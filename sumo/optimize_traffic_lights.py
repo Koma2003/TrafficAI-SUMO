@@ -1,3 +1,10 @@
+#========================================================================
+# ГЕНЕТИЧЕСКИЙ АЛГОРИТМ: подбор длительностей зелёных фаз светофора.
+#========================================================================
+
+# Параметры диапазонов, поколений и seed задаются через CLI.
+import argparse
+import sys
 import random
 import shutil
 import tempfile
@@ -6,6 +13,8 @@ from pathlib import Path
 import traci
 
 SCRIPT_DIR = Path(__file__).parent
+sys.path.insert(0, str(SCRIPT_DIR.parent))
+from sumo.phase_bounds import bounded_durations
 
 NET_FILE = SCRIPT_DIR / "test_intersection.net.xml"
 ROUTES_FILE = SCRIPT_DIR / "routes.rou.xml"
@@ -13,11 +22,12 @@ DETECTORS_FILE = SCRIPT_DIR / "detectors.add.xml"
 CONFIG_FILE = SCRIPT_DIR / "intersection.sumocfg"
 
 SIMULATION_DURATION = 360
+SIMULATION_SEED = 42
 POPULATION_SIZE = 15
-GENERATIONS = 1 # Число эпох генетического алгоритма (чем больше, тем более оптимальная светофорный цикл)
+GENERATIONS = 5
 ELITE_SIZE = 4
-MUTATION_STRENGTH = 12
-MIN_DUR = 3
+MUTATION_STRENGTH =  12
+MIN_DUR = 15
 MAX_DUR = 90
 
 
@@ -94,6 +104,9 @@ def set_phase_durations(net_path, green_durations, optimize_indices, fixed_durat
     tree.write(net_path, encoding="utf-8", xml_declaration=True)
 
 
+# Фитнес-функция. БАГ: считает задержку только машин, УЖЕ находящихся в сети
+# (traci.vehicle.getIDList()). Машина, не сумевшая въехать, не учитывается ->
+# алгоритму выгодно "морить" направление: меньше машин = меньше задержка.
 def evaluate(green_durations, optimize_indices, fixed_durations, work_dir):
     """
     Оценивает особь: запускает симуляцию и возвращает общую задержку (суммарное время ожидания всех машин).
@@ -106,7 +119,8 @@ def evaluate(green_durations, optimize_indices, fixed_durations, work_dir):
         "sumo", "-c", str(CONFIG_FILE),
         "--net-file", str(temp_net),
         "--additional-files", str(DETECTORS_FILE),
-        "--time-to-teleport", "120",
+        "--time-to-teleport", "-1",
+        "--seed", str(SIMULATION_SEED),
         "--start", "--no-step-log"
     ]
 
@@ -141,77 +155,32 @@ def evaluate(green_durations, optimize_indices, fixed_durations, work_dir):
 
 
 def create_individual(base_green, available_for_optimization, optimize_indices, fixed_durations):
-    """
-    Создаёт особь с сохранением общей длительности цикла.
-    Перераспределяет доступное время между оптимизируемыми фазами.
-    """
-    num_phases = len(base_green)
-
-    weights = [random.random() for _ in range(num_phases)]
-    total_weight = sum(weights)
-    normalized_weights = [w / total_weight for w in weights]
-
-    new_durations = []
-    for i in range(num_phases):
-        dur = normalized_weights[i] * available_for_optimization
-        dur = max(MIN_DUR, min(MAX_DUR, dur))
-        new_durations.append(dur)
-
-    current_sum = sum(new_durations)
-    if current_sum > 0:
-        correction = available_for_optimization / current_sum
-        for i in range(num_phases):
-            new_durations[i] = max(MIN_DUR, min(MAX_DUR, new_durations[i] * correction))
-
-    return new_durations
+    return bounded_durations([random.uniform(MIN_DUR, MAX_DUR) for _ in base_green],
+                             available_for_optimization, MIN_DUR, MAX_DUR)
 
 
 def mutate(ind, available_for_optimization):
-    """
-    Мутирует особь, сохраняя общую длительность цикла.
-    """
-    new = ind.copy()
-    num_phases = len(ind)
-
-    idx1, idx2 = random.sample(range(num_phases), 2)
-
-    delta = random.randint(-MUTATION_STRENGTH, MUTATION_STRENGTH)
-
-    new[idx1] = max(MIN_DUR, min(MAX_DUR, new[idx1] + delta))
-    new[idx2] = max(MIN_DUR, min(MAX_DUR, new[idx2] - delta))
-
-    current_sum = sum(new)
-    if abs(current_sum - available_for_optimization) > 0.1:
-        diff = available_for_optimization - current_sum
-        for i in range(num_phases):
-            if new[i] > MIN_DUR and new[i] < MAX_DUR:
-                add = diff / num_phases
-                new[i] = max(MIN_DUR, min(MAX_DUR, new[i] + add))
-
-    return new
+    return bounded_durations([v + random.uniform(-MUTATION_STRENGTH, MUTATION_STRENGTH) for v in ind],
+                             available_for_optimization, MIN_DUR, MAX_DUR)
 
 
 def crossover(p1, p2, available_for_optimization):
-    """
-    Одноточечный кроссовер с сохранением общей длительности.
-    """
-    child = p1.copy()
-    point = random.randint(1, len(p1) - 1)
-    for i in range(point, len(p1)):
-        child[i] = p2[i]
-
-    current_sum = sum(child)
-    if abs(current_sum - available_for_optimization) > 0.1:
-        diff = available_for_optimization - current_sum
-        for i in range(len(child)):
-            if child[i] > MIN_DUR and child[i] < MAX_DUR:
-                add = diff / len(child)
-                child[i] = max(MIN_DUR, min(MAX_DUR, child[i] + add))
-
-    return child
+    return bounded_durations([a if random.random() < .5 else b for a, b in zip(p1, p2)],
+                             available_for_optimization, MIN_DUR, MAX_DUR)
 
 
 def main():
+    global MIN_DUR, MAX_DUR, GENERATIONS, SIMULATION_SEED
+    parser = argparse.ArgumentParser(description="Генетический подбор зелёных фаз в заданных пределах")
+    parser.add_argument('--green-min', type=float, default=15)
+    parser.add_argument('--green-max', type=float, default=90)
+    parser.add_argument('--generations', type=int, default=5)
+    parser.add_argument('--seed', type=int, default=42)
+    args = parser.parse_args()
+    MIN_DUR, MAX_DUR, GENERATIONS = args.green_min, args.green_max, args.generations
+    if GENERATIONS < 1: parser.error('Нужно минимум одно поколение')
+    SIMULATION_SEED = args.seed
+    random.seed(args.seed)
     print("=" * 60)
     print("ГЕНЕТИЧЕСКАЯ ОПТИМИЗАЦИЯ (СОХРАНЕНИЕ ДЛИНЫ ЦИКЛА)")
     print("=" * 60)
@@ -233,6 +202,10 @@ def main():
     print(f"  Доступно для оптимизации: {available_for_optimization:.1f} сек")
 
     base_green = get_current_green_durations(NET_FILE, optimize_indices)
+    try:
+        feasible_base = bounded_durations(base_green, available_for_optimization, MIN_DUR, MAX_DUR)
+    except ValueError as exc:
+        parser.error(str(exc))
     print(f"\n Оптимизируем {len(base_green)} фаз")
     print(f"  Диапазон: {MIN_DUR}..{MAX_DUR} сек")
     print(f"  Сумма оптимизируемых фаз должна быть: {available_for_optimization:.1f} сек")
@@ -246,8 +219,10 @@ def main():
         create_individual(base_green, available_for_optimization, optimize_indices, fixed_durations)
         for _ in range(POPULATION_SIZE)
     ]
-    best_fitness = base_fitness
-    best_individual = base_green.copy()
+    # The baseline may violate user bounds: never export it as a valid candidate.
+    with tempfile.TemporaryDirectory() as tmpdir:
+        best_fitness = evaluate(feasible_base, optimize_indices, fixed_durations, Path(tmpdir))
+    best_individual = feasible_base.copy()
 
     for gen in range(GENERATIONS):
         if gen > 0:
@@ -262,7 +237,7 @@ def main():
                 if fit < best_fitness:
                     best_fitness = fit
                     best_individual = ind.copy()
-                    improvement = (best_fitness - base_fitness) / base_fitness * 100
+                    improvement = ((best_fitness - base_fitness) / base_fitness * 100 if base_fitness else 0.0)
                     print(f"★ Gen {gen + 1}/{GENERATIONS} Ind {idx + 1}: {fit:.2f} (улучшение {improvement:+.1f}%)")
                 else:
                     print(f"  Gen {gen + 1}/{GENERATIONS} Ind {idx + 1}: {fit:.2f}")
@@ -282,7 +257,7 @@ def main():
     print("\n[РЕЗУЛЬТАТ]")
     print(f"Исходный fitness: {base_fitness:.2f}")
     print(f"Оптимизированный: {best_fitness:.2f}")
-    improvement = (best_fitness - base_fitness) / base_fitness * 100
+    improvement = ((best_fitness - base_fitness) / base_fitness * 100 if base_fitness else 0.0)
     print(f"Улучшение: {improvement:+.1f}%")
     print(f"\n Оптимальные длительности фаз:")
     print(f"  Общая длина цикла: {sum(best_individual) + sum(fixed_durations.values()):.1f} сек")
@@ -294,20 +269,10 @@ def main():
     set_phase_durations(output_net, best_individual, optimize_indices, fixed_durations)
 
     output_cfg = SCRIPT_DIR / "test_intersection_optimized_ga.sumo.cfg"
-    cfg_content = f'''<?xml version="1.0" encoding="UTF-8"?>
-<configuration>
-    <input>
-        <net-file value="test_intersection_optimized_ga.net.xml"/>
-        <route-files value="routes.rou.xml"/>
-        <additional-files value="detectors.add.xml"/>
-    </input>
-    <time>
-        <begin value="0"/>
-        <end value="{SIMULATION_DURATION}"/>
-    </time>
-</configuration>'''
-    with open(output_cfg, "w", encoding="utf-8") as f:
-        f.write(cfg_content)
+    # Preserve the same routes (including pedestrians) and processing settings.
+    config_tree = ET.parse(CONFIG_FILE)
+    config_tree.getroot().find("input/net-file").set("value", output_net.name)
+    config_tree.write(output_cfg, encoding="utf-8", xml_declaration=True)
 
     print(f"\n Оптимизированная сеть: {output_net}")
     print(f" Конфиг для запуска: {output_cfg}")

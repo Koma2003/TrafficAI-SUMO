@@ -1,0 +1,95 @@
+{
+  "bbox": [
+    54.787,
+    55.873,
+    54.797,
+    55.883
+  ],
+  "area_km2": 0.714464515719159,
+  "source": "Учебные синтетические данные, не натурная выгрузка",
+  "retrieved_at": "2026-11-12T17:20:27.611005+00:00",
+  "counts": {
+    "residential": 1,
+    "social": 1,
+    "commercial": 1,
+    "business": 1,
+    "transport": 1,
+    "leisure": 1,
+    "other": 0
+  },
+  "objects": [
+    {
+      "osm_type": "node",
+      "osm_id": 1,
+      "category": "commercial",
+      "name": "Учебный магазин",
+      "lat": 54.791,
+      "lon": 55.878,
+      "tags": {
+        "name": "Учебный магазин",
+        "shop": "supermarket"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 2,
+      "category": "residential",
+      "name": "Учебный жилой дом",
+      "lat": 54.792,
+      "lon": 55.879,
+      "tags": {
+        "name": "Учебный жилой дом",
+        "building": "apartments",
+        "building:levels": "9"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 3,
+      "category": "social",
+      "name": "Учебная школа",
+      "lat": 54.793,
+      "lon": 55.88,
+      "tags": {
+        "name": "Учебная школа",
+        "amenity": "school"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 4,
+      "category": "transport",
+      "name": "Учебная остановка",
+      "lat": 54.794,
+      "lon": 55.881,
+      "tags": {
+        "name": "Учебная остановка",
+        "highway": "bus_stop"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 5,
+      "category": "leisure",
+      "name": "Учебный парк",
+      "lat": 54.79,
+      "lon": 55.882,
+      "tags": {
+        "name": "Учебный парк",
+        "leisure": "park"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 6,
+      "category": "business",
+      "name": "Учебный офис",
+      "lat": 54.79,
+      "lon": 55.883,
+      "tags": {
+        "name": "Учебный офис",
+        "office": "company"
+      }
+    }
+  ]
+}

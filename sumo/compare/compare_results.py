@@ -1,3 +1,8 @@
+#========================================================================
+# Сравнение "до/после": прогоняет исходную и оптимизированную сеть,
+# пишет текстовые отчёты о задержках и данных с петель.
+#========================================================================
+
 import os
 import sys
 import shutil
@@ -233,10 +238,13 @@ def collect_statistics(net_path, output_prefix, label="Сеть"):
             lane = get_lane_from_detector(det_id)
             delay_sum = total_delay[det_id]
             count_delay_det = count_delay[det_id]
+            # БАГ: count_delay - это число СЕКУНД, а не машин, поэтому
+            # "средняя задержка на машину" всегда равна 1.00.
             avg_delay = delay_sum / count_delay_det if count_delay_det > 0 else 0.0
             avg_queue = queue_sum[det_id] / queue_count[det_id] if queue_count[det_id] > 0 else 0.0
             max_queue = queue_max[det_id]
             unique_cnt = len(unique_vehicles[det_id])
+            # А вот ЭТО на самом деле средняя задержка на машину (сек) - названия перепутаны.
             stops_per_vehicle = count_delay_det / unique_cnt if unique_cnt > 0 else 0.0
 
             total_wait_all += delay_sum

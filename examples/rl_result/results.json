@@ -1,0 +1,339 @@
+{
+  "method": "tabular Q-learning (experimental)",
+  "backend": "libsumo",
+  "seed": 42,
+  "evaluation_seed": 100042,
+  "bounds": {
+    "green": [
+      15,
+      45
+    ],
+    "yellow": [
+      3,
+      5
+    ],
+    "red": [
+      2,
+      4
+    ]
+  },
+  "red_means": "all-red clearance, not the red time of an individual direction",
+  "baseline_description": "Original greens clipped to chosen bounds; chosen minimum yellow/all-red. Same demand and SUMO seed.",
+  "history": [
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3330,
+      "arrived": 160,
+      "maximum_queue_vehicles": 28
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 2908,
+      "arrived": 152,
+      "maximum_queue_vehicles": 26
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 2870,
+      "arrived": 159,
+      "maximum_queue_vehicles": 26
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 2599,
+      "arrived": 152,
+      "maximum_queue_vehicles": 23
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3914,
+      "arrived": 164,
+      "maximum_queue_vehicles": 36
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 2520,
+      "arrived": 153,
+      "maximum_queue_vehicles": 22
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 2790,
+      "arrived": 152,
+      "maximum_queue_vehicles": 24
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 2597,
+      "arrived": 159,
+      "maximum_queue_vehicles": 21
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 6215,
+      "arrived": 144,
+      "maximum_queue_vehicles": 44
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3140,
+      "arrived": 154,
+      "maximum_queue_vehicles": 26
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3115,
+      "arrived": 155,
+      "maximum_queue_vehicles": 27
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3502,
+      "arrived": 159,
+      "maximum_queue_vehicles": 30
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 2652,
+      "arrived": 164,
+      "maximum_queue_vehicles": 23
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3331,
+      "arrived": 153,
+      "maximum_queue_vehicles": 22
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3407,
+      "arrived": 154,
+      "maximum_queue_vehicles": 22
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3652,
+      "arrived": 144,
+      "maximum_queue_vehicles": 31
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 4046,
+      "arrived": 151,
+      "maximum_queue_vehicles": 30
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 2429,
+      "arrived": 157,
+      "maximum_queue_vehicles": 23
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 2997,
+      "arrived": 156,
+      "maximum_queue_vehicles": 23
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 2888,
+      "arrived": 159,
+      "maximum_queue_vehicles": 24
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3282,
+      "arrived": 164,
+      "maximum_queue_vehicles": 26
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 2643,
+      "arrived": 163,
+      "maximum_queue_vehicles": 22
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3263,
+      "arrived": 148,
+      "maximum_queue_vehicles": 24
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 4348,
+      "arrived": 152,
+      "maximum_queue_vehicles": 30
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 5237,
+      "arrived": 134,
+      "maximum_queue_vehicles": 39
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3471,
+      "arrived": 156,
+      "maximum_queue_vehicles": 25
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 1911,
+      "arrived": 161,
+      "maximum_queue_vehicles": 15
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 1888,
+      "arrived": 160,
+      "maximum_queue_vehicles": 15
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 1907,
+      "arrived": 163,
+      "maximum_queue_vehicles": 15
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 2491,
+      "arrived": 161,
+      "maximum_queue_vehicles": 22
+    }
+  ],
+  "baseline": {
+    "queue_and_insertion_wait_vehicle_seconds": 2143,
+    "arrived": 161,
+    "maximum_queue_vehicles": 15,
+    "decisions": [
+      {
+        "phase": 0,
+        "green": 30.0,
+        "yellow": 3,
+        "all_red": 2
+      },
+      {
+        "phase": 1,
+        "green": 30.0,
+        "yellow": 3,
+        "all_red": 2
+      },
+      {
+        "phase": 0,
+        "green": 30.0,
+        "yellow": 3,
+        "all_red": 2
+      },
+      {
+        "phase": 1,
+        "green": 30.0,
+        "yellow": 3,
+        "all_red": 2
+      },
+      {
+        "phase": 0,
+        "green": 30.0,
+        "yellow": 3,
+        "all_red": 2
+      },
+      {
+        "phase": 1,
+        "green": 30.0,
+        "yellow": 3,
+        "all_red": 2
+      },
+      {
+        "phase": 0,
+        "green": 30.0,
+        "yellow": 3,
+        "all_red": 2
+      },
+      {
+        "phase": 1,
+        "green": 30.0,
+        "yellow": 3,
+        "all_red": 2
+      },
+      {
+        "phase": 0,
+        "green": 30.0,
+        "yellow": 3,
+        "all_red": 2
+      },
+      {
+        "phase": 1,
+        "green": 30.0,
+        "yellow": 3,
+        "all_red": 2
+      },
+      {
+        "phase": 0,
+        "green": 30.0,
+        "yellow": 3,
+        "all_red": 2
+      }
+    ]
+  },
+  "rl": {
+    "queue_and_insertion_wait_vehicle_seconds": 1731,
+    "arrived": 167,
+    "maximum_queue_vehicles": 13,
+    "decisions": [
+      {
+        "phase": 0,
+        "green": 35,
+        "yellow": 3,
+        "all_red": 2
+      },
+      {
+        "phase": 1,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 4
+      },
+      {
+        "phase": 0,
+        "green": 25,
+        "yellow": 5,
+        "all_red": 4
+      },
+      {
+        "phase": 1,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 2
+      },
+      {
+        "phase": 0,
+        "green": 25,
+        "yellow": 5,
+        "all_red": 4
+      },
+      {
+        "phase": 1,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 2
+      },
+      {
+        "phase": 0,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 3
+      },
+      {
+        "phase": 1,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 4
+      },
+      {
+        "phase": 0,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 3
+      },
+      {
+        "phase": 1,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 4
+      },
+      {
+        "phase": 0,
+        "green": 35,
+        "yellow": 5,
+        "all_red": 3
+      },
+      {
+        "phase": 1,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 2
+      },
+      {
+        "phase": 0,
+        "green": 25,
+        "yellow": 5,
+        "all_red": 4
+      },
+      {
+        "phase": 1,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 2
+      }
+    ]
+  },
+  "limitations": "One vehicle-only TLS; educational Q-learning, no guaranteed improvement; no field deployment or pedestrian clearance validation."
+}

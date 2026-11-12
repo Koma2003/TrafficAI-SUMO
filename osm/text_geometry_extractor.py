@@ -1,3 +1,8 @@
+#========================================================================
+# Скачивает данные OpenStreetMap и ПЕЧАТАЕТ текстовый дамп.
+# Этот дамп потом целиком уходит в LLM (agent/llm_client.py).
+#========================================================================
+
 import requests, xml.etree.ElementTree as ET, math, json
 from collections import defaultdict
 
@@ -43,7 +48,10 @@ for w in root.findall("way"):
     tags = {}
     for tag in w.findall("tag"):
         tags[tag.get("k")] = tag.get("v")
-    tags.pop("oneway", None)
+    # УДАЛЕНО: tags.pop("oneway", None)
+    # ИЗМЕНЕНО: тег oneway больше НЕ вырезается и попадает в дамп для LLM.
+    # Значения OSM: yes / no / -1 / reverse / reversible.
+    # Отсутствие тега = двусторонняя улица.
     all_ways[wid] = {"nodes": nds, "tags": tags}
 
 nodes_to_ways = defaultdict(set)
@@ -84,6 +92,16 @@ for wid1, data1 in all_ways.items():
         if set(data1["nodes"]) & set(data2["nodes"]):
             neighbors[wid1].add(wid2)
             neighbors[wid2].add(wid1)
+
+# ДОБАВЛЕНО: нормализация тега oneway в boolean.
+# Сырые значения OSM (yes/-1/reverse) неудобны LLM, поэтому печатаем готовый ДА/НЕТ.
+def is_oneway(tags: dict) -> bool:
+    v = str(tags.get("oneway", "")).strip().lower()
+    if v in ("yes", "true", "1", "-1", "reverse", "reversible"):
+        return True
+    if tags.get("junction") == "roundabout":
+        return True  # круговое движение всегда одностороннее
+    return False
 
 def way_angle(wid):
     nds = all_ways[wid]["nodes"]
@@ -134,7 +152,11 @@ for tl_id in traffic_lights:
         print(f"    Название: {name}")
         print(f"    Угол: {angle}°")
         print(f"    Направление: {direction}")
-        print(f"    ВСЕ ТЕГИ:")
+
+        # ДОБАВЛЕНО: явный признак односторонней улицы, чтобы LLM не путалась
+        print(f"    ONEWAY: {'Да' if is_oneway(tags) else 'Нет'} "
+              f"(raw: {tags.get('oneway', 'нет тега')})")
+        print(f"    Все теги:")
         for k, v in sorted(tags.items()):
             print(f"      {k} = {v}")
 
@@ -168,10 +190,14 @@ for tl_id in traffic_lights:
                 print(f"{indent}  Название: {nb_name}")
                 print(f"{indent}  Угол: {nb_angle}°")
                 print(f"{indent}  Направление: {nb_direction}")
-                print(f"{indent}  ВСЕ ТЕГИ:")
+
+                # ДОБАВЛЕНО: тот же признак ONEWAY и для соседних way
+                print(f"{indent}  ONEWAY: {'Да' if is_oneway(nb_tags) else 'Нет'} "
+                      f"(raw: {nb_tags.get('oneway', 'нет тега')})")
+                print(f"{indent}  Все теги:")
                 for k, v in sorted(nb_tags.items()):
                     print(f"{indent}    {k} = {v}")
 
                 stack.append((nb, depth + 1))
 
-print("\nГОТОВО")
+print("\nГотово, текстовый дамп сгенерирован и напечатан в консоль.")

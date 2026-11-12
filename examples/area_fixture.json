@@ -1,0 +1,11 @@
+{
+  "note": "Synthetic teaching fixture; these are not surveyed OSM objects.",
+  "elements": [
+    {"type":"node","id":1,"lat":54.791,"lon":55.878,"tags":{"name":"Учебный магазин","shop":"supermarket"}},
+    {"type":"way","id":2,"center":{"lat":54.792,"lon":55.879},"tags":{"name":"Учебный жилой дом","building":"apartments","building:levels":"9"}},
+    {"type":"way","id":3,"center":{"lat":54.793,"lon":55.880},"tags":{"name":"Учебная школа","amenity":"school"}},
+    {"type":"node","id":4,"lat":54.794,"lon":55.881,"tags":{"name":"Учебная остановка","highway":"bus_stop"}},
+    {"type":"way","id":5,"center":{"lat":54.790,"lon":55.882},"tags":{"name":"Учебный парк","leisure":"park"}},
+    {"type":"way","id":6,"center":{"lat":54.790,"lon":55.883},"tags":{"name":"Учебный офис","office":"company"}}
+  ]
+}

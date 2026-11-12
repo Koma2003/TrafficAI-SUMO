@@ -1,0 +1,3696 @@
+{
+  "bbox": [
+    54.789,
+    55.874,
+    54.794,
+    55.882
+  ],
+  "area_km2": 0.2857893406303035,
+  "source": "OpenStreetMap / Overpass API",
+  "retrieved_at": "2026-11-12T17:24:57.206796+00:00",
+  "counts": {
+    "residential": 17,
+    "social": 6,
+    "commercial": 21,
+    "business": 1,
+    "transport": 4,
+    "leisure": 2,
+    "other": 209
+  },
+  "objects": [
+    {
+      "osm_type": "node",
+      "osm_id": 1203082274,
+      "category": "commercial",
+      "name": "Лукойл",
+      "lat": 54.7910045,
+      "lon": 55.8797637,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Лукойл",
+        "contact:phone": "+7 800 1000911",
+        "contact:website": "https://lukoil.ru/",
+        "fuel:diesel": "yes",
+        "fuel:octane_100": "yes",
+        "fuel:octane_92": "yes",
+        "fuel:octane_95": "yes",
+        "name": "Лукойл",
+        "name:en": "Lukoil",
+        "name:ru": "Лукойл",
+        "opening_hours": "24/7",
+        "operator": "ООО \"ЛУКОЙЛ-Уралнефтепродукт\"",
+        "payment:cards": "yes",
+        "ref": "02133",
+        "shop": "yes",
+        "toilets": "yes"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 1431580825,
+      "category": "transport",
+      "name": "Зареченский рынок",
+      "lat": 54.7892472,
+      "lon": 55.8815426,
+      "tags": {
+        "highway": "bus_stop",
+        "name": "Зареченский рынок",
+        "public_transport": "platform",
+        "source": "Bing"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 1431580833,
+      "category": "transport",
+      "name": "Зареченский рынок",
+      "lat": 54.7897631,
+      "lon": 55.8804564,
+      "tags": {
+        "highway": "bus_stop",
+        "name": "Зареченский рынок",
+        "public_transport": "platform",
+        "source": "Bing"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 1431580852,
+      "category": "transport",
+      "name": "Школа-интернат № 5",
+      "lat": 54.7923166,
+      "lon": 55.8771517,
+      "tags": {
+        "highway": "bus_stop",
+        "name": "Школа-интернат № 5",
+        "public_transport": "platform",
+        "source": "Bing"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 1431580853,
+      "category": "transport",
+      "name": "Школа-интернат № 5",
+      "lat": 54.7925058,
+      "lon": 55.8764132,
+      "tags": {
+        "highway": "bus_stop",
+        "name": "Школа-интернат № 5",
+        "public_transport": "platform",
+        "source": "Bing"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 1999585995,
+      "category": "commercial",
+      "name": "Сбербанк",
+      "lat": 54.7894065,
+      "lon": 55.8815594,
+      "tags": {
+        "amenity": "bank",
+        "bic": "SABRRUMM",
+        "branch": "Уральский банк",
+        "brand": "Сбербанк",
+        "brand:wikidata": "Q205012",
+        "brand:wikipedia": "ru:Сбербанк России",
+        "contact:facebook": "https://www.facebook.com/sberbank",
+        "contact:instagram": "https://www.instagram.com/sberbank",
+        "contact:ok": "https://ok.ru/sberbank",
+        "contact:phone": "+7 800 5555550",
+        "contact:twitter": "https://twitter.com/sberbank",
+        "contact:vk": "https://vk.com/sberbank",
+        "contact:website": "https://www.sberbank.ru",
+        "contact:youtube": "https://www.youtube.com/sberbank",
+        "name": "Сбербанк",
+        "name:en": "Sberbank",
+        "name:ru": "Сбербанк",
+        "opening_hours": "Mo-Fr 09:00-19:00; Sa 09:00-16:00",
+        "operator": "ПАО Сбербанк",
+        "operator:wikidata": "Q205012",
+        "operator:wikipedia": "ru:Сбербанк России",
+        "phone": "+7 347 2782521",
+        "ref": "8598/0176",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2028286420,
+      "category": "social",
+      "name": "Фармленд",
+      "lat": 54.7894795,
+      "lon": 55.8803525,
+      "tags": {
+        "amenity": "pharmacy",
+        "contact:email": "info@farmlend.ru",
+        "contact:phone": "+7 347 2600393;+7 800 5500393",
+        "contact:website": "https://farmlend.ru/",
+        "dispensing": "no",
+        "healthcare": "pharmacy",
+        "name": "Фармленд",
+        "opening_hours": "24/7",
+        "operator": "Фармленд",
+        "ref": "205"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2649762708,
+      "category": "social",
+      "name": "Витаминка",
+      "lat": 54.790481,
+      "lon": 55.8801264,
+      "tags": {
+        "amenity": "pharmacy",
+        "contact:email": "info@deshapt.ru",
+        "contact:phone": "+7 800 7759903",
+        "contact:website": "https://deshapt.ru",
+        "healthcare": "pharmacy",
+        "name": "Витаминка",
+        "opening_hours": "Mo-Su 08:00-22:00"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 4836385424,
+      "category": "commercial",
+      "name": "Центр выдачи заказов Сайт Уфамама.ру",
+      "lat": 54.7912005,
+      "lon": 55.8772542,
+      "tags": {
+        "addr:housenumber": "311",
+        "addr:street": "улица Ахметова",
+        "name": "Центр выдачи заказов Сайт Уфамама.ру",
+        "name:en": "Ufamama.ru",
+        "name:ru": "Центр выдачи заказов Сайт Уфамама.ру",
+        "opening_hours": "Mo-Th 12:00-20:00; Fr-Sa 12:00-19:00",
+        "shop": "clothes",
+        "website": "https://www.ufamama.ru/"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 6777010358,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.790203,
+      "lon": 55.880546,
+      "tags": {
+        "amenity": "atm",
+        "brand": "Промсвязьбанк",
+        "contact:email": "info@psbank.ru",
+        "contact:phone": "+7 495 7873333;+7 800 3330303",
+        "contact:website": "https://www.psbank.ru/",
+        "opening_hours": "24/7",
+        "operator": "ПАО \"Промсвязьбанк\""
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 7710294785,
+      "category": "social",
+      "name": "Вита Экспресс",
+      "lat": 54.790329,
+      "lon": 55.880466,
+      "tags": {
+        "amenity": "pharmacy",
+        "brand": "Вита Экспресс",
+        "brand:wikidata": "Q109810737",
+        "contact:phone": "+7 800 7550003",
+        "contact:vk": "https://vk.com/aptekivita",
+        "contact:website": "https://vitaexpress.ru/",
+        "healthcare": "pharmacy",
+        "name": "Вита Экспресс",
+        "name:en": "Vita Express",
+        "name:ru": "Вита Экспресс",
+        "opening_hours": "Mo-Sa 08:00-21:00; Su 09:00-21:00",
+        "payment:cards": "yes",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:maestro": "yes",
+        "payment:visa": "yes"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 8938927866,
+      "category": "commercial",
+      "name": "Галамарт",
+      "lat": 54.7894324,
+      "lon": 55.8804426,
+      "tags": {
+        "contact:email": "fr147-direktor@galamart.ru",
+        "contact:phone": "+7 347 2687910",
+        "contact:website": "https://galamart.ru/",
+        "name": "Галамарт",
+        "opening_hours": "Mo-Su 10:00-22:00",
+        "shop": "hardware"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 9447079039,
+      "category": "commercial",
+      "name": "585 Gold",
+      "lat": 54.7903541,
+      "lon": 55.8803862,
+      "tags": {
+        "contact:email": "02-00950@zoloto585.ru",
+        "contact:phone": "+7 499 4551585-2227",
+        "contact:website": "http://zoloto585.ru/",
+        "name": "585 Gold",
+        "opening_hours": "Mo-Su 10:00-20:00",
+        "shop": "jewelry"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 9612451759,
+      "category": "commercial",
+      "name": "МТС",
+      "lat": 54.7902397,
+      "lon": 55.8804265,
+      "tags": {
+        "contact:phone": "+7 800 2500890",
+        "contact:website": "https://bashkortostan.mts.ru/",
+        "name": "МТС",
+        "office": "telecommunication",
+        "opening_hours": "Mo-Su 09:00-21:00",
+        "shop": "mobile_phone"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 9718274572,
+      "category": "commercial",
+      "name": "Билайн",
+      "lat": 54.7901191,
+      "lon": 55.8805901,
+      "tags": {
+        "contact:email": "shop@beeline.ru",
+        "contact:phone": "+7 800 7000611",
+        "contact:website": "https://ufa.beeline.ru",
+        "name": "Билайн",
+        "office": "telecommunication",
+        "opening_hours": "Mo-Su 09:00-21:00",
+        "shop": "mobile_phone"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 10740702831,
+      "category": "commercial",
+      "name": "Joyeshop",
+      "lat": 54.789939,
+      "lon": 55.8793026,
+      "tags": {
+        "addr:city": "Уфа",
+        "addr:housenumber": "299",
+        "addr:postcode": "450017",
+        "addr:street": "улица Ахметова",
+        "name": "Joyeshop",
+        "opening_hours": "10:00-22:00",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "phone": "+78005008838",
+        "shop": "e-cigarette",
+        "website": "https://joyeshop.ru/"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 10844161288,
+      "category": "commercial",
+      "name": "Сладкий сон",
+      "lat": 54.79142,
+      "lon": 55.877559,
+      "tags": {
+        "contact:email": "sladkiisonufa@mail.ru",
+        "contact:phone": "+7 937 3683131",
+        "contact:website": "https://sweetdream.su/",
+        "name": "Сладкий сон",
+        "opening_hours": "Mo-Su 09:00-20:00",
+        "shop": "houseware"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 10844194538,
+      "category": "commercial",
+      "name": "УфаЛес",
+      "lat": 54.791348,
+      "lon": 55.878888,
+      "tags": {
+        "contact:email": "sanekovicks@gmail.com",
+        "contact:phone": "+7 905 1819121;+7 905 3096351",
+        "contact:website": "https://70000001035611527.2gis.biz",
+        "name": "УфаЛес",
+        "opening_hours": "Mo-Su 09:00-18:00",
+        "shop": "doityourself"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 11083646131,
+      "category": "leisure",
+      "name": "Нугуш",
+      "lat": 54.7913501,
+      "lon": 55.8774224,
+      "tags": {
+        "contact:email": "tk_nugush@bk.ru",
+        "contact:phone": "+7 927 3236767;+7 937 3683131;+7 950 9376767",
+        "contact:website": "https://tknugush.ru",
+        "leisure": "resort",
+        "name": "Нугуш",
+        "opening_hours": "Mo-Su 08:00-22:00"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 11083658919,
+      "category": "commercial",
+      "name": "Xiaomi",
+      "lat": 54.7900588,
+      "lon": 55.8806732,
+      "tags": {
+        "brand": "Xiaomi",
+        "brand:wikidata": "Q1636958",
+        "brand:wikipedia": "en:Xiaomi",
+        "contact:email": "pr@cifrogradrb.ru",
+        "contact:phone": "+7 917 4171778",
+        "contact:website": "https://mi-shop.com/ru",
+        "name": "Xiaomi",
+        "name:en": "Xiaomi",
+        "opening_hours": "Mo-Su 10:00-20:00",
+        "shop": "electronics"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 11169398464,
+      "category": "commercial",
+      "name": "Аккумуляторщик",
+      "lat": 54.7925888,
+      "lon": 55.8742225,
+      "tags": {
+        "contact:email": "akb-rb@mail.ru",
+        "contact:phone": "+7 937 7868339",
+        "contact:website": "https://accumulator.2gis.biz",
+        "name": "Аккумуляторщик",
+        "opening_hours": "Mo-Su 06:00-22:00",
+        "shop": "car_parts"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 11304273762,
+      "category": "commercial",
+      "name": "Сабантуй",
+      "lat": 54.7919114,
+      "lon": 55.8786053,
+      "tags": {
+        "contact:email": "bayraminfo@bashpost.ru",
+        "contact:phone": "+7 347 2466444",
+        "contact:website": "http://batyr-rb.ru",
+        "name": "Сабантуй",
+        "opening_hours": "Mo-Su 08:00-23:00",
+        "shop": "convenience"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 11459481579,
+      "category": "commercial",
+      "name": "М.Видео",
+      "lat": 54.7897736,
+      "lon": 55.87986,
+      "tags": {
+        "contact:email": "24@mvideo.ru",
+        "contact:phone": "+7 800 6007775",
+        "contact:website": "https://www.mvideo.ru",
+        "name": "М.Видео",
+        "opening_hours": "Mo-Su 10:00-21:00",
+        "shop": "electronics"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 11521599628,
+      "category": "commercial",
+      "name": "Пятёрочка",
+      "lat": 54.7900679,
+      "lon": 55.8793305,
+      "tags": {
+        "brand": "Пятёрочка",
+        "brand:wikidata": "Q1768969",
+        "brand:wikipedia": "ru:Пятёрочка",
+        "contact:email": "vopros@5ka.ru",
+        "contact:phone": "+7 800 5555505",
+        "contact:website": "https://5ka.ru",
+        "name": "Пятёрочка",
+        "name:en": "Pyaterochka",
+        "name:ru": "Пятёрочка",
+        "opening_hours": "08:00-23:00",
+        "operator": "ООО \"Агроторг\"",
+        "ref": "26791",
+        "shop": "supermarket"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 11649039266,
+      "category": "commercial",
+      "name": "Левша",
+      "lat": 54.7914258,
+      "lon": 55.880279,
+      "tags": {
+        "contact:email": "levsha.rf@mail.ru",
+        "contact:phone": "+7 347 2000933-247",
+        "contact:website": "https://левша.рф",
+        "name": "Левша",
+        "opening_hours": "Mo-Fr 09:00-19:00; Sa-Su 09:00-18:00",
+        "shop": "doityourself"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 11843598301,
+      "category": "commercial",
+      "name": "Скс Ломбард",
+      "lat": 54.7900157,
+      "lon": 55.8795231,
+      "tags": {
+        "contact:phone": "+7 800 5508565",
+        "contact:website": "https://sks-lombard.ru",
+        "name": "Скс Ломбард",
+        "opening_hours": "Mo-Su 09:00-20:00",
+        "shop": "pawnbroker"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 12254625021,
+      "category": "social",
+      "name": "Фармленд",
+      "lat": 54.7919789,
+      "lon": 55.8787259,
+      "tags": {
+        "amenity": "pharmacy",
+        "contact:email": "info@farmlend.ru",
+        "contact:phone": "+7 347 2600393;+7 800 5500393",
+        "contact:website": "https://farmlend.ru",
+        "healthcare": "pharmacy",
+        "name": "Фармленд",
+        "opening_hours": "Mo-Su 08:00-22:00"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 12254625070,
+      "category": "social",
+      "name": "Фармленд",
+      "lat": 54.7898091,
+      "lon": 55.8797758,
+      "tags": {
+        "amenity": "pharmacy",
+        "contact:email": "info@farmlend.ru",
+        "contact:phone": "+7 347 2600393;+7 800 5500393",
+        "contact:website": "https://farmlend.ru",
+        "healthcare": "pharmacy",
+        "name": "Фармленд",
+        "opening_hours": "Mo-Su 09:00-22:00"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 12298845288,
+      "category": "commercial",
+      "name": "Ваша мебель",
+      "lat": 54.7914707,
+      "lon": 55.8775136,
+      "tags": {
+        "contact:phone": "+7 927 3466617",
+        "name": "Ваша мебель",
+        "opening_hours": "Mo-Sa 10:00-19:00; Su 10:00-17:00",
+        "shop": "furniture"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 13095006515,
+      "category": "commercial",
+      "name": "ВТБ",
+      "lat": 54.789758,
+      "lon": 55.879621,
+      "tags": {
+        "amenity": "bank",
+        "brand": "ВТБ",
+        "brand:wikidata": "Q1549389",
+        "contact:phone": "+7 800 1002424",
+        "contact:website": "https://www.vtb.ru",
+        "name": "ВТБ",
+        "name:en": "VTB",
+        "name:ru": "ВТБ",
+        "official_name": "ОО \"Затон\" Филиала № 6318 Банка ВТБ (ПАО)",
+        "opening_hours": "Mo-Fr 10:00-19:00",
+        "operator": "Банк ВТБ (публичное акционерное общество)",
+        "ref": "5262",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 14020073221,
+      "category": "commercial",
+      "name": "Цветloff",
+      "lat": 54.7890999,
+      "lon": 55.8819928,
+      "tags": {
+        "contact:email": "flowers.ufa102@yandex.ru",
+        "contact:phone": "+7 937 1633744;+7 963 1427081",
+        "contact:website": "https://cvetloff-ufa.ru",
+        "name": "Цветloff",
+        "opening_hours": "24/7",
+        "shop": "florist"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 95814908,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7895204,
+      "lon": 55.8814982,
+      "tags": {
+        "addr:city": "Уфа",
+        "addr:housenumber": "324",
+        "addr:street": "улица Ахметова",
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 95814912,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7904771,
+      "lon": 55.8801962,
+      "tags": {
+        "addr:city": "Уфа",
+        "addr:housenumber": "326",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "building:levels": "2",
+        "start_date": "1973"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 95814949,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7910664,
+      "lon": 55.8739191,
+      "tags": {
+        "addr:city": "Уфа",
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 95814956,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7915128,
+      "lon": 55.8744784,
+      "tags": {
+        "addr:city": "Уфа",
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 95814977,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.790221,
+      "lon": 55.88121,
+      "tags": {
+        "addr:city": "Уфа",
+        "addr:housenumber": "326/1",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 95814996,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7900542,
+      "lon": 55.8808691,
+      "tags": {
+        "addr:city": "Уфа",
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 95815005,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.79136,
+      "lon": 55.8803478,
+      "tags": {
+        "addr:city": "Уфа",
+        "addr:housenumber": "326/1а",
+        "addr:street": "улица Ахметова",
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 95815013,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7908548,
+      "lon": 55.8740952,
+      "tags": {
+        "addr:city": "Уфа",
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 95815022,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7907369,
+      "lon": 55.881853,
+      "tags": {
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 95815025,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7909961,
+      "lon": 55.8816783,
+      "tags": {
+        "addr:city": "Уфа",
+        "addr:housenumber": "9",
+        "addr:street": "улица Ирендык",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 95815058,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.791897,
+      "lon": 55.8733312,
+      "tags": {
+        "addr:city": "Уфа",
+        "addr:housenumber": "125",
+        "addr:street": "улица Чкалова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 95815074,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.790249,
+      "lon": 55.8805694,
+      "tags": {
+        "addr:city": "Уфа",
+        "building": "yes",
+        "building:levels": "1",
+        "start_date": "2005"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 95815077,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7903967,
+      "lon": 55.8739429,
+      "tags": {
+        "addr:city": "Уфа",
+        "addr:housenumber": "154",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 95815079,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7908476,
+      "lon": 55.8813796,
+      "tags": {
+        "addr:city": "Уфа",
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 95815080,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7900856,
+      "lon": 55.8820797,
+      "tags": {
+        "addr:city": "Уфа",
+        "addr:housenumber": "326/2",
+        "addr:street": "улица Ахметова",
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 98700517,
+      "category": "leisure",
+      "name": "сквер Волна",
+      "lat": 54.7893079,
+      "lon": 55.8770052,
+      "tags": {
+        "leisure": "park",
+        "name": "сквер Волна"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 129818042,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7890125,
+      "lon": 55.8822266,
+      "tags": {
+        "addr:city": "Уфа",
+        "addr:housenumber": "322",
+        "addr:street": "улица Ахметова",
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 130846501,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7890654,
+      "lon": 55.8806859,
+      "tags": {
+        "addr:city": "Уфа",
+        "addr:country": "RU",
+        "addr:housenumber": "21",
+        "addr:street": "улица Ирендык",
+        "building": "yes",
+        "source": "Bing"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 135625627,
+      "category": "social",
+      "name": "Детский сад № 18",
+      "lat": 54.7899793,
+      "lon": 55.8821811,
+      "tags": {
+        "amenity": "kindergarten",
+        "name": "Детский сад № 18"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 188706374,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.788826,
+      "lon": 55.8812545,
+      "tags": {
+        "addr:city": "Уфа",
+        "addr:housenumber": "293",
+        "addr:street": "улица Ахметова",
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 192266421,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7894709,
+      "lon": 55.8803442,
+      "tags": {
+        "addr:housenumber": "297",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source": "Bing"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 205517272,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.790741,
+      "lon": 55.880697,
+      "tags": {
+        "addr:housenumber": "326/1",
+        "addr:street": "улица Ахметова",
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 205517288,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7914043,
+      "lon": 55.8817323,
+      "tags": {
+        "addr:housenumber": "1Б",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 452289271,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7918281,
+      "lon": 55.8787756,
+      "tags": {
+        "addr:city": "Уфа",
+        "addr:housenumber": "334",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "building:levels": "1",
+        "source:addr": "ЕГРН",
+        "start_date": "2016"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685280,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7905582,
+      "lon": 55.8743372,
+      "tags": {
+        "addr:housenumber": "152",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685281,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7909278,
+      "lon": 55.8752045,
+      "tags": {
+        "addr:housenumber": "146А",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685282,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7910858,
+      "lon": 55.8744489,
+      "tags": {
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685283,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7911974,
+      "lon": 55.8748166,
+      "tags": {
+        "addr:housenumber": "148",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685284,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7914442,
+      "lon": 55.8752518,
+      "tags": {
+        "addr:housenumber": "148А",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685285,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7911406,
+      "lon": 55.8756297,
+      "tags": {
+        "addr:housenumber": "146",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685286,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7917283,
+      "lon": 55.8755737,
+      "tags": {
+        "addr:housenumber": "5",
+        "addr:street": "улица Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685287,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7918714,
+      "lon": 55.875865,
+      "tags": {
+        "addr:housenumber": "3",
+        "addr:street": "1-й переулок Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685288,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7920027,
+      "lon": 55.8757173,
+      "tags": {
+        "addr:housenumber": "5",
+        "addr:street": "1-й переулок Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685289,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7919569,
+      "lon": 55.8751561,
+      "tags": {
+        "addr:housenumber": "9",
+        "addr:street": "улица Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685290,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7921177,
+      "lon": 55.8754792,
+      "tags": {
+        "addr:housenumber": "7",
+        "addr:street": "1-й переулок Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685291,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7920991,
+      "lon": 55.8749055,
+      "tags": {
+        "addr:housenumber": "11",
+        "addr:street": "улица Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685292,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7922433,
+      "lon": 55.875366,
+      "tags": {
+        "addr:housenumber": "9",
+        "addr:street": "1-й переулок Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685293,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7923427,
+      "lon": 55.8752074,
+      "tags": {
+        "addr:housenumber": "11",
+        "addr:street": "1-й переулок Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685294,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7922437,
+      "lon": 55.874788,
+      "tags": {
+        "addr:housenumber": "13",
+        "addr:street": "улица Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685295,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7926038,
+      "lon": 55.8749725,
+      "tags": {
+        "addr:housenumber": "26",
+        "addr:street": "1-й переулок Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685296,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7924623,
+      "lon": 55.8748042,
+      "tags": {
+        "addr:housenumber": "24",
+        "addr:street": "1-й переулок Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685297,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7923738,
+      "lon": 55.8745196,
+      "tags": {
+        "addr:housenumber": "15",
+        "addr:street": "улица Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685298,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7926078,
+      "lon": 55.8741914,
+      "tags": {
+        "addr:housenumber": "123",
+        "addr:street": "улица Чкалова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685299,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7927213,
+      "lon": 55.8744718,
+      "tags": {
+        "addr:housenumber": "119",
+        "addr:street": "улица Чкалова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685300,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7928998,
+      "lon": 55.8747099,
+      "tags": {
+        "addr:housenumber": "117",
+        "addr:street": "улица Чкалова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685301,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7915288,
+      "lon": 55.8766794,
+      "tags": {
+        "addr:housenumber": "138",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685302,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7914263,
+      "lon": 55.8765087,
+      "tags": {
+        "addr:housenumber": "140",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685303,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7913303,
+      "lon": 55.8763039,
+      "tags": {
+        "addr:housenumber": "142",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685304,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7912387,
+      "lon": 55.8760535,
+      "tags": {
+        "addr:housenumber": "144",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685305,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.791513,
+      "lon": 55.8757363,
+      "tags": {
+        "addr:housenumber": "3",
+        "addr:street": "улица Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685306,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7916167,
+      "lon": 55.8759814,
+      "tags": {
+        "addr:housenumber": "4",
+        "addr:street": "1-й переулок Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685307,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7916854,
+      "lon": 55.8762031,
+      "tags": {
+        "addr:housenumber": "6",
+        "addr:street": "1-й переулок Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685308,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7917532,
+      "lon": 55.8764989,
+      "tags": {
+        "addr:housenumber": "8",
+        "addr:street": "1-й переулок Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685309,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7916967,
+      "lon": 55.8768945,
+      "tags": {
+        "addr:housenumber": "156А",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685310,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.792073,
+      "lon": 55.8766878,
+      "tags": {
+        "addr:housenumber": "315",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685311,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7919843,
+      "lon": 55.8768045,
+      "tags": {
+        "addr:housenumber": "313",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685312,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7918994,
+      "lon": 55.8763551,
+      "tags": {
+        "addr:housenumber": "10",
+        "addr:street": "1-й переулок Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685313,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.792069,
+      "lon": 55.8760898,
+      "tags": {
+        "addr:housenumber": "12",
+        "addr:street": "1-й переулок Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685314,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7923466,
+      "lon": 55.8763083,
+      "tags": {
+        "addr:housenumber": "319",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685315,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7922171,
+      "lon": 55.8759826,
+      "tags": {
+        "addr:housenumber": "14",
+        "addr:street": "1-й переулок Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685316,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7923038,
+      "lon": 55.8757926,
+      "tags": {
+        "addr:housenumber": "16",
+        "addr:street": "1-й переулок Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685317,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7924585,
+      "lon": 55.8756595,
+      "tags": {
+        "addr:housenumber": "18",
+        "addr:street": "1-й переулок Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685318,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.79255,
+      "lon": 55.8754644,
+      "tags": {
+        "addr:housenumber": "20",
+        "addr:street": "1-й переулок Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685319,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7925692,
+      "lon": 55.8759773,
+      "tags": {
+        "addr:housenumber": "323",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685320,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7927093,
+      "lon": 55.8757544,
+      "tags": {
+        "addr:housenumber": "325",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685321,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7928469,
+      "lon": 55.8756152,
+      "tags": {
+        "addr:housenumber": "327",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685322,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7929778,
+      "lon": 55.8754148,
+      "tags": {
+        "addr:housenumber": "329",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685323,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7930118,
+      "lon": 55.8749856,
+      "tags": {
+        "addr:housenumber": "115",
+        "addr:street": "улица Чкалова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685324,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7931058,
+      "lon": 55.875214,
+      "tags": {
+        "addr:housenumber": "331",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685337,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7931557,
+      "lon": 55.8738958,
+      "tags": {
+        "addr:housenumber": "3",
+        "addr:street": "2-й переулок Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685338,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7928892,
+      "lon": 55.8738325,
+      "tags": {
+        "addr:housenumber": "108",
+        "addr:street": "улица Чкалова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685339,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7930169,
+      "lon": 55.8740224,
+      "tags": {
+        "addr:housenumber": "106",
+        "addr:street": "улица Чкалова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685347,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7937535,
+      "lon": 55.8740378,
+      "tags": {
+        "addr:housenumber": "339",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685349,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7934718,
+      "lon": 55.8738787,
+      "tags": {
+        "addr:housenumber": "6",
+        "addr:street": "2-й переулок Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685350,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7935112,
+      "lon": 55.8744381,
+      "tags": {
+        "addr:housenumber": "335",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685351,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7935987,
+      "lon": 55.8742879,
+      "tags": {
+        "addr:housenumber": "337",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685352,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7933711,
+      "lon": 55.8741178,
+      "tags": {
+        "addr:housenumber": "4",
+        "addr:street": "2-й переулок Водников",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685353,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7931083,
+      "lon": 55.8744331,
+      "tags": {
+        "addr:housenumber": "104",
+        "addr:street": "улица Чкалова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685354,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7931898,
+      "lon": 55.8746296,
+      "tags": {
+        "addr:housenumber": "102",
+        "addr:street": "улица Чкалова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685355,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7932817,
+      "lon": 55.8749381,
+      "tags": {
+        "addr:housenumber": "333",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685368,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7937141,
+      "lon": 55.8758054,
+      "tags": {
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685369,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7939631,
+      "lon": 55.8753688,
+      "tags": {
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685370,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7939517,
+      "lon": 55.8759314,
+      "tags": {
+        "addr:housenumber": "96",
+        "addr:street": "улица Чкалова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685371,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7939755,
+      "lon": 55.87626,
+      "tags": {
+        "addr:housenumber": "94",
+        "addr:street": "улица Чкалова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685386,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7939161,
+      "lon": 55.8784883,
+      "tags": {
+        "addr:housenumber": "112",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685387,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7938178,
+      "lon": 55.8782673,
+      "tags": {
+        "addr:housenumber": "114",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685388,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7939053,
+      "lon": 55.877881,
+      "tags": {
+        "addr:housenumber": "118",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685389,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7938502,
+      "lon": 55.8776574,
+      "tags": {
+        "addr:housenumber": "120",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685390,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7937168,
+      "lon": 55.8780976,
+      "tags": {
+        "addr:housenumber": "116",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685391,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.793726,
+      "lon": 55.8775563,
+      "tags": {
+        "addr:housenumber": "122",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685392,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7936753,
+      "lon": 55.8773104,
+      "tags": {
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685393,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7934808,
+      "lon": 55.8769642,
+      "tags": {
+        "addr:housenumber": "126",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685394,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.793376,
+      "lon": 55.8773748,
+      "tags": {
+        "addr:housenumber": "132А",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685395,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7931698,
+      "lon": 55.8769258,
+      "tags": {
+        "addr:housenumber": "134",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "building:levels": "1",
+        "source:addr": "ЕГРН",
+        "start_date": "2014"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685396,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.792957,
+      "lon": 55.8764743,
+      "tags": {
+        "addr:housenumber": "382",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685397,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7931601,
+      "lon": 55.8765791,
+      "tags": {
+        "addr:housenumber": "136",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685398,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7931911,
+      "lon": 55.8763083,
+      "tags": {
+        "addr:housenumber": "384",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685399,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7932629,
+      "lon": 55.8761137,
+      "tags": {
+        "addr:housenumber": "386",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685400,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7934538,
+      "lon": 55.8758483,
+      "tags": {
+        "addr:housenumber": "388",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685401,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7935488,
+      "lon": 55.8761332,
+      "tags": {
+        "addr:housenumber": "109",
+        "addr:street": "улица Чкалова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685402,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7936627,
+      "lon": 55.8763328,
+      "tags": {
+        "addr:housenumber": "107",
+        "addr:street": "улица Чкалова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685403,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.79375,
+      "lon": 55.8765521,
+      "tags": {
+        "addr:housenumber": "105",
+        "addr:street": "улица Чкалова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685404,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7938434,
+      "lon": 55.8767529,
+      "tags": {
+        "addr:housenumber": "103",
+        "addr:street": "улица Чкалова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685405,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7939388,
+      "lon": 55.8769353,
+      "tags": {
+        "addr:housenumber": "101",
+        "addr:street": "улица Чкалова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685406,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7940284,
+      "lon": 55.8771911,
+      "tags": {
+        "addr:housenumber": "99",
+        "addr:street": "улица Чкалова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685418,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7925911,
+      "lon": 55.8788641,
+      "tags": {
+        "addr:housenumber": "128И128А",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685419,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7929872,
+      "lon": 55.878158,
+      "tags": {
+        "addr:housenumber": "153А",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685420,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7928651,
+      "lon": 55.8778879,
+      "tags": {
+        "addr:housenumber": "155А",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685421,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7927086,
+      "lon": 55.8776534,
+      "tags": {
+        "addr:housenumber": "157Б",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685422,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7926059,
+      "lon": 55.8778413,
+      "tags": {
+        "addr:housenumber": "157В",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685423,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7926887,
+      "lon": 55.8783162,
+      "tags": {
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685424,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7924959,
+      "lon": 55.8779639,
+      "tags": {
+        "addr:housenumber": "157Г",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685425,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7923148,
+      "lon": 55.8782276,
+      "tags": {
+        "addr:housenumber": "130",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685426,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7922284,
+      "lon": 55.8780909,
+      "tags": {
+        "addr:housenumber": "132",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685427,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7921277,
+      "lon": 55.8778287,
+      "tags": {
+        "addr:housenumber": "370",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "building:levels": "1",
+        "source:addr": "ЕГРН",
+        "start_date": "1969"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685428,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7922982,
+      "lon": 55.8775366,
+      "tags": {
+        "addr:housenumber": "372",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685429,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7924194,
+      "lon": 55.8773725,
+      "tags": {
+        "addr:housenumber": "374",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685430,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7925056,
+      "lon": 55.8772004,
+      "tags": {
+        "addr:housenumber": "376",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685431,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7926187,
+      "lon": 55.8770325,
+      "tags": {
+        "addr:housenumber": "378",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685432,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7927716,
+      "lon": 55.876792,
+      "tags": {
+        "addr:housenumber": "380",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685433,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.792828,
+      "lon": 55.877489,
+      "tags": {
+        "addr:housenumber": "157А",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685434,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7928457,
+      "lon": 55.8770291,
+      "tags": {
+        "addr:housenumber": "159",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685435,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7930125,
+      "lon": 55.8772802,
+      "tags": {
+        "addr:housenumber": "157",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685436,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7930898,
+      "lon": 55.8775294,
+      "tags": {
+        "addr:housenumber": "155",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685437,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7932106,
+      "lon": 55.8777852,
+      "tags": {
+        "addr:housenumber": "153",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685438,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7933032,
+      "lon": 55.8781003,
+      "tags": {
+        "addr:housenumber": "151",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685439,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7932699,
+      "lon": 55.8785871,
+      "tags": {
+        "addr:housenumber": "149А",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685440,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7934959,
+      "lon": 55.8783337,
+      "tags": {
+        "addr:housenumber": "149",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685441,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.793568,
+      "lon": 55.8785053,
+      "tags": {
+        "addr:housenumber": "147",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685442,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7936422,
+      "lon": 55.8787333,
+      "tags": {
+        "addr:housenumber": "145",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685443,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.793763,
+      "lon": 55.8790049,
+      "tags": {
+        "addr:housenumber": "143",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685444,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.793516,
+      "lon": 55.8790604,
+      "tags": {
+        "addr:housenumber": "11",
+        "addr:street": "Михайловская улица",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685445,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7934057,
+      "lon": 55.8790813,
+      "tags": {
+        "addr:housenumber": "9",
+        "addr:street": "Михайловская улица",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685446,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7932796,
+      "lon": 55.8791312,
+      "tags": {
+        "addr:housenumber": "7",
+        "addr:street": "Михайловская улица",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685447,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7931252,
+      "lon": 55.8792689,
+      "tags": {
+        "addr:housenumber": "5",
+        "addr:street": "Михайловская улица",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685448,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7928979,
+      "lon": 55.8793668,
+      "tags": {
+        "addr:housenumber": "1",
+        "addr:street": "Михайловская улица",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685449,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.79224,
+      "lon": 55.8808322,
+      "tags": {
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685450,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7920971,
+      "lon": 55.8805964,
+      "tags": {
+        "addr:housenumber": "11",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685451,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7920415,
+      "lon": 55.8802104,
+      "tags": {
+        "addr:housenumber": "9А",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685452,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7919047,
+      "lon": 55.880002,
+      "tags": {
+        "addr:housenumber": "9Б",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685453,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7917968,
+      "lon": 55.8795843,
+      "tags": {
+        "addr:housenumber": "9Г",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685454,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7918869,
+      "lon": 55.8797533,
+      "tags": {
+        "addr:housenumber": "9В",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685455,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7919828,
+      "lon": 55.8793111,
+      "tags": {
+        "addr:housenumber": "101А",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685456,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7921137,
+      "lon": 55.8791006,
+      "tags": {
+        "addr:housenumber": "101",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685457,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.792223,
+      "lon": 55.8793435,
+      "tags": {
+        "addr:housenumber": "99",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685458,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7923461,
+      "lon": 55.8799927,
+      "tags": {
+        "addr:housenumber": "95",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685459,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7924003,
+      "lon": 55.8796684,
+      "tags": {
+        "addr:housenumber": "97",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685460,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7924907,
+      "lon": 55.8802565,
+      "tags": {
+        "addr:housenumber": "93",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685461,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7924985,
+      "lon": 55.8806471,
+      "tags": {
+        "addr:housenumber": "91",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685462,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.792418,
+      "lon": 55.8809889,
+      "tags": {
+        "addr:housenumber": "89",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685463,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7918899,
+      "lon": 55.8809105,
+      "tags": {
+        "addr:housenumber": "9",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685464,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7916762,
+      "lon": 55.8810236,
+      "tags": {
+        "addr:housenumber": "2В",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685465,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.791891,
+      "lon": 55.8813877,
+      "tags": {
+        "addr:housenumber": "2Б",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685466,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7920999,
+      "lon": 55.8814064,
+      "tags": {
+        "addr:housenumber": "4",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685467,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7923395,
+      "lon": 55.881509,
+      "tags": {
+        "addr:housenumber": "10Б",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685468,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7924668,
+      "lon": 55.8816344,
+      "tags": {
+        "addr:housenumber": "89А",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685469,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7924248,
+      "lon": 55.8819805,
+      "tags": {
+        "addr:housenumber": "87",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685476,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7917718,
+      "lon": 55.8817958,
+      "tags": {
+        "addr:housenumber": "4В",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685477,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.791592,
+      "lon": 55.8814789,
+      "tags": {
+        "addr:housenumber": "2А",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685478,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7915167,
+      "lon": 55.8819953,
+      "tags": {
+        "addr:housenumber": "46",
+        "addr:street": "улица Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685497,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7939004,
+      "lon": 55.8794683,
+      "tags": {
+        "addr:housenumber": "141",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685498,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.793863,
+      "lon": 55.8797222,
+      "tags": {
+        "addr:housenumber": "139",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685499,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7938538,
+      "lon": 55.8800222,
+      "tags": {
+        "addr:housenumber": "137",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685500,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7938577,
+      "lon": 55.8802374,
+      "tags": {
+        "addr:housenumber": "135",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685501,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7936469,
+      "lon": 55.8795514,
+      "tags": {
+        "addr:housenumber": "12",
+        "addr:street": "Михайловская улица",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685502,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7936203,
+      "lon": 55.8802055,
+      "tags": {
+        "addr:housenumber": "135А",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685503,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7935127,
+      "lon": 55.879597,
+      "tags": {
+        "addr:housenumber": "10",
+        "addr:street": "Михайловская улица",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685504,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7934656,
+      "lon": 55.8801582,
+      "tags": {
+        "addr:housenumber": "135Б",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685505,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7933264,
+      "lon": 55.879655,
+      "tags": {
+        "addr:housenumber": "8",
+        "addr:street": "Михайловская улица",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685506,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7932048,
+      "lon": 55.8797016,
+      "tags": {
+        "addr:housenumber": "6",
+        "addr:street": "Михайловская улица",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685507,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7932551,
+      "lon": 55.8801938,
+      "tags": {
+        "addr:housenumber": "135В",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685508,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7930059,
+      "lon": 55.8798005,
+      "tags": {
+        "addr:housenumber": "4",
+        "addr:street": "Михайловская улица",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685509,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7928511,
+      "lon": 55.8798981,
+      "tags": {
+        "addr:housenumber": "2",
+        "addr:street": "Михайловская улица",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685510,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7937897,
+      "lon": 55.8805499,
+      "tags": {
+        "addr:housenumber": "133",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685511,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.793781,
+      "lon": 55.8809438,
+      "tags": {
+        "addr:housenumber": "131",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685512,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.793775,
+      "lon": 55.8811989,
+      "tags": {
+        "addr:housenumber": "25",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685513,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7935945,
+      "lon": 55.8806223,
+      "tags": {
+        "addr:housenumber": "133А",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685514,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7935528,
+      "lon": 55.881156,
+      "tags": {
+        "addr:housenumber": "23",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685515,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7933938,
+      "lon": 55.8806311,
+      "tags": {
+        "addr:housenumber": "133Б",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685516,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7933932,
+      "lon": 55.8809498,
+      "tags": {
+        "addr:housenumber": "21",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685517,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7932856,
+      "lon": 55.8805969,
+      "tags": {
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685518,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7931561,
+      "lon": 55.8805783,
+      "tags": {
+        "addr:housenumber": "133В",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685519,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.793206,
+      "lon": 55.8810818,
+      "tags": {
+        "addr:housenumber": "19",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685520,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.79306,
+      "lon": 55.8805012,
+      "tags": {
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685521,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7929919,
+      "lon": 55.8810305,
+      "tags": {
+        "addr:housenumber": "17",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685522,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7928746,
+      "lon": 55.8805432,
+      "tags": {
+        "addr:housenumber": "133Г",
+        "addr:street": "улица Металлистов",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685523,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7927911,
+      "lon": 55.8809991,
+      "tags": {
+        "addr:housenumber": "15",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685532,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7927285,
+      "lon": 55.881896,
+      "tags": {
+        "addr:housenumber": "116",
+        "addr:street": "улица Шмидта",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685533,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7927392,
+      "lon": 55.8815879,
+      "tags": {
+        "addr:housenumber": "14",
+        "addr:street": "улица Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685534,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7928967,
+      "lon": 55.8815395,
+      "tags": {
+        "addr:housenumber": "16",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685535,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7930602,
+      "lon": 55.8816312,
+      "tags": {
+        "addr:housenumber": "18",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685538,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7931822,
+      "lon": 55.8816052,
+      "tags": {
+        "addr:housenumber": "20",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685540,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7933345,
+      "lon": 55.8821019,
+      "tags": {
+        "addr:housenumber": "24",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685541,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7933393,
+      "lon": 55.8815923,
+      "tags": {
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685542,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7934512,
+      "lon": 55.8816675,
+      "tags": {
+        "addr:housenumber": "28",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685543,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7935583,
+      "lon": 55.8815594,
+      "tags": {
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685544,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7935938,
+      "lon": 55.8817036,
+      "tags": {
+        "addr:housenumber": "30",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685588,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7940322,
+      "lon": 55.8812051,
+      "tags": {
+        "addr:housenumber": "27",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 766685745,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7939907,
+      "lon": 55.8817662,
+      "tags": {
+        "addr:housenumber": "34",
+        "addr:street": "2-й переулок Жуковского",
+        "building": "yes",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 858888745,
+      "category": "residential",
+      "name": "Без названия",
+      "lat": 54.7895082,
+      "lon": 55.8835995,
+      "tags": {
+        "landuse": "residential"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1104332318,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7909609,
+      "lon": 55.8795834,
+      "tags": {
+        "building": "roof",
+        "building:levels": "1",
+        "layer": "1",
+        "source:addr": "ЕГРН"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1154914799,
+      "category": "commercial",
+      "name": "ТЦ Затон",
+      "lat": 54.7898196,
+      "lon": 55.8794802,
+      "tags": {
+        "addr:city": "Уфа",
+        "addr:housenumber": "299",
+        "addr:postcode": "450017",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "name": "ТЦ Затон",
+        "opening_hours": "10:00-22:00",
+        "shop": "mall"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1154914802,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7901501,
+      "lon": 55.8790161,
+      "tags": {
+        "amenity": "parking"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1154914803,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7900728,
+      "lon": 55.8797215,
+      "tags": {
+        "amenity": "parking"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1220497291,
+      "category": "residential",
+      "name": "Без названия",
+      "lat": 54.7929242,
+      "lon": 55.8780805,
+      "tags": {
+        "landuse": "residential"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1220497292,
+      "category": "residential",
+      "name": "Без названия",
+      "lat": 54.7938366,
+      "lon": 55.8773214,
+      "tags": {
+        "landuse": "residential"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1220497293,
+      "category": "residential",
+      "name": "Без названия",
+      "lat": 54.794401,
+      "lon": 55.8801806,
+      "tags": {
+        "landuse": "residential"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1220497296,
+      "category": "residential",
+      "name": "Без названия",
+      "lat": 54.7943861,
+      "lon": 55.8768207,
+      "tags": {
+        "landuse": "residential"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1220497297,
+      "category": "residential",
+      "name": "Без названия",
+      "lat": 54.7933423,
+      "lon": 55.879827,
+      "tags": {
+        "landuse": "residential"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1220497298,
+      "category": "residential",
+      "name": "Без названия",
+      "lat": 54.7932821,
+      "lon": 55.8808934,
+      "tags": {
+        "landuse": "residential"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1220497299,
+      "category": "residential",
+      "name": "Без названия",
+      "lat": 54.792064,
+      "lon": 55.8799887,
+      "tags": {
+        "landuse": "residential"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1220497302,
+      "category": "residential",
+      "name": "Без названия",
+      "lat": 54.7933092,
+      "lon": 55.8732579,
+      "tags": {
+        "landuse": "residential"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1220497303,
+      "category": "residential",
+      "name": "Без названия",
+      "lat": 54.7936414,
+      "lon": 55.8739449,
+      "tags": {
+        "landuse": "residential"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1220498222,
+      "category": "residential",
+      "name": "Без названия",
+      "lat": 54.7942536,
+      "lon": 55.8829731,
+      "tags": {
+        "landuse": "residential"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1220498223,
+      "category": "residential",
+      "name": "Без названия",
+      "lat": 54.7931885,
+      "lon": 55.8824996,
+      "tags": {
+        "landuse": "residential"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1220498233,
+      "category": "residential",
+      "name": "Без названия",
+      "lat": 54.79186,
+      "lon": 55.8817791,
+      "tags": {
+        "landuse": "residential"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1240374780,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7914549,
+      "lon": 55.8773547,
+      "tags": {
+        "addr:city": "Уфа",
+        "addr:housenumber": "311",
+        "addr:postcode": "450017",
+        "addr:street": "улица Ахметова",
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1302584091,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7912725,
+      "lon": 55.8770911,
+      "tags": {
+        "addr:city": "Уфа",
+        "addr:housenumber": "311/1",
+        "addr:street": "улица Ахметова",
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1302584092,
+      "category": "business",
+      "name": "Без названия",
+      "lat": 54.7914107,
+      "lon": 55.8770422,
+      "tags": {
+        "addr:city": "Уфа",
+        "addr:housenumber": "138 к1",
+        "addr:street": "улица Шмидта",
+        "building": "commercial"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1302630496,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7918443,
+      "lon": 55.8739651,
+      "tags": {
+        "landuse": "forest"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1302630498,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7924195,
+      "lon": 55.8738713,
+      "tags": {
+        "landuse": "forest"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1364417496,
+      "category": "residential",
+      "name": "Без названия",
+      "lat": 54.7909059,
+      "lon": 55.8728269,
+      "tags": {
+        "landuse": "residential"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1364417497,
+      "category": "residential",
+      "name": "Без названия",
+      "lat": 54.7920133,
+      "lon": 55.8753082,
+      "tags": {
+        "landuse": "residential"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1434928062,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7910683,
+      "lon": 55.8799063,
+      "tags": {
+        "addr:housenumber": "330",
+        "addr:street": "улица Ахметова",
+        "building": "yes",
+        "building:levels": "1",
+        "source:addr": "ЕГРН",
+        "start_date": "1999"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1434928063,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7933647,
+      "lon": 55.8766643,
+      "tags": {
+        "building": "yes",
+        "building:levels": "2",
+        "start_date": "2021"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1434928064,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7938838,
+      "lon": 55.8750652,
+      "tags": {
+        "building": "yes",
+        "building:levels": "2",
+        "start_date": "2005"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1443772877,
+      "category": "other",
+      "name": "Без названия",
+      "lat": 54.7909875,
+      "lon": 55.8809158,
+      "tags": {
+        "addr:housenumber": "326/3",
+        "addr:street": "улица Ахметова",
+        "building": "yes"
+      }
+    },
+    {
+      "osm_type": "way",
+      "osm_id": 1535473801,
+      "category": "residential",
+      "name": "Без названия",
+      "lat": 54.7921487,
+      "lon": 55.8756854,
+      "tags": {
+        "landuse": "residential"
+      }
+    },
+    {
+      "osm_type": "relation",
+      "osm_id": 16856568,
+      "category": "residential",
+      "name": "Без названия",
+      "lat": 54.7950295,
+      "lon": 55.8758606,
+      "tags": {
+        "landuse": "residential",
+        "type": "multipolygon"
+      }
+    }
+  ]
+}

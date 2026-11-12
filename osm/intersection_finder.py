@@ -1,3 +1,8 @@
+#========================================================================
+# Карта в браузере (Leaflet): выбор перекрёстка кликом.
+# Пишет clicked_coords.json. Поиск города - через Nominatim.
+#========================================================================
+
 import json
 import webbrowser
 import os
@@ -41,7 +46,7 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
     <script>
         var map = L.map('map').setView([{center_lat}, {center_lon}], 14);
         
-        L.tileLayer('https://{{s}}.basemaps.cartocdn.com/light_all/{{z}}/{{x}}/{{y}}{{r}}.png', {{
+        L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
             attribution: '&copy; OSM'
         }}).addTo(map);
         

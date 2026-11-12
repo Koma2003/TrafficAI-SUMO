@@ -1,3 +1,7 @@
+#========================================================================
+# Графический интерфейс (Tkinter): правка полос и интенсивности.
+#========================================================================
+
 import os
 import sys
 import json
@@ -34,7 +38,7 @@ class ApproachEditor:
     def __init__(self, root):
         self.root = root
         self.root.title("Редактор направлений полос и интенсивности")
-        self.root.geometry("1200x700")
+        self.root.geometry("1300x700")  # ИЗМЕНЕНО: чуть шире — добавлена колонка «Тип»
 
         self.approaches = []
         self.groups = {}
@@ -72,7 +76,9 @@ class ApproachEditor:
                     "has_in": False,
                     "has_out": False,
                     "in_app": None,
-                    "out_app": None
+                    "out_app": None,
+                    # ДОБАВЛЕНО: тип улицы (из OSM-тега oneway), нужен для UI и net_builder
+                    "oneway": False,
                 }
             group = self.groups[key]
             if app["direction"] == "ВЪЕЗД":
@@ -82,10 +88,17 @@ class ApproachEditor:
                 group["lane_flow_rates"] = app.get("lane_flow_rates", [DEFAULT_FLOW_RATE] * group["lanes_in"])
                 group["traffic_lights"] = app.get("traffic_lights", [])
                 group["in_app"] = app
+                # ДОБАВЛЕНО: oneway берём из подхода (LLM проставляет одинаковое значение
+                # для in_ и out_ одной и той же улицы — это гарантирует промпт агента)
+                group["oneway"] = bool(app.get("oneway", False))
             elif app["direction"] == "ВЫЕЗД":
                 group["has_out"] = True
                 group["lanes_out"] = app.get("lanes", 0)
                 group["out_app"] = app
+                # ДОБАВЛЕНО: на случай, если ВЪЕЗД отсутствует (односторонняя улица,
+                # где движение только «от» перекрёстка), oneway берём из выезда
+                if group["in_app"] is None:
+                    group["oneway"] = bool(app.get("oneway", False))
 
     def build_gui(self):
         self.paned = ttk.PanedWindow(self.root, orient=tk.HORIZONTAL)
@@ -95,12 +108,14 @@ class ApproachEditor:
         self.paned.add(left_frame, weight=1)
         ttk.Label(left_frame, text="Список подходов", font=("Arial", 12)).pack(pady=5)
 
-        columns = ("Улица", "Направление", "Въезд (полос)", "Выезд (полос)")
+        # ИЗМЕНЕНО: добавлена колонка «Тип» (односторонняя / двусторонняя)
+        columns = ("Улица", "Направление", "Въезд (полос)", "Выезд (полос)", "Тип")
         self.tree = ttk.Treeview(left_frame, columns=columns, show="headings")
         for col in columns:
             self.tree.heading(col, text=col)
             self.tree.column(col, width=150, anchor=tk.CENTER)
         self.tree.column("Направление", width=120)
+        self.tree.column("Тип", width=110)  # ИЗМЕНЕНО: чуть уже
         self.tree.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
 
         for key, group in self.groups.items():
@@ -111,6 +126,8 @@ class ApproachEditor:
                 direction,
                 str(group["lanes_in"]) if group["has_in"] else "-",
                 str(group["lanes_out"]) if group["has_out"] else "-",
+                # ДОБАВЛЕНО: отображение типа улицы в таблице
+                "одностор." if group["oneway"] else "двустор.",
             )
             item = self.tree.insert("", tk.END, values=values)
             self.item_to_key[item] = key
@@ -167,6 +184,21 @@ class ApproachEditor:
         self.clear_edit_panel()
         group = self.groups[key]
 
+        direction = angle_to_direction(group["angle_deg"])
+        ttk.Label(self.scrollable_frame,
+                  text=f"Улица: {group['street_name']}  |  Направление: {direction}",
+                  font=("Arial", 10, "bold")).pack(anchor=tk.W, pady=5)
+
+        # ДОБАВЛЕНО: чекбокс для ручной правки oneway, если LLM ошибся.
+        # При переключении и сохранении сеть перестроится с новым числом рёбер.
+        oneway_var = tk.IntVar(value=1 if group["oneway"] else 0)
+        ttk.Checkbutton(
+            self.scrollable_frame,
+            text="Односторонняя улица (oneway)",
+            variable=oneway_var
+        ).pack(anchor=tk.W, pady=(0, 8))
+        self.oneway_var = oneway_var
+
         if not group["has_in"]:
             ttk.Label(self.scrollable_frame, text="Нет въездных полос для редактирования").pack()
             return
@@ -189,14 +221,11 @@ class ApproachEditor:
             group["in_app"]["turn_lanes"] = turn_lanes
             group["in_app"]["lane_flow_rates"] = lane_flow_rates
 
-        direction = angle_to_direction(group["angle_deg"])
-        ttk.Label(self.scrollable_frame,
-                  text=f"Улица: {group['street_name']}  |  Направление: {direction}",
-                  font=("Arial", 10, "bold")).pack(anchor=tk.W, pady=5)
-
         self.lane_vars = []
         self.flow_vars = []
 
+        # ВНИМАНИЕ: нумерация полос может разъезжаться с сетью из-за пешеходной
+        # полосы с индексом 0, которую добавляет --sidewalks.guess.
         for sumo_idx in range(lanes - 1, -1, -1):
             ui_num = lanes - sumo_idx
             frame = ttk.Frame(self.scrollable_frame, relief=tk.GROOVE, borderwidth=1)
@@ -234,6 +263,13 @@ class ApproachEditor:
             return
         group = self.groups[self.current_group_key]
         if not group["has_in"]:
+            # ДОБАВЛЕНО: для улицы без въезда всё равно можем менять oneway
+            new_oneway = bool(self.oneway_var.get())
+            group["oneway"] = new_oneway
+            if group["in_app"] is not None:
+                group["in_app"]["oneway"] = new_oneway
+            if group["out_app"] is not None:
+                group["out_app"]["oneway"] = new_oneway
             return
 
         lanes = group["lanes_in"]
@@ -262,9 +298,31 @@ class ApproachEditor:
 
         group["turn_lanes"] = new_turn_lanes
         group["lane_flow_rates"] = new_flow_rates
+
+        # ДОБАВЛЕНО: применяем oneway из чекбокса.
+        # При смене типа улицы предупредим, если данных не хватает для новой модели.
+        new_oneway = bool(self.oneway_var.get())
+        if new_oneway != group["oneway"]:
+            if new_oneway and group["has_in"] and group["has_out"]:
+                print(f"⚠ '{group['street_name']}' помечена как односторонняя, "
+                      f"но в geometry.json есть оба направления. "
+                      f"После перестройки сети лишнее направление останется в данных, "
+                      f"но соответствующее ребро в SUMO не создастся (улица будет односторонней).")
+            group["oneway"] = new_oneway
+            if group["in_app"] is not None:
+                group["in_app"]["oneway"] = new_oneway
+            if group["out_app"] is not None:
+                group["out_app"]["oneway"] = new_oneway
+
         if group["in_app"] is not None:
             group["in_app"]["turn_lanes"] = new_turn_lanes
             group["in_app"]["lane_flow_rates"] = new_flow_rates
+
+        # ИЗМЕНЕНО: обновляем строку в таблице, чтобы колонка «Тип» сразу отражала правку
+        for item, k in self.item_to_key.items():
+            if k == self.current_group_key:
+                self.tree.set(item, "Тип", "одностор." if group["oneway"] else "двустор.")
+                break
 
         messagebox.showinfo("Успех",
                             f"Изменения применены к {group['street_name']}")
@@ -288,29 +346,33 @@ class ApproachEditor:
 
     def save_and_rebuild(self):
         self.apply_changes()
-
         new_approaches = []
         for key, group in self.groups.items():
+            # ИЗМЕНЕНО: сохраняем ВСЕ поля исходного подхода через dict(app)
             if group["has_in"]:
-                in_app = {
+                in_app = dict(group["in_app"]) if group["in_app"] else {}
+                in_app.update({
                     "street_name": group["street_name"],
                     "angle_deg": group["angle_deg"],
                     "lanes": group["lanes_in"],
                     "turn_lanes": group["turn_lanes"],
                     "lane_flow_rates": group["lane_flow_rates"],
                     "traffic_lights": group["traffic_lights"],
-                    "direction": "ВЪЕЗД"
-                }
+                    "direction": "ВЪЕЗД",
+                    "oneway": group["oneway"],
+                })
                 new_approaches.append(in_app)
             if group["has_out"]:
-                out_app = {
+                out_app = dict(group["out_app"]) if group["out_app"] else {}
+                out_app.update({
                     "street_name": group["street_name"],
                     "angle_deg": group["angle_deg"],
                     "lanes": group["lanes_out"],
                     "turn_lanes": [],
                     "traffic_lights": [],
-                    "direction": "ВЫЕЗД"
-                }
+                    "direction": "ВЫЕЗД",
+                    "oneway": group["oneway"],
+                })
                 new_approaches.append(out_app)
 
         try:
@@ -322,12 +384,9 @@ class ApproachEditor:
             return
 
         try:
-            print("Перестроение сети...")
             build_network(new_approaches, NET_FILE)
-            print("Сеть построена.")
             generate_routes_from_network(NET_FILE, ROUTES_FILE, CONFIG_FILE, GEOMETRY_FILE)
-            print("Маршруты и детекторы сгенерированы.")
-            messagebox.showinfo("Готово", "Сеть успешно перестроена!\nМожно запускать sumo-gui.")
+            messagebox.showinfo("Готово", "Сеть перестроена.")
         except Exception as e:
             messagebox.showerror("Ошибка", f"Не удалось перестроить сеть:\n{e}")
             import traceback

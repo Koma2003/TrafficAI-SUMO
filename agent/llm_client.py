@@ -1,19 +1,18 @@
+#========================================================================
+# ГЛАВНЫЙ ФАЙЛ ПРОЕКТА — ОРКЕСТРАТОР КОНВЕЙЕРА.
+# По очереди запускает: карту -> построение geometry.json -> сеть -> маршруты.
+# Шаг "LLM" заменён детерминированным osm/geometry_builder.py.
+#========================================================================
+
 import io
-import os
 import sys
-import openai
 import json
 import subprocess
 from pathlib import Path
-from dotenv import load_dotenv
+
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 PROJECT_ROOT = Path(__file__).parent.parent
-load_dotenv(PROJECT_ROOT / '.env')
-
-API_KEY = os.getenv("YANDEX_API_KEY")
-FOLDER_ID = os.getenv("YANDEX_FOLDER_ID")
-AGENT_ID = os.getenv("YANDEX_AGENT_ID")
 
 COORDS_FILE = PROJECT_ROOT / "clicked_coords.json"
 OUTPUT_FILE = PROJECT_ROOT / "osm" / "geometry.json"
@@ -23,90 +22,54 @@ CONFIG_FILE = PROJECT_ROOT / "sumo" / "intersection.sumocfg"
 
 
 def run_intersection_finder():
-    """Запускает intersection_finder, получает координаты"""
+    """Запускает intersection_finder, получает координаты."""
     result = subprocess.run(
         ["python", str(PROJECT_ROOT / "osm" / "intersection_finder.py")],
-        cwd=str(PROJECT_ROOT)
+        cwd=str(PROJECT_ROOT),
     )
-
     if result.returncode != 0:
         raise RuntimeError("intersection_finder завершился с ошибкой")
-
     if not COORDS_FILE.exists():
         raise RuntimeError("Файл с координатами не создан")
-
     with open(COORDS_FILE, "r", encoding="utf-8") as f:
-        coords = json.load(f)
-    return coords
+        return json.load(f)
 
 
-def run_osm_extractor() -> str:
-    """Запускает text_geometry_extractor и возвращает его вывод"""
+def run_geometry_builder():
+    """Запускает osm/geometry_builder.py (детерминированный парсер OSM)."""
     print("\n" + "=" * 50)
-    print("ШАГ 2: ИЗВЛЕЧЕНИЕ ДАННЫХ OSM")
+    print("ШАГ 2: ПОСТРОЕНИЕ ГЕОМЕТРИИ (OSM -> geometry.json)")
     print("=" * 50)
 
     result = subprocess.run(
-        ["python", str(PROJECT_ROOT / "osm" / "text_geometry_extractor.py")],
+        ["python", str(PROJECT_ROOT / "osm" / "geometry_builder.py")],
+        cwd=str(PROJECT_ROOT),
         capture_output=True,
         text=True,
-        encoding='utf-8',
-        errors='replace',
-        cwd=str(PROJECT_ROOT)
+        encoding="utf-8",
+        errors="replace",
     )
 
     if result.returncode != 0:
-        raise RuntimeError(f"Ошибка OSM экстрактора: {result.stderr}")
+        print(result.stdout)
+        print(f"STDERR: {result.stderr}")
+        raise RuntimeError("geometry_builder завершился с ошибкой")
 
-    print(f"Получено {len(result.stdout)} символов")
-    return result.stdout
+    print(result.stdout)
 
+    if not OUTPUT_FILE.exists():
+        raise RuntimeError(f"Файл {OUTPUT_FILE} не создан")
 
-def call_agent(prompt: str) -> str:
-    """Вызывает агента и возвращает ответ"""
-    print("\n" + "=" * 50)
-    print("ШАГ 3: ВЫЗОВ АГЕНТА Yandex AI Studio")
-    print("=" * 50)
-
-    client = openai.OpenAI(
-        api_key=API_KEY,
-        base_url="https://ai.api.cloud.yandex.net/v1",
-        project=FOLDER_ID
-    )
-
-    response = client.responses.create(
-        prompt={"id": AGENT_ID},
-        input=prompt,
-        temperature=0.1
-    )
-
-    print(f"Получен ответ ({len(response.output_text)} символов)")
-    return response.output_text
-
-
-def extract_json(text: str) -> list:
-    """Извлекает JSON из ответа агента"""
-    text = text.strip()
-
-    if "```json" in text:
-        text = text.split("```json")[1].split("```")[0]
-    elif "```" in text:
-        text = text.split("```")[1].split("```")[0]
-
-    start = text.find("[")
-    end = text.rfind("]") + 1
-
-    if start == -1 or end == 0:
-        raise ValueError("JSON массив не найден в ответе агента")
-
-    json_text = text[start:end]
-    return json.loads(json_text)
+    with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
+        approaches = json.load(f)
+    print(f"✅ geometry.json: {len(approaches)} подходов")
+    return approaches
 
 
 def build_network():
-    """Запускает net_builder для создания SUMO сети"""
+    """Запускает net_builder для создания SUMO сети."""
     print("\n" + "=" * 50)
-    print("ШАГ 4: ПОСТРОЕНИЕ SUMO СЕТИ")
+    print("ШАГ 3: ПОСТРОЕНИЕ SUMO СЕТИ")
     print("=" * 50)
 
     result = subprocess.run(
@@ -114,8 +77,8 @@ def build_network():
         cwd=str(PROJECT_ROOT),
         capture_output=True,
         text=True,
-        encoding='utf-8',
-        errors='replace'
+        encoding="utf-8",
+        errors="replace",
     )
 
     if result.returncode != 0:
@@ -127,9 +90,9 @@ def build_network():
 
 
 def build_routes():
-    """Запускает route_builder для создания маршрутов и детекторов"""
+    """Запускает route_builder для создания маршрутов и детекторов."""
     print("\n" + "=" * 50)
-    print("ШАГ 5: ГЕНЕРАЦИЯ МАРШРУТОВ И ДЕТЕКТОРОВ")
+    print("ШАГ 4: ГЕНЕРАЦИЯ МАРШРУТОВ И ДЕТЕКТОРОВ")
     print("=" * 50)
 
     result = subprocess.run(
@@ -137,8 +100,8 @@ def build_routes():
         cwd=str(PROJECT_ROOT),
         capture_output=True,
         text=True,
-        encoding='utf-8',
-        errors='replace'
+        encoding="utf-8",
+        errors="replace",
     )
 
     if result.returncode != 0:
@@ -153,19 +116,8 @@ def build_routes():
 def main():
     try:
         run_intersection_finder()
-
-        osm_data = run_osm_extractor()
-
-        response = call_agent(osm_data)
-        approaches = extract_json(response)
-
-        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-            json.dump(approaches, f, ensure_ascii=False, indent=2)
-        print(f"\n✅ JSON сохранён: {OUTPUT_FILE}")
-        print(f"   Найдено подходов: {len(approaches)}")
-
+        run_geometry_builder()
         build_network()
-
         build_routes()
 
         print("\n" + "=" * 60)
@@ -174,6 +126,7 @@ def main():
         print(f"   Файл маршрутов: {ROUTES_FILE}")
         print(f"   Файл конфига: {CONFIG_FILE}")
         print("=" * 60)
+        return 0
 
     except Exception as e:
         print(f"\n❌ ОШИБКА: {e}")
@@ -183,4 +136,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
