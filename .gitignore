@@ -20,3 +20,8 @@ sumo/compare/optimized_*.txt
 all_code.txt
 # Local analysis / training runs
 runs/
+
+# Local simulation outputs
+examples/**/detector_[0-9]*.xml
+sumo/pedestrians.rou.xml
+sumo/test_intersection_optimized_ga.sumo.cfg

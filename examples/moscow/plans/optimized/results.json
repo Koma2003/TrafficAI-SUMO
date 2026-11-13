@@ -1,0 +1,250 @@
+{
+  "source_config": "C:\\Users\\msi\\Documents\\TrafficAI-SUMO\\examples\\moscow\\model\\scenario.sumocfg",
+  "source_network_sha256": "39b65fbfacc67a520773894fa66af686166c6f0412cf5b7664a07a8a7377aebf",
+  "method": "constrained genetic search",
+  "backend": "libsumo",
+  "seed": 42,
+  "cycle": 82.0,
+  "step_seconds": 1.0,
+  "limits": {
+    "green": [
+      15,
+      60
+    ],
+    "yellow": [
+      3,
+      5
+    ],
+    "red": [
+      10,
+      90
+    ],
+    "all_red": [
+      1,
+      3
+    ]
+  },
+  "baseline": {
+    "waiting_vehicle_seconds": 3058.0,
+    "arrived": 140,
+    "peak_stopped": 19,
+    "unfinished_vehicles": 40,
+    "sumo_version": "SUMO 1.28.0"
+  },
+  "optimized": {
+    "waiting_vehicle_seconds": 3058.0,
+    "arrived": 140,
+    "peak_stopped": 19,
+    "unfinished_vehicles": 40,
+    "sumo_version": "SUMO 1.28.0"
+  },
+  "history": [
+    3058.0,
+    3058.0
+  ],
+  "phases": [
+    {
+      "state": "GGrrrrrrr",
+      "kind": "green",
+      "before": 25.0,
+      "after": 25.0
+    },
+    {
+      "state": "GGrrrrrrr",
+      "kind": "green",
+      "before": 5.0,
+      "after": 5.0
+    },
+    {
+      "state": "yyrrrrrrr",
+      "kind": "yellow",
+      "before": 3.0,
+      "after": 3.0
+    },
+    {
+      "state": "rrGgrrrrr",
+      "kind": "green",
+      "before": 25.0,
+      "after": 25.0
+    },
+    {
+      "state": "rrGgrrrrr",
+      "kind": "green",
+      "before": 5.0,
+      "after": 5.0
+    },
+    {
+      "state": "rryyrrrrr",
+      "kind": "yellow",
+      "before": 3.0,
+      "after": 3.0
+    },
+    {
+      "state": "rrrrGGGGG",
+      "kind": "pedestrian",
+      "before": 15.0,
+      "after": 15.0
+    },
+    {
+      "state": "rrrrrrrrr",
+      "kind": "all_red",
+      "before": 1.0,
+      "after": 1.0
+    }
+  ],
+  "checked_intervals": [
+    {
+      "link": 0,
+      "color": "green",
+      "indices": [
+        0,
+        1
+      ],
+      "min": 15,
+      "max": 60,
+      "duration": 30.0
+    },
+    {
+      "link": 0,
+      "color": "yellow",
+      "indices": [
+        2
+      ],
+      "min": 3,
+      "max": 5,
+      "duration": 3.0
+    },
+    {
+      "link": 0,
+      "color": "red",
+      "indices": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "min": 10,
+      "max": 90,
+      "duration": 49.0
+    },
+    {
+      "link": 1,
+      "color": "green",
+      "indices": [
+        0,
+        1
+      ],
+      "min": 15,
+      "max": 60,
+      "duration": 30.0
+    },
+    {
+      "link": 1,
+      "color": "yellow",
+      "indices": [
+        2
+      ],
+      "min": 3,
+      "max": 5,
+      "duration": 3.0
+    },
+    {
+      "link": 1,
+      "color": "red",
+      "indices": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "min": 10,
+      "max": 90,
+      "duration": 49.0
+    },
+    {
+      "link": 2,
+      "color": "green",
+      "indices": [
+        3,
+        4
+      ],
+      "min": 15,
+      "max": 60,
+      "duration": 30.0
+    },
+    {
+      "link": 2,
+      "color": "yellow",
+      "indices": [
+        5
+      ],
+      "min": 3,
+      "max": 5,
+      "duration": 3.0
+    },
+    {
+      "link": 2,
+      "color": "red",
+      "indices": [
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      "min": 10,
+      "max": 90,
+      "duration": 49.0
+    },
+    {
+      "link": 3,
+      "color": "green",
+      "indices": [
+        3,
+        4
+      ],
+      "min": 15,
+      "max": 60,
+      "duration": 30.0
+    },
+    {
+      "link": 3,
+      "color": "yellow",
+      "indices": [
+        5
+      ],
+      "min": 3,
+      "max": 5,
+      "duration": 3.0
+    },
+    {
+      "link": 3,
+      "color": "red",
+      "indices": [
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      "min": 10,
+      "max": 90,
+      "duration": 49.0
+    },
+    {
+      "link": "все",
+      "color": "all_red",
+      "indices": [
+        7
+      ],
+      "min": 1,
+      "max": 3,
+      "duration": 1.0
+    }
+  ],
+  "constraints_satisfied": true,
+  "config_file": "C:\\Users\\msi\\Documents\\TrafficAI-SUMO\\examples\\moscow\\plans\\optimized\\scenario.sumocfg",
+  "report_file": "C:\\Users\\msi\\Documents\\TrafficAI-SUMO\\examples\\moscow\\plans\\optimized\\report.html"
+}

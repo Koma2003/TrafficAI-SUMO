@@ -19,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import tkinter as tk
 from tkinter import ttk, messagebox
 from tkinter import scrolledtext
+from ui.project_paths import model_file
 
 try:
     import tkintermapview
@@ -41,9 +42,11 @@ COLOR_SEL = "#ef4444"   # красный — выбранный подход
 
 class ControlPanel:
     def __init__(self, root):
+        from ui.appearance import configure_ui, size_window
+        configure_ui(root)
         self.root = root
-        self.root.title("TrafficAI — Панель управления")
-        self.root.geometry("1400x900")
+        self.root.title("TrafficAI")
+        size_window(root, 1500, 960)
 
         self.log_queue = queue.Queue()
         self.approach_lines = []        # [(approach_dict, map_path_item)]
@@ -61,30 +64,29 @@ class ControlPanel:
         toolbar = ttk.Frame(self.root, padding=5)
         toolbar.pack(side=tk.TOP, fill=tk.X)
 
-        self.btn_choose = ttk.Button(toolbar, text="🗺 Выбрать в браузере", command=self.on_choose_browser)
-        self.btn_choose.pack(side=tk.LEFT, padx=2)
-
-        self.btn_rebuild = ttk.Button(toolbar, text="🔨 Пересобрать всё", command=self.on_rebuild)
-        self.btn_rebuild.pack(side=tk.LEFT, padx=2)
-
-        self.btn_sumo = ttk.Button(toolbar, text="▶ Открыть SUMO", command=self.on_open_sumo)
-        self.btn_sumo.pack(side=tk.LEFT, padx=2)
-
-        self.btn_editor = ttk.Button(toolbar, text="✏ Редактор полос", command=self.on_open_editor)
-        self.btn_editor.pack(side=tk.LEFT, padx=2)
-
-        self.btn_cancel = ttk.Button(toolbar, text="✕ Отмена", command=self.on_cancel, state=tk.DISABLED)
-        self.btn_cancel.pack(side=tk.LEFT, padx=2)
-
+        primary = toolbar
+        secondary = toolbar
         from ui.area_dialog import open_area_dialog
-        ttk.Button(toolbar, text="Район и отчёт", command=lambda: open_area_dialog(
-            self.root, self.map_widget, PROJECT_ROOT)).pack(side=tk.LEFT, padx=2)
+        from ui.signal_plan_dialog import open_signal_plan_dialog
         from ui.signal_dialog import open_signal_dialog
-        ttk.Button(toolbar, text="RL / фазы", command=lambda: open_signal_dialog(
+        ttk.Button(primary, text="Район и отчёт", command=lambda: open_area_dialog(
+            self.root, self.map_widget, PROJECT_ROOT)).pack(side=tk.LEFT, padx=2)
+        ttk.Button(primary, text="Светофорные планы", command=lambda: open_signal_plan_dialog(
             self.root, PROJECT_ROOT)).pack(side=tk.LEFT, padx=2)
-
-        self.status = ttk.Label(toolbar, text="Готов", foreground="gray")
-        self.status.pack(side=tk.RIGHT, padx=10)
+        self.btn_sumo = ttk.Button(primary, text="Открыть SUMO", command=self.on_open_sumo)
+        self.btn_sumo.pack(side=tk.LEFT, padx=2)
+        self.status = ttk.Label(primary, text="Готов", foreground="gray")
+        self.status.pack(side=tk.RIGHT, padx=12)
+        self.btn_choose = ttk.Button(secondary, text="Выбрать перекрёсток", command=self.on_choose_browser)
+        self.btn_choose.pack(side=tk.LEFT, padx=2)
+        self.btn_rebuild = ttk.Button(secondary, text="Пересобрать сеть", command=self.on_rebuild)
+        self.btn_rebuild.pack(side=tk.LEFT, padx=2)
+        self.btn_editor = ttk.Button(secondary, text="Редактор полос", command=self.on_open_editor)
+        self.btn_editor.pack(side=tk.LEFT, padx=2)
+        ttk.Button(secondary, text="RL-обучение", command=lambda: open_signal_dialog(
+            self.root, PROJECT_ROOT)).pack(side=tk.LEFT, padx=2)
+        self.btn_cancel = ttk.Button(secondary, text="Отмена", command=self.on_cancel, state=tk.DISABLED)
+        self.btn_cancel.pack(side=tk.LEFT, padx=2)
 
         paned = ttk.PanedWindow(self.root, orient=tk.HORIZONTAL)
         paned.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
@@ -113,20 +115,20 @@ class ControlPanel:
                 pass_coords=True,
             )
 
-        info = ttk.Frame(paned, width=420)
+        info = ttk.Frame(paned, width=540)
         paned.add(info, weight=1)
 
-        ttk.Label(info, text="Перекрёсток", font=("Arial", 11, "bold")).pack(anchor=tk.W, pady=(0, 4))
+        ttk.Label(info, text="Перекрёсток", font=("Segoe UI", -20, "bold")).pack(anchor=tk.W, pady=(0, 4))
         self.info_label = ttk.Label(info, text="Не выбран", justify=tk.LEFT, wraplength=400)
         self.info_label.pack(anchor=tk.W, pady=(0, 10))
 
-        ttk.Label(info, text="Улицы / подходы", font=("Arial", 11, "bold")).pack(anchor=tk.W, pady=(8, 4))
+        ttk.Label(info, text="Улицы / подходы", font=("Segoe UI", -20, "bold")).pack(anchor=tk.W, pady=(8, 4))
 
         cols = ("street", "angle", "dir", "lanes", "speed", "type")
         self.tree = ttk.Treeview(info, columns=cols, show="headings", height=18)
         for c, t, w in [
-            ("street", "Улица", 140), ("angle", "Угол", 55), ("dir", "Напр", 50),
-            ("lanes", "Пол", 40), ("speed", "км/ч", 55), ("type", "Тип", 70),
+            ("street", "Улица", 220), ("angle", "Угол", 85), ("dir", "Напр", 50),
+            ("lanes", "Полос", 80), ("speed", "км/ч", 55), ("type", "Тип", 70),
         ]:
             self.tree.heading(c, text=t)
             self.tree.column(c, width=w, anchor=tk.CENTER)
@@ -144,7 +146,7 @@ class ControlPanel:
 
         log_frame = ttk.LabelFrame(self.root, text="Лог", padding=4)
         log_frame.pack(side=tk.BOTTOM, fill=tk.X, padx=5, pady=(0, 5))
-        self.log_text = scrolledtext.ScrolledText(log_frame, height=9, font=("Consolas", 9))
+        self.log_text = scrolledtext.ScrolledText(log_frame, height=4, font=("Consolas", -16))
         self.log_text.pack(fill=tk.BOTH, expand=True)
         self.log_text.configure(state=tk.DISABLED)
 
@@ -194,7 +196,7 @@ class ControlPanel:
         self.log(f"▶ {label}...")
         env = dict(os.environ, PYTHONIOENCODING="utf-8")
         self._current_proc = subprocess.Popen(
-            [sys.executable, str(script_path)],
+            [sys.executable, "-E", "-X", "utf8", str(script_path)],
             cwd=str(PROJECT_ROOT),
             stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
             text=True, encoding="utf-8", errors="replace",
@@ -253,20 +255,20 @@ class ControlPanel:
             self.root.after(400, self._open_sumo_impl)
 
     def on_open_sumo(self):
-        if not CONFIG_FILE.exists():
+        if not model_file(PROJECT_ROOT, "config").exists():
             messagebox.showwarning("Нет конфига", f"{CONFIG_FILE} не найден.\nСначала пересоберите сеть.")
             return
         self._open_sumo_impl()
 
     def _open_sumo_impl(self):
         try:
-            subprocess.Popen(["sumo-gui", "-c", str(CONFIG_FILE)], cwd=str(PROJECT_ROOT))
+            subprocess.Popen(["sumo-gui", "-c", str(model_file(PROJECT_ROOT, "config"))], cwd=str(PROJECT_ROOT))
             self.log("SUMO GUI запущен")
         except FileNotFoundError:
             messagebox.showerror("SUMO не найден", "Установите SUMO и добавьте в PATH")
 
     def on_open_editor(self):
-        subprocess.Popen([sys.executable, str(PROJECT_ROOT / "ui" / "main.py")],
+        subprocess.Popen([sys.executable, "-E", "-X", "utf8", str(PROJECT_ROOT / "ui" / "main.py")],
                          cwd=str(PROJECT_ROOT))
         self.log("✏ Открыт редактор полос")
 
@@ -294,14 +296,15 @@ class ControlPanel:
             self._highlight_line = None
 
     def refresh_from_disk(self):
-        if not GEOMETRY_FILE.exists():
+        geometry_file = model_file(PROJECT_ROOT, "geometry")
+        if not geometry_file.exists():
             self.info_label.configure(text="geometry.json не найден.\n\n"
                                             "ПКМ на карте → «Сделать перекрёстком»\n"
                                             "или кнопка «Выбрать в браузере».")
             self._clear_map()
             return
 
-        with open(GEOMETRY_FILE, "r", encoding="utf-8") as f:
+        with open(geometry_file, "r", encoding="utf-8") as f:
             approaches = json.load(f)
         if not approaches:
             self.info_label.configure(text="geometry.json пуст")

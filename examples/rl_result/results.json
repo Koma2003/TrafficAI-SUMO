@@ -17,162 +17,226 @@
       4
     ]
   },
+  "context": {
+    "policy_schema": 2,
+    "controller_version": "2.0",
+    "input_fingerprint": "de8e80fe1f54edb482a0d2238114d47215263ba9171103a478c49cfb171341d9",
+    "inputs": [
+      {
+        "kind": "configuration",
+        "sha256": "be94c39e275ed372b2d8174b5f2350e18753b9bc0e78674166f586a2be11a091"
+      },
+      {
+        "kind": "net-file",
+        "sha256": "927eeec25822a33552f7eb5574e5a699778581a28d9067509587baefb917cf2b"
+      },
+      {
+        "kind": "route-files",
+        "sha256": "c5afc4f755380ed588b8b8b8a32fab160d3491f6f77cd636db21b3775d8e1752"
+      }
+    ],
+    "tls": "center",
+    "phases": [
+      {
+        "green": "GrGr",
+        "yellow": "yryr",
+        "green_seconds": 30.0,
+        "yellow_seconds": 3.0,
+        "all_red_seconds": 0.0
+      },
+      {
+        "green": "rGrG",
+        "yellow": "ryry",
+        "green_seconds": 30.0,
+        "yellow_seconds": 3.0,
+        "all_red_seconds": 0.0
+      }
+    ],
+    "state_encoding": "phase-index:sorted-controlled-lanes:halting-floor-div-3-capped-at-3",
+    "bounds": {
+      "green": [
+        15,
+        45
+      ],
+      "yellow": [
+        3,
+        5
+      ],
+      "red": [
+        2,
+        4
+      ]
+    },
+    "green_step_seconds": 10,
+    "horizon_seconds": 360,
+    "simulation_step_seconds": 1.0,
+    "state_layout": [
+      "east_in_0",
+      "north_in_0",
+      "south_in_0",
+      "west_in_0"
+    ],
+    "sumo_version": [
+      22,
+      "SUMO 1.28.0"
+    ]
+  },
   "red_means": "all-red clearance, not the red time of an individual direction",
-  "baseline_description": "Original greens clipped to chosen bounds; chosen minimum yellow/all-red. Same demand and SUMO seed.",
+  "baseline_description": "Original greens clipped to chosen bounds; minimum permitted yellow/all-red preserving original clearances. Same demand and SUMO seed.",
   "history": [
     {
-      "queue_and_insertion_wait_vehicle_seconds": 3330,
+      "queue_and_insertion_wait_vehicle_seconds": 3330.0,
       "arrived": 160,
       "maximum_queue_vehicles": 28
     },
     {
-      "queue_and_insertion_wait_vehicle_seconds": 2908,
+      "queue_and_insertion_wait_vehicle_seconds": 2908.0,
       "arrived": 152,
       "maximum_queue_vehicles": 26
     },
     {
-      "queue_and_insertion_wait_vehicle_seconds": 2870,
+      "queue_and_insertion_wait_vehicle_seconds": 2870.0,
       "arrived": 159,
       "maximum_queue_vehicles": 26
     },
     {
-      "queue_and_insertion_wait_vehicle_seconds": 2599,
+      "queue_and_insertion_wait_vehicle_seconds": 2599.0,
       "arrived": 152,
       "maximum_queue_vehicles": 23
     },
     {
-      "queue_and_insertion_wait_vehicle_seconds": 3914,
-      "arrived": 164,
+      "queue_and_insertion_wait_vehicle_seconds": 3935.0,
+      "arrived": 162,
       "maximum_queue_vehicles": 36
     },
     {
-      "queue_and_insertion_wait_vehicle_seconds": 2520,
-      "arrived": 153,
+      "queue_and_insertion_wait_vehicle_seconds": 2484.0,
+      "arrived": 155,
       "maximum_queue_vehicles": 22
     },
     {
-      "queue_and_insertion_wait_vehicle_seconds": 2790,
-      "arrived": 152,
-      "maximum_queue_vehicles": 24
+      "queue_and_insertion_wait_vehicle_seconds": 2845.0,
+      "arrived": 151,
+      "maximum_queue_vehicles": 25
     },
     {
-      "queue_and_insertion_wait_vehicle_seconds": 2597,
+      "queue_and_insertion_wait_vehicle_seconds": 2274.0,
+      "arrived": 157,
+      "maximum_queue_vehicles": 20
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3957.0,
+      "arrived": 158,
+      "maximum_queue_vehicles": 30
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3187.0,
+      "arrived": 161,
+      "maximum_queue_vehicles": 25
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3444.0,
+      "arrived": 150,
+      "maximum_queue_vehicles": 25
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 2799.0,
+      "arrived": 161,
+      "maximum_queue_vehicles": 22
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 2746.0,
+      "arrived": 151,
+      "maximum_queue_vehicles": 20
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 2910.0,
+      "arrived": 156,
+      "maximum_queue_vehicles": 22
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3881.0,
+      "arrived": 153,
+      "maximum_queue_vehicles": 28
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 2362.0,
       "arrived": 159,
       "maximum_queue_vehicles": 21
     },
     {
-      "queue_and_insertion_wait_vehicle_seconds": 6215,
-      "arrived": 144,
-      "maximum_queue_vehicles": 44
-    },
-    {
-      "queue_and_insertion_wait_vehicle_seconds": 3140,
-      "arrived": 154,
-      "maximum_queue_vehicles": 26
-    },
-    {
-      "queue_and_insertion_wait_vehicle_seconds": 3115,
-      "arrived": 155,
-      "maximum_queue_vehicles": 27
-    },
-    {
-      "queue_and_insertion_wait_vehicle_seconds": 3502,
-      "arrived": 159,
-      "maximum_queue_vehicles": 30
-    },
-    {
-      "queue_and_insertion_wait_vehicle_seconds": 2652,
-      "arrived": 164,
-      "maximum_queue_vehicles": 23
-    },
-    {
-      "queue_and_insertion_wait_vehicle_seconds": 3331,
-      "arrived": 153,
-      "maximum_queue_vehicles": 22
-    },
-    {
-      "queue_and_insertion_wait_vehicle_seconds": 3407,
-      "arrived": 154,
-      "maximum_queue_vehicles": 22
-    },
-    {
-      "queue_and_insertion_wait_vehicle_seconds": 3652,
-      "arrived": 144,
+      "queue_and_insertion_wait_vehicle_seconds": 4478.0,
+      "arrived": 147,
       "maximum_queue_vehicles": 31
     },
     {
-      "queue_and_insertion_wait_vehicle_seconds": 4046,
-      "arrived": 151,
-      "maximum_queue_vehicles": 30
-    },
-    {
-      "queue_and_insertion_wait_vehicle_seconds": 2429,
-      "arrived": 157,
-      "maximum_queue_vehicles": 23
-    },
-    {
-      "queue_and_insertion_wait_vehicle_seconds": 2997,
-      "arrived": 156,
-      "maximum_queue_vehicles": 23
-    },
-    {
-      "queue_and_insertion_wait_vehicle_seconds": 2888,
-      "arrived": 159,
-      "maximum_queue_vehicles": 24
-    },
-    {
-      "queue_and_insertion_wait_vehicle_seconds": 3282,
-      "arrived": 164,
-      "maximum_queue_vehicles": 26
-    },
-    {
-      "queue_and_insertion_wait_vehicle_seconds": 2643,
-      "arrived": 163,
-      "maximum_queue_vehicles": 22
-    },
-    {
-      "queue_and_insertion_wait_vehicle_seconds": 3263,
+      "queue_and_insertion_wait_vehicle_seconds": 4172.0,
       "arrived": 148,
-      "maximum_queue_vehicles": 24
-    },
-    {
-      "queue_and_insertion_wait_vehicle_seconds": 4348,
-      "arrived": 152,
       "maximum_queue_vehicles": 30
     },
     {
-      "queue_and_insertion_wait_vehicle_seconds": 5237,
-      "arrived": 134,
-      "maximum_queue_vehicles": 39
+      "queue_and_insertion_wait_vehicle_seconds": 2417.0,
+      "arrived": 166,
+      "maximum_queue_vehicles": 24
     },
     {
-      "queue_and_insertion_wait_vehicle_seconds": 3471,
-      "arrived": 156,
-      "maximum_queue_vehicles": 25
-    },
-    {
-      "queue_and_insertion_wait_vehicle_seconds": 1911,
-      "arrived": 161,
-      "maximum_queue_vehicles": 15
-    },
-    {
-      "queue_and_insertion_wait_vehicle_seconds": 1888,
-      "arrived": 160,
-      "maximum_queue_vehicles": 15
-    },
-    {
-      "queue_and_insertion_wait_vehicle_seconds": 1907,
-      "arrived": 163,
-      "maximum_queue_vehicles": 15
-    },
-    {
-      "queue_and_insertion_wait_vehicle_seconds": 2491,
-      "arrived": 161,
+      "queue_and_insertion_wait_vehicle_seconds": 2498.0,
+      "arrived": 164,
       "maximum_queue_vehicles": 22
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3642.0,
+      "arrived": 142,
+      "maximum_queue_vehicles": 30
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3718.0,
+      "arrived": 164,
+      "maximum_queue_vehicles": 29
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3092.0,
+      "arrived": 164,
+      "maximum_queue_vehicles": 24
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 2221.0,
+      "arrived": 165,
+      "maximum_queue_vehicles": 23
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 2040.0,
+      "arrived": 161,
+      "maximum_queue_vehicles": 18
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3985.0,
+      "arrived": 161,
+      "maximum_queue_vehicles": 31
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 2579.0,
+      "arrived": 164,
+      "maximum_queue_vehicles": 22
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3194.0,
+      "arrived": 144,
+      "maximum_queue_vehicles": 28
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 2211.0,
+      "arrived": 164,
+      "maximum_queue_vehicles": 22
+    },
+    {
+      "queue_and_insertion_wait_vehicle_seconds": 3327.0,
+      "arrived": 145,
+      "maximum_queue_vehicles": 26
     }
   ],
   "baseline": {
-    "queue_and_insertion_wait_vehicle_seconds": 2143,
+    "queue_and_insertion_wait_vehicle_seconds": 2143.0,
     "arrived": 161,
     "maximum_queue_vehicles": 15,
     "decisions": [
@@ -180,160 +244,2502 @@
         "phase": 0,
         "green": 30.0,
         "yellow": 3,
-        "all_red": 2
+        "all_red": 2,
+        "start_seconds": 0.0,
+        "actual_interval_seconds": 35.0
       },
       {
         "phase": 1,
         "green": 30.0,
         "yellow": 3,
-        "all_red": 2
+        "all_red": 2,
+        "start_seconds": 35.0,
+        "actual_interval_seconds": 35.0
       },
       {
         "phase": 0,
         "green": 30.0,
         "yellow": 3,
-        "all_red": 2
+        "all_red": 2,
+        "start_seconds": 70.0,
+        "actual_interval_seconds": 35.0
       },
       {
         "phase": 1,
         "green": 30.0,
         "yellow": 3,
-        "all_red": 2
+        "all_red": 2,
+        "start_seconds": 105.0,
+        "actual_interval_seconds": 35.0
       },
       {
         "phase": 0,
         "green": 30.0,
         "yellow": 3,
-        "all_red": 2
+        "all_red": 2,
+        "start_seconds": 140.0,
+        "actual_interval_seconds": 35.0
       },
       {
         "phase": 1,
         "green": 30.0,
         "yellow": 3,
-        "all_red": 2
+        "all_red": 2,
+        "start_seconds": 175.0,
+        "actual_interval_seconds": 35.0
       },
       {
         "phase": 0,
         "green": 30.0,
         "yellow": 3,
-        "all_red": 2
+        "all_red": 2,
+        "start_seconds": 210.0,
+        "actual_interval_seconds": 35.0
       },
       {
         "phase": 1,
         "green": 30.0,
         "yellow": 3,
-        "all_red": 2
+        "all_red": 2,
+        "start_seconds": 245.0,
+        "actual_interval_seconds": 35.0
       },
       {
         "phase": 0,
         "green": 30.0,
         "yellow": 3,
-        "all_red": 2
+        "all_red": 2,
+        "start_seconds": 280.0,
+        "actual_interval_seconds": 35.0
       },
       {
         "phase": 1,
         "green": 30.0,
         "yellow": 3,
-        "all_red": 2
+        "all_red": 2,
+        "start_seconds": 315.0,
+        "actual_interval_seconds": 35.0
       },
       {
         "phase": 0,
         "green": 30.0,
         "yellow": 3,
-        "all_red": 2
+        "all_red": 2,
+        "start_seconds": 350.0,
+        "actual_interval_seconds": 10.0
       }
-    ]
+    ],
+    "fallback_decisions": 0,
+    "elapsed_seconds": 360.0,
+    "runtime": {
+      "simulation_step_seconds": 1.0,
+      "state_layout": [
+        "east_in_0",
+        "north_in_0",
+        "south_in_0",
+        "west_in_0"
+      ],
+      "sumo_version": [
+        22,
+        "SUMO 1.28.0"
+      ]
+    }
   },
-  "rl": {
-    "queue_and_insertion_wait_vehicle_seconds": 1731,
-    "arrived": 167,
+  "minimum_fixed": {
+    "queue_and_insertion_wait_vehicle_seconds": 1752.0,
+    "arrived": 161,
     "maximum_queue_vehicles": 13,
     "decisions": [
       {
         "phase": 0,
-        "green": 35,
+        "green": 15,
         "yellow": 3,
-        "all_red": 2
+        "all_red": 2,
+        "start_seconds": 0.0,
+        "actual_interval_seconds": 20.0
       },
       {
         "phase": 1,
         "green": 15,
         "yellow": 3,
-        "all_red": 4
-      },
-      {
-        "phase": 0,
-        "green": 25,
-        "yellow": 5,
-        "all_red": 4
-      },
-      {
-        "phase": 1,
-        "green": 15,
-        "yellow": 3,
-        "all_red": 2
-      },
-      {
-        "phase": 0,
-        "green": 25,
-        "yellow": 5,
-        "all_red": 4
-      },
-      {
-        "phase": 1,
-        "green": 15,
-        "yellow": 3,
-        "all_red": 2
+        "all_red": 2,
+        "start_seconds": 20.0,
+        "actual_interval_seconds": 20.0
       },
       {
         "phase": 0,
         "green": 15,
         "yellow": 3,
-        "all_red": 3
+        "all_red": 2,
+        "start_seconds": 40.0,
+        "actual_interval_seconds": 20.0
       },
       {
         "phase": 1,
         "green": 15,
         "yellow": 3,
-        "all_red": 4
+        "all_red": 2,
+        "start_seconds": 60.0,
+        "actual_interval_seconds": 20.0
       },
       {
         "phase": 0,
         "green": 15,
         "yellow": 3,
-        "all_red": 3
+        "all_red": 2,
+        "start_seconds": 80.0,
+        "actual_interval_seconds": 20.0
       },
       {
         "phase": 1,
         "green": 15,
         "yellow": 3,
-        "all_red": 4
+        "all_red": 2,
+        "start_seconds": 100.0,
+        "actual_interval_seconds": 20.0
       },
       {
         "phase": 0,
-        "green": 35,
-        "yellow": 5,
-        "all_red": 3
+        "green": 15,
+        "yellow": 3,
+        "all_red": 2,
+        "start_seconds": 120.0,
+        "actual_interval_seconds": 20.0
       },
       {
         "phase": 1,
         "green": 15,
         "yellow": 3,
-        "all_red": 2
+        "all_red": 2,
+        "start_seconds": 140.0,
+        "actual_interval_seconds": 20.0
       },
       {
         "phase": 0,
-        "green": 25,
-        "yellow": 5,
-        "all_red": 4
+        "green": 15,
+        "yellow": 3,
+        "all_red": 2,
+        "start_seconds": 160.0,
+        "actual_interval_seconds": 20.0
       },
       {
         "phase": 1,
         "green": 15,
         "yellow": 3,
-        "all_red": 2
+        "all_red": 2,
+        "start_seconds": 180.0,
+        "actual_interval_seconds": 20.0
+      },
+      {
+        "phase": 0,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 2,
+        "start_seconds": 200.0,
+        "actual_interval_seconds": 20.0
+      },
+      {
+        "phase": 1,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 2,
+        "start_seconds": 220.0,
+        "actual_interval_seconds": 20.0
+      },
+      {
+        "phase": 0,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 2,
+        "start_seconds": 240.0,
+        "actual_interval_seconds": 20.0
+      },
+      {
+        "phase": 1,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 2,
+        "start_seconds": 260.0,
+        "actual_interval_seconds": 20.0
+      },
+      {
+        "phase": 0,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 2,
+        "start_seconds": 280.0,
+        "actual_interval_seconds": 20.0
+      },
+      {
+        "phase": 1,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 2,
+        "start_seconds": 300.0,
+        "actual_interval_seconds": 20.0
+      },
+      {
+        "phase": 0,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 2,
+        "start_seconds": 320.0,
+        "actual_interval_seconds": 20.0
+      },
+      {
+        "phase": 1,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 2,
+        "start_seconds": 340.0,
+        "actual_interval_seconds": 20.0
       }
-    ]
+    ],
+    "fallback_decisions": 0,
+    "elapsed_seconds": 360.0,
+    "runtime": {
+      "simulation_step_seconds": 1.0,
+      "state_layout": [
+        "east_in_0",
+        "north_in_0",
+        "south_in_0",
+        "west_in_0"
+      ],
+      "sumo_version": [
+        22,
+        "SUMO 1.28.0"
+      ]
+    }
+  },
+  "rl": {
+    "queue_and_insertion_wait_vehicle_seconds": 1763.0,
+    "arrived": 163,
+    "maximum_queue_vehicles": 14,
+    "decisions": [
+      {
+        "phase": 0,
+        "green": 45,
+        "yellow": 3,
+        "all_red": 3,
+        "start_seconds": 0.0,
+        "actual_interval_seconds": 51.0
+      },
+      {
+        "phase": 1,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 2,
+        "start_seconds": 51.0,
+        "actual_interval_seconds": 20.0
+      },
+      {
+        "phase": 0,
+        "green": 25,
+        "yellow": 4,
+        "all_red": 4,
+        "start_seconds": 71.0,
+        "actual_interval_seconds": 33.0
+      },
+      {
+        "phase": 1,
+        "green": 15,
+        "yellow": 5,
+        "all_red": 3,
+        "start_seconds": 104.0,
+        "actual_interval_seconds": 23.0
+      },
+      {
+        "phase": 0,
+        "green": 15,
+        "yellow": 4,
+        "all_red": 2,
+        "start_seconds": 127.0,
+        "actual_interval_seconds": 21.0
+      },
+      {
+        "phase": 1,
+        "green": 25,
+        "yellow": 3,
+        "all_red": 2,
+        "start_seconds": 148.0,
+        "actual_interval_seconds": 30.0
+      },
+      {
+        "phase": 0,
+        "green": 45,
+        "yellow": 5,
+        "all_red": 2,
+        "start_seconds": 178.0,
+        "actual_interval_seconds": 52.0
+      },
+      {
+        "phase": 1,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 2,
+        "start_seconds": 230.0,
+        "actual_interval_seconds": 20.0
+      },
+      {
+        "phase": 0,
+        "green": 25,
+        "yellow": 4,
+        "all_red": 4,
+        "start_seconds": 250.0,
+        "actual_interval_seconds": 33.0
+      },
+      {
+        "phase": 1,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 2,
+        "start_seconds": 283.0,
+        "actual_interval_seconds": 20.0
+      },
+      {
+        "phase": 0,
+        "green": 25,
+        "yellow": 4,
+        "all_red": 4,
+        "start_seconds": 303.0,
+        "actual_interval_seconds": 33.0
+      },
+      {
+        "phase": 1,
+        "green": 15,
+        "yellow": 3,
+        "all_red": 2,
+        "start_seconds": 336.0,
+        "actual_interval_seconds": 20.0
+      },
+      {
+        "phase": 0,
+        "green": 25,
+        "yellow": 4,
+        "all_red": 4,
+        "start_seconds": 356.0,
+        "actual_interval_seconds": 4.0
+      }
+    ],
+    "fallback_decisions": 0,
+    "elapsed_seconds": 360.0,
+    "runtime": {
+      "simulation_step_seconds": 1.0,
+      "state_layout": [
+        "east_in_0",
+        "north_in_0",
+        "south_in_0",
+        "west_in_0"
+      ],
+      "sumo_version": [
+        22,
+        "SUMO 1.28.0"
+      ]
+    }
+  },
+  "evaluations": [
+    {
+      "seed": 100042,
+      "baseline": {
+        "queue_and_insertion_wait_vehicle_seconds": 2143.0,
+        "arrived": 161,
+        "maximum_queue_vehicles": 15,
+        "decisions": [
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 0.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 35.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 70.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 105.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 140.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 175.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 210.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 245.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 280.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 315.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 350.0,
+            "actual_interval_seconds": 10.0
+          }
+        ],
+        "fallback_decisions": 0,
+        "elapsed_seconds": 360.0,
+        "runtime": {
+          "simulation_step_seconds": 1.0,
+          "state_layout": [
+            "east_in_0",
+            "north_in_0",
+            "south_in_0",
+            "west_in_0"
+          ],
+          "sumo_version": [
+            22,
+            "SUMO 1.28.0"
+          ]
+        }
+      },
+      "minimum_fixed": {
+        "queue_and_insertion_wait_vehicle_seconds": 1752.0,
+        "arrived": 161,
+        "maximum_queue_vehicles": 13,
+        "decisions": [
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 0.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 20.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 40.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 60.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 80.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 100.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 120.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 140.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 160.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 180.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 200.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 220.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 240.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 260.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 280.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 300.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 320.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 340.0,
+            "actual_interval_seconds": 20.0
+          }
+        ],
+        "fallback_decisions": 0,
+        "elapsed_seconds": 360.0,
+        "runtime": {
+          "simulation_step_seconds": 1.0,
+          "state_layout": [
+            "east_in_0",
+            "north_in_0",
+            "south_in_0",
+            "west_in_0"
+          ],
+          "sumo_version": [
+            22,
+            "SUMO 1.28.0"
+          ]
+        }
+      },
+      "rl": {
+        "queue_and_insertion_wait_vehicle_seconds": 1763.0,
+        "arrived": 163,
+        "maximum_queue_vehicles": 14,
+        "decisions": [
+          {
+            "phase": 0,
+            "green": 45,
+            "yellow": 3,
+            "all_red": 3,
+            "start_seconds": 0.0,
+            "actual_interval_seconds": 51.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 51.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 71.0,
+            "actual_interval_seconds": 33.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 5,
+            "all_red": 3,
+            "start_seconds": 104.0,
+            "actual_interval_seconds": 23.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 4,
+            "all_red": 2,
+            "start_seconds": 127.0,
+            "actual_interval_seconds": 21.0
+          },
+          {
+            "phase": 1,
+            "green": 25,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 148.0,
+            "actual_interval_seconds": 30.0
+          },
+          {
+            "phase": 0,
+            "green": 45,
+            "yellow": 5,
+            "all_red": 2,
+            "start_seconds": 178.0,
+            "actual_interval_seconds": 52.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 230.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 250.0,
+            "actual_interval_seconds": 33.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 283.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 303.0,
+            "actual_interval_seconds": 33.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 336.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 356.0,
+            "actual_interval_seconds": 4.0
+          }
+        ],
+        "fallback_decisions": 0,
+        "elapsed_seconds": 360.0,
+        "runtime": {
+          "simulation_step_seconds": 1.0,
+          "state_layout": [
+            "east_in_0",
+            "north_in_0",
+            "south_in_0",
+            "west_in_0"
+          ],
+          "sumo_version": [
+            22,
+            "SUMO 1.28.0"
+          ]
+        }
+      }
+    },
+    {
+      "seed": 100043,
+      "baseline": {
+        "queue_and_insertion_wait_vehicle_seconds": 2120.0,
+        "arrived": 162,
+        "maximum_queue_vehicles": 15,
+        "decisions": [
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 0.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 35.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 70.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 105.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 140.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 175.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 210.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 245.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 280.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 315.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 350.0,
+            "actual_interval_seconds": 10.0
+          }
+        ],
+        "fallback_decisions": 0,
+        "elapsed_seconds": 360.0,
+        "runtime": {
+          "simulation_step_seconds": 1.0,
+          "state_layout": [
+            "east_in_0",
+            "north_in_0",
+            "south_in_0",
+            "west_in_0"
+          ],
+          "sumo_version": [
+            22,
+            "SUMO 1.28.0"
+          ]
+        }
+      },
+      "minimum_fixed": {
+        "queue_and_insertion_wait_vehicle_seconds": 1465.0,
+        "arrived": 163,
+        "maximum_queue_vehicles": 11,
+        "decisions": [
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 0.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 20.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 40.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 60.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 80.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 100.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 120.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 140.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 160.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 180.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 200.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 220.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 240.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 260.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 280.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 300.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 320.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 340.0,
+            "actual_interval_seconds": 20.0
+          }
+        ],
+        "fallback_decisions": 0,
+        "elapsed_seconds": 360.0,
+        "runtime": {
+          "simulation_step_seconds": 1.0,
+          "state_layout": [
+            "east_in_0",
+            "north_in_0",
+            "south_in_0",
+            "west_in_0"
+          ],
+          "sumo_version": [
+            22,
+            "SUMO 1.28.0"
+          ]
+        }
+      },
+      "rl": {
+        "queue_and_insertion_wait_vehicle_seconds": 1797.0,
+        "arrived": 156,
+        "maximum_queue_vehicles": 15,
+        "decisions": [
+          {
+            "phase": 0,
+            "green": 45,
+            "yellow": 3,
+            "all_red": 3,
+            "start_seconds": 0.0,
+            "actual_interval_seconds": 51.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 51.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 71.0,
+            "actual_interval_seconds": 33.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 104.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 124.0,
+            "actual_interval_seconds": 33.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 157.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 177.0,
+            "actual_interval_seconds": 33.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 210.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 230.0,
+            "actual_interval_seconds": 33.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 5,
+            "all_red": 2,
+            "start_seconds": 263.0,
+            "actual_interval_seconds": 22.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 4,
+            "all_red": 2,
+            "start_seconds": 285.0,
+            "actual_interval_seconds": 21.0
+          },
+          {
+            "phase": 1,
+            "green": 25,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 306.0,
+            "actual_interval_seconds": 30.0
+          },
+          {
+            "phase": 0,
+            "green": 45,
+            "yellow": 5,
+            "all_red": 2,
+            "start_seconds": 336.0,
+            "actual_interval_seconds": 24.0
+          }
+        ],
+        "fallback_decisions": 0,
+        "elapsed_seconds": 360.0,
+        "runtime": {
+          "simulation_step_seconds": 1.0,
+          "state_layout": [
+            "east_in_0",
+            "north_in_0",
+            "south_in_0",
+            "west_in_0"
+          ],
+          "sumo_version": [
+            22,
+            "SUMO 1.28.0"
+          ]
+        }
+      }
+    },
+    {
+      "seed": 100044,
+      "baseline": {
+        "queue_and_insertion_wait_vehicle_seconds": 2026.0,
+        "arrived": 160,
+        "maximum_queue_vehicles": 15,
+        "decisions": [
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 0.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 35.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 70.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 105.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 140.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 175.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 210.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 245.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 280.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 315.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 350.0,
+            "actual_interval_seconds": 10.0
+          }
+        ],
+        "fallback_decisions": 0,
+        "elapsed_seconds": 360.0,
+        "runtime": {
+          "simulation_step_seconds": 1.0,
+          "state_layout": [
+            "east_in_0",
+            "north_in_0",
+            "south_in_0",
+            "west_in_0"
+          ],
+          "sumo_version": [
+            22,
+            "SUMO 1.28.0"
+          ]
+        }
+      },
+      "minimum_fixed": {
+        "queue_and_insertion_wait_vehicle_seconds": 1482.0,
+        "arrived": 164,
+        "maximum_queue_vehicles": 11,
+        "decisions": [
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 0.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 20.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 40.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 60.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 80.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 100.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 120.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 140.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 160.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 180.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 200.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 220.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 240.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 260.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 280.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 300.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 320.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 340.0,
+            "actual_interval_seconds": 20.0
+          }
+        ],
+        "fallback_decisions": 0,
+        "elapsed_seconds": 360.0,
+        "runtime": {
+          "simulation_step_seconds": 1.0,
+          "state_layout": [
+            "east_in_0",
+            "north_in_0",
+            "south_in_0",
+            "west_in_0"
+          ],
+          "sumo_version": [
+            22,
+            "SUMO 1.28.0"
+          ]
+        }
+      },
+      "rl": {
+        "queue_and_insertion_wait_vehicle_seconds": 1819.0,
+        "arrived": 156,
+        "maximum_queue_vehicles": 17,
+        "decisions": [
+          {
+            "phase": 0,
+            "green": 45,
+            "yellow": 3,
+            "all_red": 3,
+            "start_seconds": 0.0,
+            "actual_interval_seconds": 51.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 51.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 71.0,
+            "actual_interval_seconds": 33.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 104.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 124.0,
+            "actual_interval_seconds": 33.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 157.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 177.0,
+            "actual_interval_seconds": 33.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 210.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 230.0,
+            "actual_interval_seconds": 33.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 263.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 283.0,
+            "actual_interval_seconds": 23.0
+          },
+          {
+            "phase": 1,
+            "green": 25,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 306.0,
+            "actual_interval_seconds": 30.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 336.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 25,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 356.0,
+            "actual_interval_seconds": 4.0
+          }
+        ],
+        "fallback_decisions": 0,
+        "elapsed_seconds": 360.0,
+        "runtime": {
+          "simulation_step_seconds": 1.0,
+          "state_layout": [
+            "east_in_0",
+            "north_in_0",
+            "south_in_0",
+            "west_in_0"
+          ],
+          "sumo_version": [
+            22,
+            "SUMO 1.28.0"
+          ]
+        }
+      }
+    },
+    {
+      "seed": 100045,
+      "baseline": {
+        "queue_and_insertion_wait_vehicle_seconds": 2122.0,
+        "arrived": 161,
+        "maximum_queue_vehicles": 15,
+        "decisions": [
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 0.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 35.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 70.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 105.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 140.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 175.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 210.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 245.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 280.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 315.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 350.0,
+            "actual_interval_seconds": 10.0
+          }
+        ],
+        "fallback_decisions": 0,
+        "elapsed_seconds": 360.0,
+        "runtime": {
+          "simulation_step_seconds": 1.0,
+          "state_layout": [
+            "east_in_0",
+            "north_in_0",
+            "south_in_0",
+            "west_in_0"
+          ],
+          "sumo_version": [
+            22,
+            "SUMO 1.28.0"
+          ]
+        }
+      },
+      "minimum_fixed": {
+        "queue_and_insertion_wait_vehicle_seconds": 1629.0,
+        "arrived": 162,
+        "maximum_queue_vehicles": 13,
+        "decisions": [
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 0.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 20.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 40.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 60.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 80.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 100.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 120.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 140.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 160.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 180.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 200.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 220.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 240.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 260.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 280.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 300.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 320.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 340.0,
+            "actual_interval_seconds": 20.0
+          }
+        ],
+        "fallback_decisions": 0,
+        "elapsed_seconds": 360.0,
+        "runtime": {
+          "simulation_step_seconds": 1.0,
+          "state_layout": [
+            "east_in_0",
+            "north_in_0",
+            "south_in_0",
+            "west_in_0"
+          ],
+          "sumo_version": [
+            22,
+            "SUMO 1.28.0"
+          ]
+        }
+      },
+      "rl": {
+        "queue_and_insertion_wait_vehicle_seconds": 1622.0,
+        "arrived": 159,
+        "maximum_queue_vehicles": 11,
+        "decisions": [
+          {
+            "phase": 0,
+            "green": 45,
+            "yellow": 3,
+            "all_red": 3,
+            "start_seconds": 0.0,
+            "actual_interval_seconds": 51.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 51.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 71.0,
+            "actual_interval_seconds": 33.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 104.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 124.0,
+            "actual_interval_seconds": 33.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 157.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 177.0,
+            "actual_interval_seconds": 33.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 210.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 230.0,
+            "actual_interval_seconds": 33.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 263.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 283.0,
+            "actual_interval_seconds": 33.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 316.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 336.0,
+            "actual_interval_seconds": 23.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 5,
+            "all_red": 2,
+            "start_seconds": 359.0,
+            "actual_interval_seconds": 1.0
+          }
+        ],
+        "fallback_decisions": 0,
+        "elapsed_seconds": 360.0,
+        "runtime": {
+          "simulation_step_seconds": 1.0,
+          "state_layout": [
+            "east_in_0",
+            "north_in_0",
+            "south_in_0",
+            "west_in_0"
+          ],
+          "sumo_version": [
+            22,
+            "SUMO 1.28.0"
+          ]
+        }
+      }
+    },
+    {
+      "seed": 100046,
+      "baseline": {
+        "queue_and_insertion_wait_vehicle_seconds": 2203.0,
+        "arrived": 162,
+        "maximum_queue_vehicles": 15,
+        "decisions": [
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 0.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 35.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 70.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 105.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 140.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 175.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 210.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 245.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 280.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 1,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 315.0,
+            "actual_interval_seconds": 35.0
+          },
+          {
+            "phase": 0,
+            "green": 30.0,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 350.0,
+            "actual_interval_seconds": 10.0
+          }
+        ],
+        "fallback_decisions": 0,
+        "elapsed_seconds": 360.0,
+        "runtime": {
+          "simulation_step_seconds": 1.0,
+          "state_layout": [
+            "east_in_0",
+            "north_in_0",
+            "south_in_0",
+            "west_in_0"
+          ],
+          "sumo_version": [
+            22,
+            "SUMO 1.28.0"
+          ]
+        }
+      },
+      "minimum_fixed": {
+        "queue_and_insertion_wait_vehicle_seconds": 1767.0,
+        "arrived": 159,
+        "maximum_queue_vehicles": 14,
+        "decisions": [
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 0.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 20.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 40.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 60.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 80.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 100.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 120.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 140.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 160.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 180.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 200.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 220.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 240.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 260.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 280.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 300.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 320.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 340.0,
+            "actual_interval_seconds": 20.0
+          }
+        ],
+        "fallback_decisions": 0,
+        "elapsed_seconds": 360.0,
+        "runtime": {
+          "simulation_step_seconds": 1.0,
+          "state_layout": [
+            "east_in_0",
+            "north_in_0",
+            "south_in_0",
+            "west_in_0"
+          ],
+          "sumo_version": [
+            22,
+            "SUMO 1.28.0"
+          ]
+        }
+      },
+      "rl": {
+        "queue_and_insertion_wait_vehicle_seconds": 1650.0,
+        "arrived": 156,
+        "maximum_queue_vehicles": 11,
+        "decisions": [
+          {
+            "phase": 0,
+            "green": 45,
+            "yellow": 3,
+            "all_red": 3,
+            "start_seconds": 0.0,
+            "actual_interval_seconds": 51.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 51.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 71.0,
+            "actual_interval_seconds": 33.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 5,
+            "all_red": 2,
+            "start_seconds": 104.0,
+            "actual_interval_seconds": 22.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 126.0,
+            "actual_interval_seconds": 33.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 159.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 179.0,
+            "actual_interval_seconds": 33.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 5,
+            "all_red": 2,
+            "start_seconds": 212.0,
+            "actual_interval_seconds": 22.0
+          },
+          {
+            "phase": 0,
+            "green": 25,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 234.0,
+            "actual_interval_seconds": 33.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 267.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 287.0,
+            "actual_interval_seconds": 23.0
+          },
+          {
+            "phase": 1,
+            "green": 15,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 310.0,
+            "actual_interval_seconds": 20.0
+          },
+          {
+            "phase": 0,
+            "green": 15,
+            "yellow": 4,
+            "all_red": 4,
+            "start_seconds": 330.0,
+            "actual_interval_seconds": 23.0
+          },
+          {
+            "phase": 1,
+            "green": 25,
+            "yellow": 3,
+            "all_red": 2,
+            "start_seconds": 353.0,
+            "actual_interval_seconds": 7.0
+          }
+        ],
+        "fallback_decisions": 0,
+        "elapsed_seconds": 360.0,
+        "runtime": {
+          "simulation_step_seconds": 1.0,
+          "state_layout": [
+            "east_in_0",
+            "north_in_0",
+            "south_in_0",
+            "west_in_0"
+          ],
+          "sumo_version": [
+            22,
+            "SUMO 1.28.0"
+          ]
+        }
+      }
+    }
+  ],
+  "summary": {
+    "baseline": {
+      "queue_and_insertion_wait_vehicle_seconds": {
+        "mean": 2122.8,
+        "min": 2026.0,
+        "max": 2203.0
+      },
+      "arrived": {
+        "mean": 161.2,
+        "min": 160,
+        "max": 162
+      },
+      "maximum_queue_vehicles": {
+        "mean": 15.0,
+        "min": 15,
+        "max": 15
+      }
+    },
+    "minimum_fixed": {
+      "queue_and_insertion_wait_vehicle_seconds": {
+        "mean": 1619.0,
+        "min": 1465.0,
+        "max": 1767.0
+      },
+      "arrived": {
+        "mean": 161.8,
+        "min": 159,
+        "max": 164
+      },
+      "maximum_queue_vehicles": {
+        "mean": 12.4,
+        "min": 11,
+        "max": 14
+      }
+    },
+    "rl": {
+      "queue_and_insertion_wait_vehicle_seconds": {
+        "mean": 1730.2,
+        "min": 1622.0,
+        "max": 1819.0
+      },
+      "arrived": {
+        "mean": 158.0,
+        "min": 156,
+        "max": 163
+      },
+      "maximum_queue_vehicles": {
+        "mean": 13.6,
+        "min": 11,
+        "max": 17
+      }
+    }
   },
   "limitations": "One vehicle-only TLS; educational Q-learning, no guaranteed improvement; no field deployment or pedestrian clearance validation."
 }

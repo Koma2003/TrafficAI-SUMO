@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <vType id="car" type="passenger" accel="2.6" decel="4.5" sigma="0.5" length="5" maxSpeed="55.0"/>
+
+    <route id="route_1" edges="in_ulitsa_ahmetova_129 out_ulitsa_ahmetova_129"/>
+    <flow id="flow_1_lane_1" type="car" route="route_1" begin="0" end="360" period="8.00" departLane="1"/>
+    <flow id="flow_1_lane_2" type="car" route="route_1" begin="0" end="360" period="8.00" departLane="2"/>
+    <route id="route_2" edges="in_ulitsa_ahmetova_309 out_ulitsa_ahmetova_309"/>
+    <flow id="flow_2_lane_1" type="car" route="route_2" begin="0" end="360" period="8.00" departLane="1"/>
+    <flow id="flow_2_lane_2" type="car" route="route_2" begin="0" end="360" period="8.00" departLane="2"/>
+    <route id="route_3" edges="in_ulitsa_shmidta_259 out_ulitsa_shmidta_259"/>
+    <flow id="flow_3_lane_1" type="car" route="route_3" begin="0" end="360" period="8.00" departLane="1"/>
+    <route id="route_4" edges="in_ulitsa_shmidta_79 out_ulitsa_shmidta_79"/>
+    <flow id="flow_4_lane_1" type="car" route="route_4" begin="0" end="360" period="8.00" departLane="1"/>
+</routes>

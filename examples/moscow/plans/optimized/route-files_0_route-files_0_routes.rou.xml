@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <vType id="car" type="passenger" accel="2.6" decel="4.5" sigma="0.5" length="5" maxSpeed="55.0"/>
+
+    <route id="route_1" edges="in_ulitsa_chaplygina_124 out_lyalin_pereulok_111"/>
+    <flow id="flow_1_lane_1" type="car" route="route_1" begin="0" end="360" period="8.00" departLane="1"/>
+    <route id="route_2" edges="in_ulitsa_chaplygina_124 out_ulitsa_pokrovka_61"/>
+    <flow id="flow_2_lane_2" type="car" route="route_2" begin="0" end="360" period="8.00" departLane="2"/>
+    <route id="route_3" edges="in_ulitsa_pokrovka_61 out_ulitsa_pokrovka_61"/>
+    <flow id="flow_3_lane_1" type="car" route="route_3" begin="0" end="360" period="8.00" departLane="1"/>
+    <flow id="flow_3_lane_2" type="car" route="route_3" begin="0" end="360" period="8.00" departLane="2"/>
+</routes>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<additional>
+    <e1Detector id="det_in_ulitsa_ahmetova_129_1" lane="in_ulitsa_ahmetova_129_1" pos="555.1" period="1.0" file="detector_0_1.xml" friendlyPos="true" />
+    <e1Detector id="det_in_ulitsa_ahmetova_129_2" lane="in_ulitsa_ahmetova_129_2" pos="555.1" period="1.0" file="detector_0_2.xml" friendlyPos="true" />
+    <e1Detector id="det_in_ulitsa_ahmetova_309_1" lane="in_ulitsa_ahmetova_309_1" pos="1876.9" period="1.0" file="detector_0_3.xml" friendlyPos="true" />
+    <e1Detector id="det_in_ulitsa_ahmetova_309_2" lane="in_ulitsa_ahmetova_309_2" pos="1876.9" period="1.0" file="detector_0_4.xml" friendlyPos="true" />
+    <e1Detector id="det_in_ulitsa_shmidta_259_1" lane="in_ulitsa_shmidta_259_1" pos="524.4" period="1.0" file="detector_0_5.xml" friendlyPos="true" />
+    <e1Detector id="det_in_ulitsa_shmidta_79_1" lane="in_ulitsa_shmidta_79_1" pos="311.2" period="1.0" file="detector_0_6.xml" friendlyPos="true" />
+    <e1Detector id="det_in_ulitsa_shmidta_259_0" lane="in_ulitsa_shmidta_259_0" pos="524.4" period="1.0" file="detector_0_7.xml" friendlyPos="true" />
+    <e1Detector id="det_in_ulitsa_ahmetova_309_0" lane="in_ulitsa_ahmetova_309_0" pos="1876.9" period="1.0" file="detector_0_8.xml" friendlyPos="true" />
+    <e1Detector id="det_in_ulitsa_shmidta_79_0" lane="in_ulitsa_shmidta_79_0" pos="311.2" period="1.0" file="detector_0_9.xml" friendlyPos="true" />
+    <e1Detector id="det_in_ulitsa_ahmetova_129_0" lane="in_ulitsa_ahmetova_129_0" pos="555.1" period="1.0" file="detector_0_10.xml" friendlyPos="true" />
+</additional>

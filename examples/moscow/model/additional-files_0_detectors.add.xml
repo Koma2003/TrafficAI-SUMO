@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<additional>
+    <e1Detector id="det_in_ulitsa_chaplygina_124_1" lane="in_ulitsa_chaplygina_124_1" pos="127.6" period="1.0" file="detector_0_1.xml" friendlyPos="true" />
+    <e1Detector id="det_in_ulitsa_chaplygina_124_2" lane="in_ulitsa_chaplygina_124_2" pos="127.6" period="1.0" file="detector_0_2.xml" friendlyPos="true" />
+    <e1Detector id="det_in_ulitsa_pokrovka_61_1" lane="in_ulitsa_pokrovka_61_1" pos="201.9" period="1.0" file="detector_0_3.xml" friendlyPos="true" />
+    <e1Detector id="det_in_ulitsa_pokrovka_61_2" lane="in_ulitsa_pokrovka_61_2" pos="201.9" period="1.0" file="detector_0_4.xml" friendlyPos="true" />
+    <e1Detector id="det_in_ulitsa_pokrovka_61_0" lane="in_ulitsa_pokrovka_61_0" pos="201.9" period="1.0" file="detector_0_5.xml" friendlyPos="true" />
+    <e1Detector id="det_in_ulitsa_chaplygina_124_0" lane="in_ulitsa_chaplygina_124_0" pos="127.6" period="1.0" file="detector_0_6.xml" friendlyPos="true" />
+</additional>

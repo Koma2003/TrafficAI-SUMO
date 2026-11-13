@@ -12,6 +12,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, PROJECT_ROOT)
 
 from config import DEFAULT_FLOW_RATE
+from ui.project_paths import model_file
 from sumo.net_builder import build_network
 from sumo.route_builder import generate_routes_from_network
 
@@ -36,6 +37,8 @@ def angle_to_direction(angle_deg):
 
 class ApproachEditor:
     def __init__(self, root):
+        from ui.appearance import configure_ui
+        configure_ui(root)
         self.root = root
         self.root.title("Редактор направлений полос и интенсивности")
         self.root.geometry("1300x700")  # ИЗМЕНЕНО: чуть шире — добавлена колонка «Тип»
@@ -54,9 +57,10 @@ class ApproachEditor:
         self.build_gui()
 
     def load_data(self):
-        if not os.path.exists(GEOMETRY_FILE):
+        geometry_source = model_file(PROJECT_ROOT, "geometry")
+        if not geometry_source.exists():
             return
-        with open(GEOMETRY_FILE, "r", encoding="utf-8") as f:
+        with open(geometry_source, "r", encoding="utf-8") as f:
             self.approaches = json.load(f)
 
         self.groups = {}

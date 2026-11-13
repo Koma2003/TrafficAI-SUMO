@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <personFlow id="pf_1" begin="0" end="360" period="144.00">
+        <walk from="in_ulitsa_ahmetova_129" to="out_ulitsa_shmidta_259"/>
+    </personFlow>
+    <personFlow id="pf_2" begin="0" end="360" period="144.00">
+        <walk from="in_ulitsa_ahmetova_129" to="out_ulitsa_ahmetova_129"/>
+    </personFlow>
+    <personFlow id="pf_3" begin="0" end="360" period="144.00">
+        <walk from="in_ulitsa_ahmetova_129" to="out_ulitsa_shmidta_79"/>
+    </personFlow>
+    <personFlow id="pf_4" begin="0" end="360" period="144.00">
+        <walk from="in_ulitsa_shmidta_79" to="out_ulitsa_ahmetova_309"/>
+    </personFlow>
+    <personFlow id="pf_5" begin="0" end="360" period="144.00">
+        <walk from="in_ulitsa_shmidta_79" to="out_ulitsa_ahmetova_129"/>
+    </personFlow>
+    <personFlow id="pf_6" begin="0" end="360" period="144.00">
+        <walk from="in_ulitsa_shmidta_79" to="out_ulitsa_shmidta_79"/>
+    </personFlow>
+    <personFlow id="pf_7" begin="0" end="360" period="144.00">
+        <walk from="in_ulitsa_ahmetova_309" to="out_ulitsa_ahmetova_309"/>
+    </personFlow>
+    <personFlow id="pf_8" begin="0" end="360" period="144.00">
+        <walk from="in_ulitsa_ahmetova_309" to="out_ulitsa_shmidta_259"/>
+    </personFlow>
+    <personFlow id="pf_9" begin="0" end="360" period="144.00">
+        <walk from="in_ulitsa_ahmetova_309" to="out_ulitsa_shmidta_79"/>
+    </personFlow>
+    <personFlow id="pf_10" begin="0" end="360" period="144.00">
+        <walk from="in_ulitsa_shmidta_259" to="out_ulitsa_ahmetova_309"/>
+    </personFlow>
+    <personFlow id="pf_11" begin="0" end="360" period="144.00">
+        <walk from="in_ulitsa_shmidta_259" to="out_ulitsa_shmidta_259"/>
+    </personFlow>
+    <personFlow id="pf_12" begin="0" end="360" period="144.00">
+        <walk from="in_ulitsa_shmidta_259" to="out_ulitsa_ahmetova_129"/>
+    </personFlow>
+</routes>

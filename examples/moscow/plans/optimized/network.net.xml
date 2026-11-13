@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='utf-8'?>
+<net xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.20" junctionCornerDetail="5" walkingareas="true" limitTurnSpeed="5.50" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="155.09,151.07" convBoundary="0.00,0.00,435.31,428.11" origBoundary="-155.09,-151.07,280.22,277.04" projParameter="!" />
+
+    <edge id=":center_0" function="internal">
+        <lane id=":center_0_0" index="0" disallow="pedestrian" speed="13.89" length="20.90" shape="152.28,139.79 165.42,155.99" />
+        <lane id=":center_0_1" index="1" disallow="pedestrian" speed="13.89" length="20.90" shape="149.78,141.78 162.97,158.05" />
+    </edge>
+    <edge id=":center_2" function="internal">
+        <lane id=":center_2_0" index="0" disallow="pedestrian" speed="8.33" length="11.79" shape="150.15,148.19 153.36,146.75 155.63,145.76 157.56,144.38 159.75,141.75" />
+    </edge>
+    <edge id=":center_3" function="internal">
+        <lane id=":center_3_0" index="0" disallow="pedestrian" speed="8.57" length="9.76" shape="152.09,150.79 154.10,150.57 156.59,151.71 159.54,154.20 160.30,155.05" />
+    </edge>
+    <edge id=":center_4" function="internal">
+        <lane id=":center_4_0" index="0" disallow="pedestrian" speed="8.57" length="4.02" shape="160.30,155.05 162.97,158.05" />
+    </edge>
+    <edge id=":center_c0" function="crossing" crossingEdges="out_ulitsa_pokrovka_61">
+        <lane id=":center_c0_0" index="0" allow="pedestrian" speed="2.78" length="6.40" width="4.00" shape="165.40,153.43 160.47,157.50" outlineShape="166.68,154.97 161.74,159.04 160.90,158.15 160.10,157.51 159.32,157.13 158.57,157.01 157.83,157.15 157.57,157.29 164.24,151.80 164.38,152.02" />
+    </edge>
+    <edge id=":center_c1" function="crossing" crossingEdges="out_lyalin_pereulok_111">
+        <lane id=":center_c1_0" index="0" allow="pedestrian" speed="2.78" length="3.20" width="4.00" shape="157.29,142.46 159.90,144.31" outlineShape="158.45,140.83 161.06,142.68 160.65,143.82 160.78,145.32 161.30,146.77 158.74,145.94 156.13,144.09 155.66,140.99 156.42,141.45 157.19,141.60 157.87,141.40" />
+    </edge>
+    <edge id=":center_c2" function="crossing" crossingEdges="in_ulitsa_pokrovka_61">
+        <lane id=":center_c2_0" index="0" allow="pedestrian" speed="2.78" length="6.40" width="4.00" shape="149.74,144.34 154.77,140.39" outlineShape="148.42,142.83 153.62,138.76 154.60,140.05 155.56,140.93 156.42,141.45 156.62,141.49 156.01,141.97 150.97,145.92 149.37,146.93 149.51,146.91 149.84,146.43 150.02,145.96 149.98,145.36 149.72,144.63 149.23,143.76" />
+    </edge>
+    <edge id=":center_c3" function="crossing" crossingEdges="in_ulitsa_chaplygina_124">
+        <lane id=":center_c3_0" index="0" allow="pedestrian" speed="2.78" length="6.42" width="4.00" shape="154.60,151.32 151.21,145.86" outlineShape="152.89,152.37 149.51,146.91 149.84,146.43 150.02,145.96 149.98,145.36 149.72,144.63 149.58,144.39 152.91,144.81 156.30,150.27 153.29,152.41" />
+    </edge>
+    <edge id=":center_c4" function="crossing" crossingEdges="out_ulitsa_chaplygina_304">
+        <lane id=":center_c4_0" index="0" allow="pedestrian" speed="2.78" length="6.40" width="4.00" shape="158.72,156.35 154.89,151.22" outlineShape="157.17,157.62 153.23,152.33 156.50,150.02 153.29,152.41 156.50,150.02 160.32,155.15 160.59,157.91 160.10,157.51 159.32,157.13 158.57,157.01 157.83,157.15" />
+    </edge>
+    <edge id=":center_w0" function="walkingarea">
+        <lane id=":center_w0_0" index="0" allow="pedestrian" speed="2.78" length="8.45" width="4.00" shape="166.63,154.94 168.18,153.68 161.06,142.68 160.65,143.82 160.78,145.32 161.44,147.18 162.64,149.42 164.38,152.02" />
+    </edge>
+    <edge id=":center_w1" function="walkingarea">
+        <lane id=":center_w1_0" index="0" allow="pedestrian" speed="2.78" length="3.29" width="4.00" shape="158.45,140.83 156.82,139.67 155.11,137.56 153.53,138.78 154.60,140.05 155.56,140.93 156.42,141.45 157.19,141.60 157.87,141.40" />
+    </edge>
+    <edge id=":center_w2" function="walkingarea">
+        <lane id=":center_w2_0" index="0" allow="pedestrian" speed="2.78" length="2.28" width="4.00" shape="148.50,142.77 148.12,145.18 149.03,146.96 149.51,146.91 149.84,146.43 150.02,145.96 149.98,145.36 149.72,144.63 149.23,143.76" />
+    </edge>
+    <edge id=":center_w3" function="walkingarea">
+        <lane id=":center_w3_0" index="0" allow="pedestrian" speed="2.78" length="2.41" width="4.00" shape="157.11,157.55 158.31,159.15 161.74,159.04 160.90,158.15 160.10,157.51 159.32,157.13 158.57,157.01 157.83,157.15" />
+    </edge>
+    <edge id=":center_w4" function="walkingarea">
+        <lane id=":center_w4_0" index="0" allow="pedestrian" speed="2.78" length="0.31" width="4.00" shape="156.50,150.02 153.29,152.41 152.89,152.37 156.30,150.27" />
+    </edge>
+
+    <edge id="in_ulitsa_chaplygina_124" from="in_ulitsa_chaplygina_124" to="center" priority="-1" shape="66.28,253.45 70.91,248.45 91.07,224.72 106.81,206.01 132.93,173.45 138.51,166.72 147.62,155.77 151.19,153.04 155.09,151.07">
+        <lane id="in_ulitsa_chaplygina_124_0" index="0" allow="pedestrian" speed="8.33" length="134.56" width="2.00" shape="60.85,248.42 65.37,243.54 85.42,219.94 101.09,201.31 127.20,168.77 132.82,161.99 142.46,150.40 147.24,146.74 148.57,146.07" />
+        <lane id="in_ulitsa_chaplygina_124_1" index="1" disallow="pedestrian" speed="8.33" length="134.56" shape="62.76,250.19 67.32,245.26 87.40,221.62 103.10,202.96 129.21,170.42 134.82,163.65 144.28,152.29 148.63,148.96 150.15,148.19" />
+        <lane id="in_ulitsa_chaplygina_124_2" index="2" disallow="pedestrian" speed="8.33" length="134.56" shape="65.11,252.36 69.71,247.39 89.85,223.69 105.57,204.99 131.69,172.44 137.28,165.70 146.51,154.61 150.34,151.68 152.09,150.79" />
+    </edge>
+    <edge id="in_ulitsa_pokrovka_61" from="in_ulitsa_pokrovka_61" to="center" priority="-1" shape="0.00,0.00 7.15,4.23 20.64,13.30 29.57,19.34 44.46,31.62 62.85,47.54 64.59,49.27 77.11,60.38 78.30,61.76 87.16,70.77 91.66,76.03 97.81,82.87 108.14,94.34 114.60,101.86 126.42,115.29 143.50,136.27 149.48,144.01 155.09,151.07">
+        <lane id="in_ulitsa_pokrovka_61_0" index="0" allow="pedestrian" speed="13.89" length="208.94" width="2.00" shape="3.77,-6.37 11.10,-2.03 24.78,7.16 34.01,13.41 49.24,25.97 67.89,42.11 69.66,43.87 82.39,55.17 83.75,56.74 92.62,65.76 97.22,71.15 103.31,77.92 113.70,89.45 120.18,97.00 132.07,110.51 149.30,131.67 154.32,138.17" />
+        <lane id="in_ulitsa_pokrovka_61_1" index="1" disallow="pedestrian" speed="13.89" length="208.94" shape="2.44,-4.13 9.71,0.17 23.32,9.32 32.45,15.49 47.56,27.95 66.12,44.02 67.88,45.77 80.54,57.00 81.83,58.51 90.70,67.52 95.27,72.86 101.38,79.66 111.74,91.17 118.22,98.71 130.08,112.19 147.26,133.29 152.28,139.79" />
+        <lane id="in_ulitsa_pokrovka_61_2" index="2" disallow="pedestrian" speed="13.89" length="208.94" shape="0.81,-1.38 8.00,2.88 21.53,11.97 30.53,18.06 45.49,30.40 63.94,46.37 65.69,48.10 78.25,59.25 79.48,60.68 88.34,69.69 92.86,74.97 99.00,81.80 109.34,93.28 115.81,100.81 127.64,114.26 144.75,135.28 149.78,141.78" />
+    </edge>
+    <edge id="out_lyalin_pereulok_111" from="center" to="out_lyalin_pereulok_111" priority="-1">
+        <lane id="out_lyalin_pereulok_111_0" index="0" allow="pedestrian" speed="8.33" length="0.20" width="2.00" shape="157.63,140.25 157.75,140.08" />
+        <lane id="out_lyalin_pereulok_111_1" index="1" disallow="pedestrian" speed="8.33" length="0.20" shape="159.75,141.75 159.87,141.59" />
+    </edge>
+    <edge id="out_ulitsa_chaplygina_304" from="center" to="out_ulitsa_chaplygina_304" priority="-1" shape="155.09,151.07 151.65,153.64 148.76,156.74 140.28,168.10 135.29,175.30 109.74,208.35 94.54,227.58 74.95,251.80 70.90,257.28">
+        <lane id="out_ulitsa_chaplygina_304_0" index="0" allow="pedestrian" speed="8.33" length="132.12" width="2.00" shape="157.71,158.35 156.61,159.17 154.45,161.49 146.29,172.42 141.26,179.67 115.57,212.91 100.32,232.20 80.81,256.33 76.85,261.68" />
+        <lane id="out_ulitsa_chaplygina_304_1" index="1" disallow="pedestrian" speed="8.33" length="132.12" shape="156.16,156.26 154.87,157.23 152.45,159.82 144.18,170.90 139.16,178.14 113.52,211.31 98.29,230.58 78.75,254.74 74.76,260.13" />
+        <lane id="out_ulitsa_chaplygina_304_2" index="2" disallow="pedestrian" speed="8.33" length="132.12" shape="154.25,153.70 152.72,154.84 149.99,157.77 141.58,169.03 136.58,176.25 111.00,209.34 95.79,228.58 76.22,252.78 72.19,258.23" />
+    </edge>
+    <edge id="out_ulitsa_pokrovka_61" from="center" to="out_ulitsa_pokrovka_61" priority="-1" shape="155.09,151.07 159.57,156.39 181.91,184.04 203.39,209.19 218.39,226.72 222.75,231.82 224.75,234.06 229.62,239.80 238.52,249.78 240.60,251.90 248.95,260.97 262.48,275.02 284.20,297.43 289.26,302.34 297.49,309.95 314.82,326.57 317.12,328.61 337.24,346.93 356.83,363.78 366.78,372.08 377.28,380.47 386.54,388.10 396.98,396.76 397.72,397.23 417.46,413.63 435.31,428.11">
+        <lane id="out_ulitsa_pokrovka_61_0" index="0" allow="pedestrian" speed="13.89" length="383.87" width="2.00" shape="167.40,154.31 187.60,179.31 209.02,204.38 224.01,221.91 228.34,226.97 230.33,229.20 235.20,234.94 243.93,244.72 245.96,246.80 254.34,255.90 267.80,269.88 289.43,292.20 294.35,296.97 302.56,304.56 319.84,321.13 322.07,323.11 342.14,341.39 361.61,358.13 371.46,366.35 381.94,374.72 391.26,382.40 401.34,390.76 402.09,391.24 422.16,407.91 439.97,422.36" />
+        <lane id="out_ulitsa_pokrovka_61_1" index="1" disallow="pedestrian" speed="13.89" length="383.87" shape="165.42,155.99 185.60,180.97 207.04,206.07 222.04,223.60 226.38,228.68 228.37,230.91 233.24,236.65 242.03,246.50 244.08,248.59 252.44,257.68 265.93,271.68 287.60,294.04 292.56,298.85 300.78,306.46 318.07,323.04 320.33,325.04 340.42,343.34 359.93,360.12 369.82,368.36 380.30,376.74 389.60,384.40 399.81,392.87 400.55,393.34 420.51,409.92 438.33,424.38" />
+        <lane id="out_ulitsa_pokrovka_61_2" index="2" disallow="pedestrian" speed="13.89" length="383.87" shape="162.97,158.05 183.14,183.02 204.61,208.15 219.61,225.68 223.96,230.77 225.96,233.01 230.83,238.75 239.69,248.69 241.76,250.80 250.11,259.87 263.63,273.91 285.33,296.30 290.36,301.18 298.59,308.79 315.90,325.39 318.19,327.42 338.30,345.73 357.86,362.56 367.79,370.84 378.29,379.23 387.56,386.87 397.92,395.46 398.66,395.93 418.48,412.39 436.32,426.87" />
+    </edge>
+
+    <tlLogic id="center" type="static" programID="0" offset="0">
+        <phase duration="25" state="GGrrrrrrr" />
+        <phase duration="5" state="GGrrrrrrr" />
+        <phase duration="3" state="yyrrrrrrr" />
+        <phase duration="25" state="rrGgrrrrr" />
+        <phase duration="5" state="rrGgrrrrr" />
+        <phase duration="3" state="rryyrrrrr" />
+    <phase duration="15" state="rrrrGGGGG" /><phase duration="1" state="rrrrrrrrr" /></tlLogic>
+
+    <junction id="center" type="traffic_light" x="155.09" y="151.07" incLanes="in_ulitsa_pokrovka_61_0 in_ulitsa_pokrovka_61_1 in_ulitsa_pokrovka_61_2 in_ulitsa_chaplygina_124_0 in_ulitsa_chaplygina_124_1 in_ulitsa_chaplygina_124_2 :center_w0_0 :center_w1_0 :center_w2_0 :center_w4_0 :center_w3_0" intLanes=":center_0_0 :center_0_1 :center_2_0 :center_4_0 :center_c0_0 :center_c1_0 :center_c2_0 :center_c3_0 :center_c4_0" shape="161.74,159.08 168.17,153.67 162.19,141.09 157.95,138.08 155.10,137.55 148.53,142.78 149.01,143.75 149.00,144.19 148.82,144.58 148.48,144.94 147.97,145.26 158.31,159.15 159.66,158.42 160.26,158.32 160.80,158.40 161.30,158.65">
+        <request index="0" response="001010000" foes="001011100" cont="0" />
+        <request index="1" response="001011000" foes="001011100" cont="0" />
+        <request index="2" response="010100011" foes="010100011" cont="0" />
+        <request index="3" response="010010011" foes="010010011" cont="1" />
+        <request index="4" response="000000000" foes="000001011" cont="0" />
+        <request index="5" response="000000000" foes="000000100" cont="0" />
+        <request index="6" response="000000000" foes="000000011" cont="0" />
+        <request index="7" response="000000000" foes="000001100" cont="0" />
+        <request index="8" response="000000000" foes="000000000" cont="0" />
+    </junction>
+    <junction id="in_ulitsa_chaplygina_124" type="dead_end" x="66.28" y="253.45" incLanes="" intLanes="" shape="66.28,253.45 60.12,247.74" />
+    <junction id="in_ulitsa_pokrovka_61" type="dead_end" x="0.00" y="0.00" incLanes="" intLanes="" shape="0.00,0.00 4.28,-7.23" />
+    <junction id="out_lyalin_pereulok_111" type="dead_end" x="160.04" y="144.11" incLanes="out_lyalin_pereulok_111_0 out_lyalin_pereulok_111_1" intLanes="" shape="155.80,141.10 160.04,144.11" />
+    <junction id="out_ulitsa_chaplygina_304" type="dead_end" x="70.90" y="257.28" incLanes="out_ulitsa_chaplygina_304_0 out_ulitsa_chaplygina_304_1 out_ulitsa_chaplygina_304_2" intLanes="" shape="77.66,262.27 70.90,257.28" />
+    <junction id="out_ulitsa_pokrovka_61" type="dead_end" x="435.31" y="428.11" incLanes="out_ulitsa_pokrovka_61_0 out_ulitsa_pokrovka_61_1 out_ulitsa_pokrovka_61_2" intLanes="" shape="440.60,421.59 435.31,428.11" />
+
+    <junction id=":center_4_0" type="internal" x="160.30" y="155.05" incLanes=":center_3_0" intLanes=":center_0_0 :center_0_1 :center_c0_0 :center_c3_0" />
+
+    <connection from="in_ulitsa_chaplygina_124" to="out_lyalin_pereulok_111" fromLane="1" toLane="1" via=":center_2_0" tl="center" linkIndex="2" dir="s" state="o" />
+    <connection from="in_ulitsa_chaplygina_124" to="out_ulitsa_pokrovka_61" fromLane="2" toLane="2" via=":center_3_0" tl="center" linkIndex="3" dir="l" state="o" />
+    <connection from="in_ulitsa_pokrovka_61" to="out_ulitsa_pokrovka_61" fromLane="1" toLane="1" via=":center_0_0" tl="center" linkIndex="0" dir="s" state="o" />
+    <connection from="in_ulitsa_pokrovka_61" to="out_ulitsa_pokrovka_61" fromLane="2" toLane="2" via=":center_0_1" tl="center" linkIndex="1" dir="s" state="o" />
+
+    <connection from=":center_0" to="out_ulitsa_pokrovka_61" fromLane="0" toLane="1" dir="s" state="M" />
+    <connection from=":center_0" to="out_ulitsa_pokrovka_61" fromLane="1" toLane="2" dir="s" state="M" />
+    <connection from=":center_2" to="out_lyalin_pereulok_111" fromLane="0" toLane="1" dir="s" state="M" />
+    <connection from=":center_3" to="out_ulitsa_pokrovka_61" fromLane="0" toLane="2" via=":center_4_0" dir="l" state="m" />
+    <connection from=":center_4" to="out_ulitsa_pokrovka_61" fromLane="0" toLane="2" dir="l" state="m" />
+
+    <connection from=":center_c0" to=":center_w3" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from=":center_c1" to=":center_w0" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from=":center_c2" to=":center_w1" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from=":center_c3" to=":center_w2" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from=":center_c4" to=":center_w4" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from=":center_w0" to=":center_c0" fromLane="0" toLane="0" tl="center" linkIndex="4" dir="s" state="M" />
+    <connection from=":center_w0" to="out_ulitsa_pokrovka_61" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from=":center_w1" to=":center_c1" fromLane="0" toLane="0" tl="center" linkIndex="5" dir="s" state="M" />
+    <connection from=":center_w1" to="out_lyalin_pereulok_111" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from="in_ulitsa_pokrovka_61" to=":center_w1" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from=":center_w2" to=":center_c2" fromLane="0" toLane="0" tl="center" linkIndex="6" dir="s" state="M" />
+    <connection from="in_ulitsa_chaplygina_124" to=":center_w2" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from=":center_w3" to=":center_c4" fromLane="0" toLane="0" tl="center" linkIndex="8" dir="s" state="M" />
+    <connection from=":center_w3" to="out_ulitsa_chaplygina_304" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from=":center_w4" to=":center_c3" fromLane="0" toLane="0" tl="center" linkIndex="7" dir="s" state="M" />
+</net>

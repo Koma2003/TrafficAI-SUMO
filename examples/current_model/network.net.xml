@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='utf-8'?>
+<net xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.20" junctionCornerDetail="5" walkingareas="true" limitTurnSpeed="5.50" avoidOverlap="0" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="407.12,1651.26" convBoundary="0.00,0.00,1284.44,2052.36" origBoundary="-407.12,-1651.26,877.32,401.10" projParameter="!" />
+
+    <edge id=":center_0" function="internal">
+        <lane id=":center_0_0" index="0" disallow="pedestrian" speed="11.11" length="20.93" shape="414.19,1659.10 397.90,1645.96" />
+    </edge>
+    <edge id=":center_1" function="internal">
+        <lane id=":center_1_0" index="0" disallow="pedestrian" speed="11.11" length="14.69" shape="415.46,1648.59 406.14,1659.98" />
+        <lane id=":center_1_1" index="1" disallow="pedestrian" speed="11.11" length="14.69" shape="412.96,1646.59 403.68,1657.94" />
+    </edge>
+    <edge id=":center_3" function="internal">
+        <lane id=":center_3_0" index="0" disallow="pedestrian" speed="11.11" length="20.94" shape="400.01,1643.31 416.25,1656.54" />
+    </edge>
+    <edge id=":center_4" function="internal">
+        <lane id=":center_4_0" index="0" disallow="pedestrian" speed="11.11" length="14.61" shape="398.71,1653.85 407.96,1642.56" />
+        <lane id=":center_4_1" index="1" disallow="pedestrian" speed="11.11" length="14.61" shape="401.18,1655.88 410.46,1644.57" />
+    </edge>
+    <edge id=":center_c0" function="crossing" crossingEdges="out_ulitsa_shmidta_79 in_ulitsa_shmidta_259">
+        <lane id=":center_c0_0" index="0" allow="pedestrian" speed="2.78" length="6.47" width="4.00" shape="415.69,1654.04 411.63,1659.07" outlineShape="417.31,1655.22 413.12,1660.41 412.14,1659.65 411.14,1659.27 410.16,1659.22 409.20,1659.49 408.98,1659.64 410.07,1657.82 414.13,1652.78 415.73,1651.36 415.62,1651.65 415.55,1652.61 415.80,1653.54 416.36,1654.44" />
+    </edge>
+    <edge id=":center_c1" function="crossing" crossingEdges="out_ulitsa_ahmetova_129 in_ulitsa_ahmetova_309">
+        <lane id=":center_c1_0" index="0" allow="pedestrian" speed="2.78" length="12.81" width="4.00" shape="405.46,1643.11 415.44,1651.16" outlineShape="406.64,1641.49 416.77,1649.66 416.00,1650.64 415.62,1651.65 415.55,1652.61 415.80,1653.54 415.97,1653.82 414.19,1652.71 404.21,1644.67 402.79,1643.07 403.07,1643.18 404.03,1643.25 404.96,1643.01 405.86,1642.44" />
+    </edge>
+    <edge id=":center_c2" function="crossing" crossingEdges="out_ulitsa_shmidta_259 in_ulitsa_shmidta_79">
+        <lane id=":center_c2_0" index="0" allow="pedestrian" speed="2.78" length="6.55" width="4.00" shape="398.46,1648.45 402.57,1643.35" outlineShape="396.84,1647.28 401.07,1642.02 402.07,1642.79 403.07,1643.18 404.03,1643.25 404.96,1643.01 405.25,1642.83 404.13,1644.60 400.02,1649.71 398.44,1651.14 398.57,1650.82 398.63,1649.87 398.37,1648.95 397.80,1648.06" />
+    </edge>
+    <edge id=":center_c3" function="crossing" crossingEdges="out_ulitsa_ahmetova_309 in_ulitsa_ahmetova_129">
+        <lane id=":center_c3_0" index="0" allow="pedestrian" speed="2.78" length="12.83" width="4.00" shape="408.65,1659.46 398.77,1651.29" outlineShape="407.45,1661.06 397.41,1652.76 398.18,1651.81 398.57,1650.82 398.63,1649.87 398.37,1648.95 398.19,1648.67 400.04,1649.74 409.93,1657.92 411.40,1659.37 411.14,1659.27 410.16,1659.22 409.20,1659.49 408.28,1660.09" />
+    </edge>
+    <edge id=":center_w0" function="walkingarea">
+        <lane id=":center_w0_0" index="0" allow="pedestrian" speed="2.78" length="3.42" width="4.00" shape="407.38,1661.00 408.92,1662.27 411.93,1661.90 413.19,1660.35 412.14,1659.65 411.14,1659.27 410.16,1659.22 409.20,1659.49 408.28,1660.09" />
+    </edge>
+    <edge id=":center_w1" function="walkingarea">
+        <lane id=":center_w1_0" index="0" allow="pedestrian" speed="2.78" length="3.34" width="4.00" shape="417.25,1655.29 418.50,1653.73 418.26,1650.85 416.70,1649.60 416.00,1650.64 415.62,1651.65 415.55,1652.61 415.80,1653.54 416.36,1654.44" />
+    </edge>
+    <edge id=":center_w2" function="walkingarea">
+        <lane id=":center_w2_0" index="0" allow="pedestrian" speed="2.78" length="3.36" width="4.00" shape="406.72,1641.56 405.16,1640.30 402.27,1640.50 400.99,1642.05 402.07,1642.79 403.07,1643.18 404.03,1643.25 404.96,1643.01 405.86,1642.44" />
+    </edge>
+    <edge id=":center_w3" function="walkingarea">
+        <lane id=":center_w3_0" index="0" allow="pedestrian" speed="2.78" length="3.30" width="4.00" shape="396.90,1647.21 395.65,1648.77 395.94,1651.55 397.48,1652.83 398.18,1651.81 398.57,1650.82 398.63,1649.87 398.37,1648.95 397.80,1648.06" />
+    </edge>
+
+    <edge id="in_ulitsa_ahmetova_129" from="in_ulitsa_ahmetova_129" to="center" priority="8" shape="0.00,2047.72 24.57,2028.01 85.94,1978.13 94.29,1971.20 129.36,1942.69 179.98,1901.93 208.95,1874.70 258.67,1827.43 321.44,1754.00 407.12,1651.26">
+        <lane id="in_ulitsa_ahmetova_129_0" index="0" allow="pedestrian" speed="11.11" length="562.08" width="2.00" shape="-4.63,2041.95 19.92,2022.25 81.24,1972.41 89.59,1965.48 124.71,1936.94 175.12,1896.34 203.87,1869.32 253.29,1822.33 315.79,1749.23 396.71,1652.19" />
+        <lane id="in_ulitsa_ahmetova_129_1" index="1" disallow="pedestrian" speed="11.11" length="562.08" shape="-3.00,2043.98 21.55,2024.28 82.89,1974.42 91.24,1967.49 126.34,1938.96 176.83,1898.31 205.65,1871.21 255.18,1824.12 317.77,1750.90 398.71,1653.85" />
+        <lane id="in_ulitsa_ahmetova_129_2" index="2" disallow="pedestrian" speed="11.11" length="562.08" shape="-1.00,2046.47 23.56,2026.77 84.92,1976.89 93.27,1969.96 128.35,1941.45 178.93,1900.72 207.85,1873.54 257.51,1826.33 320.22,1752.97 401.18,1655.88" />
+    </edge>
+    <edge id="in_ulitsa_ahmetova_309" from="in_ulitsa_ahmetova_309" to="center" priority="8" shape="1284.44,2.57 1261.03,51.45 1202.61,198.73 1198.22,209.99 1166.16,290.45 1137.41,366.12 1071.35,539.00 1063.23,561.62 995.91,737.90 993.26,745.95 925.60,924.54 917.78,944.84 857.00,1103.59 793.81,1181.35 710.83,1283.65 614.19,1402.80 595.96,1425.10 584.78,1438.70 539.45,1494.45 523.39,1512.69 519.94,1516.45 470.28,1573.28 407.12,1651.26">
+        <lane id="in_ulitsa_ahmetova_309_0" index="0" allow="pedestrian" speed="11.11" length="1883.87" width="2.00" shape="1291.11,5.77 1267.81,54.42 1209.49,201.46 1205.10,212.70 1173.06,293.13 1144.33,368.75 1078.29,541.57 1070.17,564.19 1002.88,740.38 1000.24,748.42 932.51,927.18 924.69,947.49 863.49,1107.34 799.55,1186.01 716.58,1288.31 619.93,1407.47 601.68,1429.79 590.51,1443.38 545.10,1499.23 528.89,1517.64 525.45,1521.39 475.94,1578.05 417.48,1650.22" />
+        <lane id="in_ulitsa_ahmetova_309_1" index="1" disallow="pedestrian" speed="11.11" length="1883.87" shape="1288.77,4.64 1265.43,53.37 1207.07,200.50 1202.69,211.75 1170.63,292.19 1141.90,367.83 1075.85,540.67 1067.73,563.29 1000.43,739.51 997.79,747.55 930.08,926.25 922.26,946.56 861.21,1106.02 797.54,1184.38 714.56,1286.67 617.91,1405.83 599.67,1428.14 588.50,1441.74 543.11,1497.55 526.96,1515.90 523.52,1519.65 473.95,1576.37 415.46,1648.59" />
+        <lane id="in_ulitsa_ahmetova_309_2" index="2" disallow="pedestrian" speed="11.11" length="1883.87" shape="1285.88,3.26 1262.50,52.09 1204.10,199.32 1199.71,210.58 1167.65,291.03 1138.91,366.69 1072.85,539.56 1064.73,562.18 997.42,738.44 994.77,746.48 927.09,925.11 919.27,945.41 858.40,1104.40 795.05,1182.36 712.07,1284.66 615.43,1403.81 597.20,1426.11 586.02,1439.71 540.67,1495.48 524.58,1513.76 521.13,1517.52 471.50,1574.31 412.96,1646.59" />
+    </edge>
+    <edge id="in_ulitsa_shmidta_259" from="in_ulitsa_shmidta_259" to="center" priority="4" shape="849.63,1601.75 736.26,1733.48 632.64,1742.83 579.60,1747.19 538.71,1750.39 500.28,1727.39 407.12,1651.26">
+        <lane id="in_ulitsa_shmidta_259_0" index="0" allow="pedestrian" speed="11.11" length="531.38" width="2.00" shape="852.81,1604.49 738.33,1737.51 633.00,1747.01 579.94,1751.38 537.70,1754.68 497.86,1730.84 412.56,1661.13" />
+        <lane id="in_ulitsa_shmidta_259_1" index="1" disallow="pedestrian" speed="11.11" length="531.38" shape="850.84,1602.79 737.05,1735.02 632.78,1744.42 579.73,1748.78 538.33,1752.02 499.36,1728.70 414.19,1659.10" />
+    </edge>
+    <edge id="in_ulitsa_shmidta_79" from="in_ulitsa_shmidta_79" to="center" priority="4" shape="152.93,1443.49 151.60,1450.57 198.75,1489.75 292.61,1559.00 303.23,1567.39 363.63,1615.32 407.12,1651.26">
+        <lane id="in_ulitsa_shmidta_79_0" index="0" allow="pedestrian" speed="11.11" length="318.22" width="2.00" shape="157.06,1444.27 156.18,1448.92 201.34,1486.44 295.16,1555.66 305.84,1564.10 366.27,1612.06 401.63,1641.27" />
+        <lane id="in_ulitsa_shmidta_79_1" index="1" disallow="pedestrian" speed="11.11" length="318.22" shape="154.50,1443.79 153.35,1449.94 199.74,1488.49 293.58,1557.73 304.22,1566.14 364.64,1614.08 400.01,1643.31" />
+    </edge>
+    <edge id="out_ulitsa_ahmetova_129" from="center" to="out_ulitsa_ahmetova_129" priority="8" shape="407.12,1651.26 470.07,1573.11 519.53,1516.09 522.77,1512.15 538.61,1493.76 583.72,1437.84 594.69,1424.07 612.71,1401.60 709.13,1282.28 791.90,1179.81 854.58,1102.33 914.98,943.77 922.54,923.38 989.94,744.71 992.34,736.55 1059.40,560.17 1067.27,537.46 1133.08,364.47 1161.58,288.67 1193.40,208.09 1197.53,196.72 1255.74,49.25 1279.03,0.00">
+        <lane id="out_ulitsa_ahmetova_129_0" index="0" allow="pedestrian" speed="11.11" length="1881.28" width="2.00" shape="405.94,1640.93 464.39,1568.36 513.88,1511.31 517.11,1507.38 532.93,1489.02 577.95,1433.21 588.91,1419.45 606.95,1396.96 703.37,1277.63 786.14,1175.16 848.08,1098.59 908.05,941.17 915.61,920.79 982.92,742.36 985.32,734.19 1052.44,557.64 1060.31,534.93 1126.16,361.85 1154.67,286.01 1186.48,205.47 1190.61,194.10 1248.95,46.31 1272.34,-3.16" />
+        <lane id="out_ulitsa_ahmetova_129_1" index="1" disallow="pedestrian" speed="11.11" length="1881.28" shape="407.96,1642.56 466.39,1570.03 515.86,1512.99 519.10,1509.06 534.92,1490.69 579.97,1434.84 590.94,1421.07 608.97,1398.59 705.40,1279.26 788.17,1176.79 850.37,1099.91 910.49,942.08 918.04,921.70 985.39,743.18 987.79,735.02 1054.89,558.53 1062.76,535.82 1128.59,362.77 1157.10,286.94 1188.91,206.39 1193.04,195.02 1251.33,47.34 1274.69,-2.05" />
+        <lane id="out_ulitsa_ahmetova_129_2" index="2" disallow="pedestrian" speed="11.11" length="1881.28" shape="410.46,1644.57 468.84,1572.08 518.31,1515.06 521.55,1511.12 537.38,1492.74 582.47,1436.84 593.44,1423.07 611.46,1400.60 707.89,1281.27 790.66,1178.80 853.18,1101.52 913.48,943.21 921.04,922.82 988.42,744.20 990.82,736.04 1057.90,559.62 1065.77,536.91 1131.58,363.90 1160.09,288.09 1191.90,207.52 1196.03,196.15 1254.27,48.61 1277.58,-0.68" />
+    </edge>
+    <edge id="out_ulitsa_ahmetova_309" from="center" to="out_ulitsa_ahmetova_309" priority="8" shape="407.12,1651.26 321.95,1754.43 259.65,1828.33 210.34,1876.15 181.72,1903.95 131.47,1945.27 96.86,1974.27 88.92,1981.73 27.95,2032.13 3.81,2052.36">
+        <lane id="out_ulitsa_ahmetova_309_0" index="0" allow="pedestrian" speed="11.11" length="564.23" width="2.00" shape="408.15,1661.64 327.63,1759.17 265.07,1833.38 215.49,1881.46 186.66,1909.47 136.20,1950.96 101.77,1979.81 93.82,1987.28 32.68,2037.82 8.56,2058.03" />
+        <lane id="out_ulitsa_ahmetova_309_1" index="1" disallow="pedestrian" speed="11.11" length="564.23" shape="406.14,1659.98 325.64,1757.50 263.16,1831.61 213.68,1879.59 184.92,1907.53 134.54,1948.96 100.05,1977.86 92.10,1985.33 31.02,2035.82 6.89,2056.04" />
+        <lane id="out_ulitsa_ahmetova_309_2" index="2" disallow="pedestrian" speed="11.11" length="564.23" shape="403.68,1657.94 323.18,1755.45 260.82,1829.42 211.45,1877.30 182.79,1905.14 132.49,1946.50 97.92,1975.47 89.98,1982.93 28.97,2033.36 4.84,2053.59" />
+    </edge>
+    <edge id="out_ulitsa_shmidta_259" from="center" to="out_ulitsa_shmidta_259" priority="4" shape="407.12,1651.26 363.00,1616.10 302.01,1568.97 290.84,1561.42 196.33,1492.93 148.05,1454.09 146.93,1443.42">
+        <lane id="out_ulitsa_shmidta_259_0" index="0" allow="pedestrian" speed="11.11" length="328.30" width="2.00" shape="396.28,1647.99 360.41,1619.40 299.55,1572.37 288.43,1564.86 193.78,1496.27 144.06,1456.27 142.75,1443.86" />
+        <lane id="out_ulitsa_shmidta_259_1" index="1" disallow="pedestrian" speed="11.11" length="328.30" shape="397.90,1645.96 362.01,1617.36 301.07,1570.27 289.92,1562.73 195.36,1494.20 146.53,1454.92 145.34,1443.59" />
+    </edge>
+    <edge id="out_ulitsa_shmidta_79" from="center" to="out_ulitsa_shmidta_79" priority="4" shape="407.12,1651.26 500.88,1726.59 539.17,1748.45 579.32,1744.20 632.27,1738.85 733.52,1729.30 845.07,1597.85">
+        <lane id="out_ulitsa_shmidta_79_0" index="0" allow="pedestrian" speed="11.11" length="516.98" width="2.00" shape="417.87,1654.51 503.25,1723.11 540.08,1744.13 578.89,1740.02 631.86,1734.67 731.42,1725.28 841.87,1595.13" />
+        <lane id="out_ulitsa_shmidta_79_1" index="1" disallow="pedestrian" speed="11.11" length="516.98" shape="416.25,1656.54 501.78,1725.26 539.51,1746.80 579.16,1742.61 632.11,1737.26 732.72,1727.77 843.85,1596.81" />
+    </edge>
+
+    <tlLogic id="center" type="static" programID="0" offset="0">
+        <phase duration="25" state="rGGrGGGrGr" />
+        <phase duration="5" state="rGGrGGrrrr" />
+        <phase duration="3" state="ryyryyrrrr" />
+        <phase duration="1" state="rrrrrrrrrr" />
+        <phase duration="25" state="GrrGrrrGrG" />
+        <phase duration="5" state="GrrGrrrrrr" />
+        <phase duration="3" state="yrryrrrrrr" />
+        <phase duration="1" state="rrrrrrrrrr" />
+    </tlLogic>
+
+    <junction id="center" type="traffic_light" x="407.12" y="1651.26" incLanes="in_ulitsa_shmidta_259_0 in_ulitsa_shmidta_259_1 in_ulitsa_ahmetova_309_0 in_ulitsa_ahmetova_309_1 in_ulitsa_ahmetova_309_2 in_ulitsa_shmidta_79_0 in_ulitsa_shmidta_79_1 in_ulitsa_ahmetova_129_0 in_ulitsa_ahmetova_129_1 in_ulitsa_ahmetova_129_2 :center_w1_0 :center_w2_0 :center_w3_0 :center_w0_0" intLanes=":center_0_0 :center_1_0 :center_1_1 :center_3_0 :center_4_0 :center_4_1 :center_c0_0 :center_c1_0 :center_c2_0 :center_c3_0" shape="411.93,1661.91 418.50,1653.73 417.78,1652.86 417.66,1652.39 417.70,1651.90 417.90,1651.38 418.26,1650.85 405.16,1640.30 404.28,1641.01 403.81,1641.13 403.31,1641.08 402.79,1640.87 402.25,1640.49 395.65,1648.77 396.38,1649.63 396.51,1650.09 396.47,1650.56 396.28,1651.05 395.94,1651.55 408.92,1662.27 409.87,1661.48 410.37,1661.34 410.88,1661.36 411.40,1661.55">
+        <request index="0" response="0000110110" foes="0101110110" cont="0" />
+        <request index="1" response="0000000000" foes="1010001001" cont="0" />
+        <request index="2" response="0000000000" foes="1010001001" cont="0" />
+        <request index="3" response="0000110110" foes="0101110110" cont="0" />
+        <request index="4" response="0000000000" foes="1010001001" cont="0" />
+        <request index="5" response="0000000000" foes="1010001001" cont="0" />
+        <request index="6" response="0000001001" foes="0000001001" cont="0" />
+        <request index="7" response="0000110110" foes="0000110110" cont="0" />
+        <request index="8" response="0000001001" foes="0000001001" cont="0" />
+        <request index="9" response="0000110110" foes="0000110110" cont="0" />
+    </junction>
+    <junction id="in_ulitsa_ahmetova_129" type="dead_end" x="0.00" y="2047.72" incLanes="" intLanes="" shape="0.00,2047.72 -5.26,2041.17" />
+    <junction id="in_ulitsa_ahmetova_309" type="dead_end" x="1284.44" y="2.57" incLanes="" intLanes="" shape="1284.44,2.57 1292.02,6.20" />
+    <junction id="in_ulitsa_shmidta_259" type="dead_end" x="849.63" y="1601.75" incLanes="" intLanes="" shape="849.63,1601.75 853.57,1605.14" />
+    <junction id="in_ulitsa_shmidta_79" type="dead_end" x="152.93" y="1443.49" incLanes="" intLanes="" shape="152.93,1443.49 158.04,1444.45" />
+    <junction id="out_ulitsa_ahmetova_129" type="dead_end" x="1279.03" y="0.00" incLanes="out_ulitsa_ahmetova_129_0 out_ulitsa_ahmetova_129_1 out_ulitsa_ahmetova_129_2" intLanes="" shape="1271.44,-3.59 1279.03,0.00" />
+    <junction id="out_ulitsa_ahmetova_309" type="dead_end" x="3.81" y="2052.36" incLanes="out_ulitsa_ahmetova_309_0 out_ulitsa_ahmetova_309_1 out_ulitsa_ahmetova_309_2" intLanes="" shape="9.21,2058.80 3.81,2052.36" />
+    <junction id="out_ulitsa_shmidta_259" type="dead_end" x="146.93" y="1443.42" incLanes="out_ulitsa_shmidta_259_0 out_ulitsa_shmidta_259_1" intLanes="" shape="141.76,1443.96 146.93,1443.42" />
+    <junction id="out_ulitsa_shmidta_79" type="dead_end" x="845.07" y="1597.85" incLanes="out_ulitsa_shmidta_79_0 out_ulitsa_shmidta_79_1" intLanes="" shape="841.11,1594.49 845.07,1597.85" />
+
+    <connection from="in_ulitsa_ahmetova_129" to="out_ulitsa_ahmetova_129" fromLane="1" toLane="1" via=":center_4_0" tl="center" linkIndex="4" dir="s" state="O" />
+    <connection from="in_ulitsa_ahmetova_129" to="out_ulitsa_ahmetova_129" fromLane="2" toLane="2" via=":center_4_1" tl="center" linkIndex="5" dir="s" state="O" />
+    <connection from="in_ulitsa_ahmetova_309" to="out_ulitsa_ahmetova_309" fromLane="1" toLane="1" via=":center_1_0" tl="center" linkIndex="1" dir="s" state="O" />
+    <connection from="in_ulitsa_ahmetova_309" to="out_ulitsa_ahmetova_309" fromLane="2" toLane="2" via=":center_1_1" tl="center" linkIndex="2" dir="s" state="O" />
+    <connection from="in_ulitsa_shmidta_259" to="out_ulitsa_shmidta_259" fromLane="1" toLane="1" via=":center_0_0" tl="center" linkIndex="0" dir="s" state="o" />
+    <connection from="in_ulitsa_shmidta_79" to="out_ulitsa_shmidta_79" fromLane="1" toLane="1" via=":center_3_0" tl="center" linkIndex="3" dir="s" state="o" />
+
+    <connection from=":center_0" to="out_ulitsa_shmidta_259" fromLane="0" toLane="1" dir="s" state="M" />
+    <connection from=":center_1" to="out_ulitsa_ahmetova_309" fromLane="0" toLane="1" dir="s" state="M" />
+    <connection from=":center_1" to="out_ulitsa_ahmetova_309" fromLane="1" toLane="2" dir="s" state="M" />
+    <connection from=":center_3" to="out_ulitsa_shmidta_79" fromLane="0" toLane="1" dir="s" state="M" />
+    <connection from=":center_4" to="out_ulitsa_ahmetova_129" fromLane="0" toLane="1" dir="s" state="M" />
+    <connection from=":center_4" to="out_ulitsa_ahmetova_129" fromLane="1" toLane="2" dir="s" state="M" />
+
+    <connection from=":center_c0" to=":center_w0" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from=":center_c1" to=":center_w1" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from=":center_c2" to=":center_w2" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from=":center_c3" to=":center_w3" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from=":center_w0" to=":center_c3" fromLane="0" toLane="0" tl="center" linkIndex="9" dir="s" state="m" />
+    <connection from=":center_w0" to="out_ulitsa_ahmetova_309" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from="in_ulitsa_shmidta_259" to=":center_w0" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from=":center_w1" to=":center_c0" fromLane="0" toLane="0" tl="center" linkIndex="6" dir="s" state="m" />
+    <connection from=":center_w1" to="out_ulitsa_shmidta_79" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from="in_ulitsa_ahmetova_309" to=":center_w1" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from=":center_w2" to=":center_c1" fromLane="0" toLane="0" tl="center" linkIndex="7" dir="s" state="m" />
+    <connection from=":center_w2" to="out_ulitsa_ahmetova_129" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from="in_ulitsa_shmidta_79" to=":center_w2" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from=":center_w3" to=":center_c2" fromLane="0" toLane="0" tl="center" linkIndex="8" dir="s" state="m" />
+    <connection from=":center_w3" to="out_ulitsa_shmidta_259" fromLane="0" toLane="0" dir="s" state="M" />
+    <connection from="in_ulitsa_ahmetova_129" to=":center_w3" fromLane="0" toLane="0" dir="s" state="M" />
+</net>

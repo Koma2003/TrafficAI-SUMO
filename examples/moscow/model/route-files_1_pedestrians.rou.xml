@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <personFlow id="pf_1" begin="0" end="360" period="144.00">
+        <walk from="out_ulitsa_pokrovka_61" to="out_ulitsa_chaplygina_304"/>
+    </personFlow>
+    <personFlow id="pf_2" begin="0" end="360" period="144.00">
+        <walk from="out_ulitsa_pokrovka_61" to="in_ulitsa_pokrovka_61"/>
+    </personFlow>
+    <personFlow id="pf_3" begin="0" end="360" period="144.00">
+        <walk from="out_ulitsa_pokrovka_61" to="out_lyalin_pereulok_111"/>
+    </personFlow>
+    <personFlow id="pf_4" begin="0" end="360" period="144.00">
+        <walk from="in_ulitsa_chaplygina_124" to="out_ulitsa_pokrovka_61"/>
+    </personFlow>
+    <personFlow id="pf_5" begin="0" end="360" period="144.00">
+        <walk from="in_ulitsa_chaplygina_124" to="in_ulitsa_pokrovka_61"/>
+    </personFlow>
+    <personFlow id="pf_6" begin="0" end="360" period="144.00">
+        <walk from="in_ulitsa_chaplygina_124" to="out_lyalin_pereulok_111"/>
+    </personFlow>
+    <personFlow id="pf_7" begin="0" end="360" period="144.00">
+        <walk from="in_ulitsa_pokrovka_61" to="out_ulitsa_pokrovka_61"/>
+    </personFlow>
+    <personFlow id="pf_8" begin="0" end="360" period="144.00">
+        <walk from="in_ulitsa_pokrovka_61" to="out_ulitsa_chaplygina_304"/>
+    </personFlow>
+    <personFlow id="pf_9" begin="0" end="360" period="144.00">
+        <walk from="in_ulitsa_pokrovka_61" to="out_lyalin_pereulok_111"/>
+    </personFlow>
+    <personFlow id="pf_10" begin="0" end="360" period="144.00">
+        <walk from="out_lyalin_pereulok_111" to="out_ulitsa_pokrovka_61"/>
+    </personFlow>
+    <personFlow id="pf_11" begin="0" end="360" period="144.00">
+        <walk from="out_lyalin_pereulok_111" to="out_ulitsa_chaplygina_304"/>
+    </personFlow>
+    <personFlow id="pf_12" begin="0" end="360" period="144.00">
+        <walk from="out_lyalin_pereulok_111" to="in_ulitsa_pokrovka_61"/>
+    </personFlow>
+</routes>

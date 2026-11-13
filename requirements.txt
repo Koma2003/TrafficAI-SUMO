@@ -1,11 +1,8 @@
-# --- Обязательные для пайплайна (osm/, sumo/, ui/) ---
-requests>=2.31.0          # OSM Overpass API, Nominatim
-tkintermapview>=0.29      # встроенная карта в ui/control_panel.py
-Pillow>=10.0.0            # зависимость tkintermapview (для рендера тайлов)
+requests>=2.31.0,<3
+tkintermapview>=0.29
+Pillow>=10.0.0
+traci>=1.20.0,<2
+scipy>=1.11,<2
 
-# --- Опционально: если используете LLM-пайплайн (agent/llm_client.py) ---
-# openai>=1.30.0          # Yandex AI Studio (OpenAI-совместимый API)
-# python-dotenv>=1.0.0    # .env с YANDEX_API_KEY / YANDEX_FOLDER_ID / YANDEX_AGENT_ID
-
-# --- Опционально: traci, если SUMO установлен НЕ в PATH ---
-# traci>=1.20.0           # TraCI для optimize_traffic_lights.py и compare_results.py
+# Optional fast SUMO backend: install libsumo matching your SUMO version.
+# LLM is not required by the district report.
