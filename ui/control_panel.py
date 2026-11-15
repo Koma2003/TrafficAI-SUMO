@@ -191,12 +191,12 @@ class ControlPanel:
                 self._current_proc = None
         threading.Thread(target=worker, daemon=True).start()
 
-    def _run_script(self, script_path, label):
+    def _run_script(self, script_path, label, *script_args):
         """Запускает скрипт, стримит stdout в лог, ждёт завершения."""
         self.log(f"▶ {label}...")
         env = dict(os.environ, PYTHONIOENCODING="utf-8")
         self._current_proc = subprocess.Popen(
-            [sys.executable, "-E", "-X", "utf8", str(script_path)],
+            [sys.executable, "-E", "-X", "utf8", str(script_path), *script_args],
             cwd=str(PROJECT_ROOT),
             stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
             text=True, encoding="utf-8", errors="replace",
@@ -230,7 +230,7 @@ class ControlPanel:
     def _choose_browser_task(self):
         self.root.after(0, lambda: self._set_status("Ожидание клика в браузере...", "blue"))
         self.log("Открываю карту в браузере — кликните на перекрёсток")
-        self._run_script(PROJECT_ROOT / "osm" / "intersection_finder.py", "Выбор перекрёстка")
+        self._run_script(PROJECT_ROOT / "osm" / "intersection_finder.py", "Выбор перекрёстка", "--city", "Москва")
         if not COORDS_FILE.exists():
             raise RuntimeError("Координаты не сохранились")
         self.root.after(0, self._ask_rebuild_after_pick)

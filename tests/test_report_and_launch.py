@@ -8,7 +8,7 @@ from unittest.mock import Mock, patch
 import requests
 from osm.area_analysis import fetch_area, summarize
 from ui.signal_dialog import training_command
-from ui.report_viewer import ReportText
+from ui.report_viewer import ReportText, show_report
 
 
 class LaunchTests(unittest.TestCase):
@@ -26,6 +26,31 @@ class LaunchTests(unittest.TestCase):
         self.assertIn('Школы',text)
         self.assertNotIn('hidden css',text)
         self.assertNotIn('graphic',text)
+
+    def test_preview_skips_page_metadata_and_keeps_body(self):
+        metadata='<title>Service title</title><style>hidden</style>'
+        for header in (metadata,f'<head>{metadata}</head>'):
+            with self.subTest(header=header):
+                parser=ReportText()
+                parser.feed(f'<html>{header}'
+                            '<body><h1>Отчёт по району</h1><p>Магазины: 4</p></body></html>')
+                parser.close()
+                self.assertNotIn('Service title',parser.text())
+                self.assertEqual(parser.text(),'Отчёт по району\n\nМагазины: 4')
+
+    def test_unreadable_report_shows_error_without_opening_window(self):
+        with tempfile.TemporaryDirectory() as name:
+            missing=Path(name)/'missing.html'
+            corrupt=Path(name)/'corrupt.html'
+            corrupt.write_bytes(b'\xff\xfe')
+            for path in (missing,corrupt):
+                with self.subTest(path=path.name), patch('ui.report_viewer.messagebox.showerror') as error, patch('ui.report_viewer.tk.Toplevel') as window:
+                    parent=Mock()
+                    self.assertIsNone(show_report(parent,path,'Отчёт по району'))
+                    window.assert_not_called()
+                    error.assert_called_once()
+                    self.assertIn('Не удалось прочитать отчёт',error.call_args.args[1])
+                    self.assertIs(error.call_args.kwargs['parent'],parent)
 
 
 class FetchFallbackTests(unittest.TestCase):

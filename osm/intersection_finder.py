@@ -3,7 +3,9 @@
 # Пишет clicked_coords.json. Поиск города - через Nominatim.
 #========================================================================
 
+import argparse
 import json
+import sys
 import webbrowser
 import os
 import time
@@ -157,11 +159,18 @@ def get_city_coords(city_name):
     return 55.751244, 37.618423
 
 
+def selected_city(args=None):
+    parser = argparse.ArgumentParser(description='Выбор перекрёстка на карте')
+    parser.add_argument('--city', help='Город, с которого открывается карта')
+    city = parser.parse_args(args).city
+    if city is None and sys.stdin is not None and sys.stdin.isatty():
+        city = input('Введите город: ')
+    return (city or '').strip() or 'Москва'
+
+
 if __name__ == "__main__":
     print("\n" + "=" * 50)
-    city = input("Введите город: ").strip()
-    if not city:
-        city = "Москва"
+    city = selected_city()
 
     lat, lon = get_city_coords(city)
     MyHandler.center_lat = lat

@@ -14,13 +14,13 @@ class ReportText(HTMLParser):
         self.skip=0
 
     def handle_starttag(self,tag,attrs):
-        if tag in {'style','script','svg'}:self.skip+=1
+        if tag in {'head','title','style','script','svg'}:self.skip+=1
         if not self.skip:
             if tag in {'h1','h2','h3','p','tr','li','br','footer'}:self.parts.append('\n')
             elif tag in {'td','th'}:self.parts.append(' | ')
 
     def handle_endtag(self,tag):
-        if tag in {'style','script','svg'}:self.skip=max(0,self.skip-1)
+        if tag in {'head','title','style','script','svg'}:self.skip=max(0,self.skip-1)
         elif not self.skip and tag in {'h1','h2','h3','p','tr','li','footer'}:self.parts.append('\n')
 
     def handle_data(self,data):
@@ -31,8 +31,13 @@ class ReportText(HTMLParser):
 
 
 def show_report(parent,path,title='Отчёт'):
-    path=Path(path).resolve()
-    parser=ReportText();parser.feed(path.read_text(encoding='utf-8'))
+    try:
+        path=Path(path).resolve()
+        content=path.read_text(encoding='utf-8')
+    except (OSError,UnicodeError) as exc:
+        messagebox.showerror(title,f'Не удалось прочитать отчёт.\n{exc}',parent=parent)
+        return None
+    parser=ReportText();parser.feed(content);parser.close()
     window=tk.Toplevel(parent);window.title(title);window.geometry('1000x760')
     container=ttk.Frame(window,padding=12);container.pack(fill='both',expand=True)
     ttk.Label(container,text=title,font=('Segoe UI',-20,'bold')).pack(anchor='w',pady=(0,10))
