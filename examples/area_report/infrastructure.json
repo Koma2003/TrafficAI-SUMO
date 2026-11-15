@@ -8,13 +8,75 @@
   "area_km2": 0.714464515719159,
   "source": "Учебные синтетические данные, не натурная выгрузка",
   "retrieved_at": "2026-11-12T17:20:27.611005+00:00",
-  "counts": {
-    "residential": 1,
+  "generated_at": "2026-11-15T12:38:26.263476+00:00",
+  "osm_snapshot_at": null,
+  "cache_hit": false,
+  "query_sha256": null,
+  "boundary_semantics": "OSM objects selected by Overpass bbox; ways and relations may extend outside. Representative centers are not entrances or clipped geometries.",
+  "role_counts": {
+    "poi": 5,
+    "building": 1,
+    "landuse": 0,
+    "other": 0
+  },
+  "unknown_buildings": 0,
+  "unclassified_buildings": 0,
+  "category_basis_counts": {
+    "object_tags": 5,
+    "building_type": 1
+  },
+  "poi_category_counts": {
     "social": 1,
     "commercial": 1,
-    "business": 1,
     "transport": 1,
+    "business": 1,
     "leisure": 1,
+    "residential": 0,
+    "other": 0
+  },
+  "building_type_counts": {
+    "apartments": 1
+  },
+  "representative_points_outside": 0,
+  "subtypes": [
+    {
+      "tag": "shop=supermarket",
+      "label": "Супермаркеты",
+      "count": 1
+    },
+    {
+      "tag": "building=apartments",
+      "label": "Многоквартирные здания",
+      "count": 1
+    },
+    {
+      "tag": "amenity=school",
+      "label": "Школы",
+      "count": 1
+    },
+    {
+      "tag": "highway=bus_stop",
+      "label": "Остановки автобуса",
+      "count": 1
+    },
+    {
+      "tag": "leisure=park",
+      "label": "Парки",
+      "count": 1
+    },
+    {
+      "tag": "office=company",
+      "label": "office=company",
+      "count": 1
+    }
+  ],
+  "counts": {
+    "social": 1,
+    "commercial": 1,
+    "transport": 1,
+    "business": 1,
+    "leisure": 1,
+    "residential": 1,
     "other": 0
   },
   "objects": [
@@ -28,7 +90,14 @@
       "tags": {
         "name": "Учебный магазин",
         "shop": "supermarket"
-      }
+      },
+      "role": "poi",
+      "subtype": "shop=supermarket",
+      "subtype_label": "Супермаркеты",
+      "category_basis": "object_tags",
+      "building_type": null,
+      "building_category": null,
+      "representative_point_inside": true
     },
     {
       "osm_type": "way",
@@ -41,7 +110,14 @@
         "name": "Учебный жилой дом",
         "building": "apartments",
         "building:levels": "9"
-      }
+      },
+      "role": "building",
+      "subtype": "building=apartments",
+      "subtype_label": "Многоквартирные здания",
+      "category_basis": "building_type",
+      "building_type": "apartments",
+      "building_category": "residential",
+      "representative_point_inside": true
     },
     {
       "osm_type": "way",
@@ -53,7 +129,14 @@
       "tags": {
         "name": "Учебная школа",
         "amenity": "school"
-      }
+      },
+      "role": "poi",
+      "subtype": "amenity=school",
+      "subtype_label": "Школы",
+      "category_basis": "object_tags",
+      "building_type": null,
+      "building_category": null,
+      "representative_point_inside": true
     },
     {
       "osm_type": "node",
@@ -65,7 +148,14 @@
       "tags": {
         "name": "Учебная остановка",
         "highway": "bus_stop"
-      }
+      },
+      "role": "poi",
+      "subtype": "highway=bus_stop",
+      "subtype_label": "Остановки автобуса",
+      "category_basis": "object_tags",
+      "building_type": null,
+      "building_category": null,
+      "representative_point_inside": true
     },
     {
       "osm_type": "way",
@@ -77,7 +167,14 @@
       "tags": {
         "name": "Учебный парк",
         "leisure": "park"
-      }
+      },
+      "role": "poi",
+      "subtype": "leisure=park",
+      "subtype_label": "Парки",
+      "category_basis": "object_tags",
+      "building_type": null,
+      "building_category": null,
+      "representative_point_inside": true
     },
     {
       "osm_type": "way",
@@ -89,7 +186,14 @@
       "tags": {
         "name": "Учебный офис",
         "office": "company"
-      }
+      },
+      "role": "poi",
+      "subtype": "office=company",
+      "subtype_label": "office=company",
+      "category_basis": "object_tags",
+      "building_type": null,
+      "building_category": null,
+      "representative_point_inside": true
     }
   ]
 }

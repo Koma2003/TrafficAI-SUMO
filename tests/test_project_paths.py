@@ -23,5 +23,29 @@ class ProjectPathsTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as name:
             self.assertEqual(model_file(name,'config'),Path(name)/'sumo/intersection.sumocfg')
 
+    def test_partial_local_geometry_does_not_launch_bundled_config(self):
+        with tempfile.TemporaryDirectory() as name:
+            root=Path(name)
+            for relative in ['osm/geometry.json','examples/moscow/geometry.json',
+                             'examples/moscow/model/scenario.sumocfg']:
+                path=root/relative
+                path.parent.mkdir(parents=True,exist_ok=True)
+                path.write_text('{}')
+            self.assertEqual(model_file(root,'geometry'),root/'osm/geometry.json')
+            self.assertEqual(model_file(root,'config'),root/'sumo/intersection.sumocfg')
+            self.assertFalse(model_file(root,'config').exists())
+
+    def test_partial_local_config_does_not_show_bundled_geometry(self):
+        with tempfile.TemporaryDirectory() as name:
+            root=Path(name)
+            for relative in ['sumo/intersection.sumocfg','examples/moscow/geometry.json',
+                             'examples/moscow/model/scenario.sumocfg']:
+                path=root/relative
+                path.parent.mkdir(parents=True,exist_ok=True)
+                path.write_text('{}')
+            self.assertEqual(model_file(root,'config'),root/'sumo/intersection.sumocfg')
+            self.assertEqual(model_file(root,'geometry'),root/'osm/geometry.json')
+            self.assertFalse(model_file(root,'geometry').exists())
+
 
 if __name__=='__main__':unittest.main()

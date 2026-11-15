@@ -284,11 +284,13 @@ def generate_routes_from_network(net_file, output_routes, output_config, geometr
         raise RuntimeError("Нет соединений in_* → out_* в сети")
 
     groups = {}
+    lane_destinations = {}
     for c in conns:
         key = (c["from"], c["to"])
         if key not in groups:
             groups[key] = {"from": c["from"], "to": c["to"], "lanes": set()}
         groups[key]["lanes"].add(c["fromLane"])
+        lane_destinations.setdefault((c["from"], c["fromLane"]), set()).add(c["to"])
 
     print("\n groups (маршруты и полосы):")
     for (from_edge, to_edge), data in groups.items():
@@ -296,6 +298,8 @@ def generate_routes_from_network(net_file, output_routes, output_config, geometr
 
     routes_xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
     routes_xml += '<routes>\n'
+    routes_xml += ('    <!-- Turning shares are unknown: each lane demand is split equally '
+                   'among its unique permitted destination edges. -->\n')
     # vType не ограничивает скорость: реальная задаётся у рёбер (из maxspeed OSM).
     routes_xml += '    <vType id="car" type="passenger" accel="2.6" decel="4.5" sigma="0.5" length="5" maxSpeed="55.0"/>\n\n'
 
@@ -309,11 +313,14 @@ def generate_routes_from_network(net_file, output_routes, output_config, geometr
             geo_lane = lane - offsets.get(from_edge, 0)
             flow_rate = lane_flow_rates.get((from_edge, geo_lane), DEFAULT_FLOW_RATE)
             if flow_rate > 0:
-                period = 3600.0 / flow_rate
-                routes_xml += f'    <flow id="flow_{route_id}_lane_{lane}" type="car" route="route_{route_id}" begin="0" end="360" period="{period:.2f}" departLane="{lane}"/>\n'
+                destination_count = len(lane_destinations[(from_edge, lane)])
+                route_flow_rate = flow_rate / destination_count
+                period = 3600.0 / route_flow_rate
+                routes_xml += f'    <flow id="flow_{route_id}_lane_{lane}" type="car" route="route_{route_id}" begin="0" end="360" period="{period:.12g}" departLane="{lane}"/>\n'
                 print(
                     f"    Маршрут {route_id}, SUMO-полоса {lane} (геометрия {geo_lane}): "
-                    f"период {period:.2f} сек (интенсивность {flow_rate} авто/час)")
+                    f"период {period:.2f} сек (доля маршрута {route_flow_rate:g} из {flow_rate:g} авто/час; "
+                    f"равномерно между {destination_count} направлениями)")
             else:
                 print(f"    Маршрут {route_id}, SUMO-полоса {lane}: интенсивность 0, поток не создан")
 

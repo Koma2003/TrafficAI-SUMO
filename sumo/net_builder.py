@@ -183,7 +183,8 @@ def build_network(approaches, output_file="intersection.net.xml", debug=True):
                 "lanes_in": 0, "lanes_out": 0, "turn_lanes_in": [],
                 "traffic_lights": [], "has_in": False, "has_out": False,
                 "oneway": bool(app.get("oneway", False)),
-                "maxspeed_kmh": app.get("maxspeed") or DEFAULT_MAXSPEED_KMH,
+                "maxspeed_in_kmh": DEFAULT_MAXSPEED_KMH,
+                "maxspeed_out_kmh": DEFAULT_MAXSPEED_KMH,
                 "highway": app.get("highway", ""),
                 "in_shape": None, "out_shape": None,
                 "in_far": None, "out_far": None,
@@ -193,17 +194,17 @@ def build_network(approaches, output_file="intersection.net.xml", debug=True):
             g["lanes_in"] = app["lanes"]
             g["turn_lanes_in"] = app.get("turn_lanes", [])
             g["has_in"] = True
+            g["maxspeed_in_kmh"] = app.get("maxspeed") or DEFAULT_MAXSPEED_KMH
             if app.get("shape_latlon"): g["in_shape"] = app["shape_latlon"]
             if app.get("far_lat") is not None: g["in_far"] = (app["far_lat"], app["far_lon"])
         elif app["direction"] == "ВЫЕЗД":
             g["lanes_out"] = app["lanes"]
             g["has_out"] = True
+            g["maxspeed_out_kmh"] = app.get("maxspeed") or DEFAULT_MAXSPEED_KMH
             if app.get("shape_latlon"): g["out_shape"] = app["shape_latlon"]
             if app.get("far_lat") is not None: g["out_far"] = (app["far_lat"], app["far_lon"])
         if app.get("traffic_lights"):
             g["traffic_lights"].extend(app["traffic_lights"])
-        if app.get("maxspeed"):
-            g["maxspeed_kmh"] = max(g["maxspeed_kmh"], app["maxspeed"])
         # highway может прийти не у всех подходов; берём самый старший
         if app.get("highway"):
             cur = (g.get("highway") or "").lower()
@@ -282,10 +283,10 @@ def build_network(approaches, output_file="intersection.net.xml", debug=True):
     for app in sorted_apps:
         name = app["street_name"]; angle = app["angle_deg"]
         bid = f"{transliterate(name)}_{angle:.0f}"
-        speed_kmh = app.get("maxspeed_kmh") or DEFAULT_MAXSPEED_KMH
-        speed = speed_kmh / 3.6
         prio_attr = f' priority="{app["priority"]}"' if not has_lights else ""
         if app["has_in"]:
+            speed_kmh = app["maxspeed_in_kmh"]
+            speed = speed_kmh / 3.6
             shp = shape_attr(app["in_shape_xy"])
             edg_xml += (f'    <edge from="in_{bid}" to="center" id="in_{bid}" '
                         f'numLanes="{app["lanes_in"]}" speed="{speed:.2f}"'
@@ -294,6 +295,8 @@ def build_network(approaches, output_file="intersection.net.xml", debug=True):
                   f"shape={len(app['in_shape_xy'])} точек"
                   f"{' prio='+str(app['priority']) if not has_lights else ''}")
         if app["has_out"]:
+            speed_kmh = app["maxspeed_out_kmh"]
+            speed = speed_kmh / 3.6
             shp = shape_attr(app["out_shape_xy"])
             edg_xml += (f'    <edge from="center" to="out_{bid}" id="out_{bid}" '
                         f'numLanes="{app["lanes_out"]}" speed="{speed:.2f}"'

@@ -25,6 +25,56 @@ class InfrastructureFactsTests(unittest.TestCase):
         custom = {'social': {'label': 'Social', 'match': {'amenity': ['new_category']}}}
         self.assertEqual(classify({'amenity': 'new_category'}, custom), 'social')
 
+    def test_building_types_are_kept_without_inventing_operating_institutions(self):
+        types = {'school': 'social', 'hospital': 'social', 'retail': 'commercial',
+                 'kindergarten': 'social', 'university': 'social', 'college': 'social',
+                 'warehouse': 'business', 'train_station': 'transport'}
+        data = {'elements': [element(index, {'building': building})
+                             for index, building in enumerate(types, 1)]}
+        result = summarize(data, BBOX)
+        self.assertEqual(result['unknown_buildings'], 0)
+        self.assertEqual(result['role_counts']['poi'], 0)
+        self.assertTrue(all(count == 0 for count in result['poi_category_counts'].values()))
+        for obj in result['objects']:
+            with self.subTest(building=obj['building_type']):
+                self.assertEqual(obj['category'], types[obj['building_type']])
+                self.assertEqual(obj['role'], 'building')
+                self.assertEqual(obj['category_basis'], 'building_type')
+                self.assertEqual(obj['subtype'], 'building='+obj['building_type'])
+        output = report_html(result)
+        self.assertIn('Здания школьного типа', output)
+        self.assertIn('Больничные здания', output)
+        self.assertIn('Торговые здания', output)
+        self.assertIn('сам по себе не подтверждает действующую школу', output)
+
+    def test_explicit_poi_use_wins_over_building_type_in_every_category(self):
+        data = {'elements': [element(1, {'building': 'school', 'shop': 'supermarket'}),
+                             element(2, {'building': 'retail', 'amenity': 'school'})]}
+        result = summarize(data, BBOX)
+        shop, school = result['objects']
+        self.assertEqual((shop['category'], shop['subtype']), ('commercial', 'shop=supermarket'))
+        self.assertEqual(shop['building_category'], 'social')
+        self.assertEqual(shop['building_type'], 'school')
+        self.assertEqual((school['category'], school['subtype']), ('social', 'amenity=school'))
+        self.assertEqual(school['building_category'], 'commercial')
+        self.assertEqual(result['poi_category_counts']['commercial'], 1)
+        self.assertEqual(result['poi_category_counts']['social'], 1)
+        self.assertTrue(all(o['category_basis'] == 'object_tags' for o in result['objects']))
+
+    def test_known_noncategory_building_types_are_not_called_unknown(self):
+        data = {'elements': [element(1, {'building': 'roof'}),
+                             element(2, {'building': 'service'}),
+                             element(3, {'building': 'yes'})]}
+        result = summarize(data, BBOX)
+        self.assertEqual(result['counts']['other'], 3)
+        self.assertEqual(result['unknown_buildings'], 1)
+        self.assertEqual(result['unclassified_buildings'], 2)
+        self.assertEqual(result['building_type_counts'], {'roof': 1, 'service': 1})
+        output = report_html(result)
+        self.assertIn('building=roof', output)
+        self.assertIn('building=service', output)
+        self.assertIn('Ещё 2 зданий имеют явно заданный тип', output)
+
     def test_unknown_buildings_and_named_poi_are_separate(self):
         data = {'elements': [element(1, {'building': 'yes'}),
                              element(2, {'shop': 'supermarket', 'name': 'Магазин <script>x</script>'}),

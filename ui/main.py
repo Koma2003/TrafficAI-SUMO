@@ -264,7 +264,7 @@ class ApproachEditor:
 
     def apply_changes(self):
         if self.current_group_key is None:
-            return
+            return True
         group = self.groups[self.current_group_key]
         if not group["has_in"]:
             # ДОБАВЛЕНО: для улицы без въезда всё равно можем менять oneway
@@ -274,7 +274,7 @@ class ApproachEditor:
                 group["in_app"]["oneway"] = new_oneway
             if group["out_app"] is not None:
                 group["out_app"]["oneway"] = new_oneway
-            return
+            return True
 
         lanes = group["lanes_in"]
 
@@ -296,7 +296,7 @@ class ApproachEditor:
                 new_flow_rates_reversed.append(rate)
             except ValueError:
                 messagebox.showerror("Ошибка", "Введите целое число для интенсивности")
-                return
+                return False
 
         new_flow_rates = list(reversed(new_flow_rates_reversed))
 
@@ -330,6 +330,7 @@ class ApproachEditor:
 
         messagebox.showinfo("Успех",
                             f"Изменения применены к {group['street_name']}")
+        return True
 
     def reset_to_default(self):
         """Сбрасывает все lane_flow_rates на DEFAULT_FLOW_RATE"""
@@ -349,7 +350,8 @@ class ApproachEditor:
         messagebox.showinfo("Успех", f"Все интенсивности сброшены на {DEFAULT_FLOW_RATE}")
 
     def save_and_rebuild(self):
-        self.apply_changes()
+        if not self.apply_changes():
+            return
         new_approaches = []
         for key, group in self.groups.items():
             # ИЗМЕНЕНО: сохраняем ВСЕ поля исходного подхода через dict(app)

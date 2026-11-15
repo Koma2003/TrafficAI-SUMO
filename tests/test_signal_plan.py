@@ -55,6 +55,28 @@ class SignalPlanTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'исходный'):
                 _problem(path,dict(LIMITS,all_red=(1,3)),82)
 
+    def test_missing_all_red_rejects_positive_minimum(self):
+        with tempfile.TemporaryDirectory() as temp:
+            path=Path(temp)/'net.xml'
+            network(path,[('Gr',30),('yr',3),('rG',30),('ry',3)])
+            with self.assertRaisesRegex(ValueError,'нет фазы «всем красный»'):
+                _problem(path,dict(LIMITS,all_red=(1,3)),66)
+
+    def test_missing_all_red_allows_explicit_zero_minimum(self):
+        with tempfile.TemporaryDirectory() as temp:
+            path=Path(temp)/'net.xml'
+            network(path,[('Gr',30),('yr',3),('rG',30),('ry',3)])
+            problem=_problem(path,dict(LIMITS,all_red=(0,3)),66)
+            self.assertTrue(validate_durations(problem,problem['feasible']))
+            self.assertFalse(any(r['color']=='all_red' for r in problem['runs']))
+
+    def test_missing_yellow_rejects_positive_minimum_for_that_direction(self):
+        with tempfile.TemporaryDirectory() as temp:
+            path=Path(temp)/'net.xml'
+            network(path,[('Gr',30),('rr',1),('rG',30),('ry',3),('rr',1)])
+            with self.assertRaisesRegex(ValueError,'У направления 0 .*нет жёлтого интервала'):
+                _problem(path,LIMITS,65)
+
     def test_always_green_direction_is_not_a_finite_interval(self):
         with tempfile.TemporaryDirectory() as temp:
             path=Path(temp)/'net.xml'

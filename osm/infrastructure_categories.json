@@ -1,9 +1,9 @@
 {
-  "social": {"label": "Социальная инфраструктура", "match": {"amenity": ["school", "kindergarten", "university", "college", "hospital", "clinic", "doctors", "pharmacy", "library", "theatre", "community_centre", "arts_centre", "social_facility"]}},
-  "commercial": {"label": "Магазины и услуги", "match": {"shop": "*", "amenity": ["marketplace", "restaurant", "cafe", "bank", "fast_food", "fuel", "post_office"]}},
-  "transport": {"label": "Транспорт", "match": {"railway": ["station", "halt", "subway_entrance"], "public_transport": "*", "amenity": ["bus_station"], "highway": ["bus_stop"]}},
-  "business": {"label": "Промышленность и офисы", "match": {"office": "*", "industrial": "*", "man_made": ["works"], "landuse": ["industrial", "commercial"], "building": ["industrial", "commercial", "office"]}},
-  "leisure": {"label": "Досуг и рекреация", "match": {"leisure": "*", "tourism": "*"}},
+  "social": {"label": "Социальная инфраструктура", "match": {"amenity": ["school", "kindergarten", "university", "college", "hospital", "clinic", "doctors", "pharmacy", "library", "theatre", "community_centre", "arts_centre", "social_facility"], "building": ["school", "kindergarten", "university", "college", "hospital", "clinic", "library"]}},
+  "commercial": {"label": "Магазины и услуги", "match": {"shop": "*", "amenity": ["marketplace", "restaurant", "cafe", "bank", "fast_food", "fuel", "post_office"], "building": ["retail", "supermarket", "kiosk"]}},
+  "transport": {"label": "Транспорт", "match": {"railway": ["station", "halt", "subway_entrance"], "public_transport": "*", "amenity": ["bus_station"], "highway": ["bus_stop"], "building": ["train_station", "transportation"]}},
+  "business": {"label": "Промышленность и офисы", "match": {"office": "*", "industrial": "*", "man_made": ["works"], "landuse": ["industrial", "commercial"], "building": ["industrial", "commercial", "office", "warehouse"]}},
+  "leisure": {"label": "Досуг и рекреация", "match": {"leisure": "*", "tourism": "*", "building": ["sports_hall", "stadium", "grandstand"]}},
   "residential": {"label": "Жилая застройка", "match": {"building": ["apartments", "house", "residential", "detached", "dormitory", "terrace"], "landuse": ["residential"]}},
   "other": {"label": "Прочие здания и объекты", "match": {}}
 }

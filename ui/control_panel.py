@@ -255,8 +255,10 @@ class ControlPanel:
             self.root.after(400, self._open_sumo_impl)
 
     def on_open_sumo(self):
-        if not model_file(PROJECT_ROOT, "config").exists():
-            messagebox.showwarning("Нет конфига", f"{CONFIG_FILE} не найден.\nСначала пересоберите сеть.")
+        config = model_file(PROJECT_ROOT, "config")
+        if not config.is_file():
+            messagebox.showwarning("Нет конфигурации SUMO",
+                                   f"Не найден файл: {config}\nЛокальная модель не собрана полностью. Пересоберите сеть.")
             return
         self._open_sumo_impl()
 

@@ -7,6 +7,7 @@ import os
 import sys
 import shutil
 import tempfile
+import math
 import xml.etree.ElementTree as ET
 from pathlib import Path
 import traci
@@ -20,7 +21,59 @@ ROUTES_FILE = SUMO_DIR / "routes.rou.xml"
 DETECTORS_FILE = SUMO_DIR / "detectors.add.xml"
 CONFIG_FILE = SUMO_DIR / "intersection.sumocfg"
 
-STATS_INTERVAL = 1
+SIMULATION_DURATION = 360.0
+
+
+class LaneStatistics:
+    """Observed waiting seconds and stop transitions, independent of step size.
+
+    A stop is a sampled transition from speed > 0.1 m/s to <= 0.1 m/s.
+    The first sighting of a stationary vehicle is not a known transition.
+    Per-vehicle means include every vehicle seen on the monitored lane,
+    including unfinished journeys; arrivals are not the denominator.
+    """
+    def __init__(self, detector_ids, lane_to_detector):
+        self.lane_to_detector = lane_to_detector
+        self.total_delay = {detector: 0.0 for detector in detector_ids}
+        self.stop_count = {detector: 0 for detector in detector_ids}
+        self.unique_vehicles = {detector: set() for detector in detector_ids}
+        self.queue_sum = {detector: 0.0 for detector in detector_ids}
+        self.queue_seconds = {detector: 0.0 for detector in detector_ids}
+        self.queue_max = {detector: 0 for detector in detector_ids}
+        self.previous_wait = {}
+        self.was_stopped = {}
+
+    def record_vehicle(self, vehicle, lane, waiting, speed, seconds):
+        if not math.isfinite(seconds) or seconds <= 0:
+            raise ValueError("Шаг наблюдения должен быть положительным числом секунд")
+        previous = self.previous_wait.get(vehicle, 0.0)
+        # getWaitingTime resets after movement. Count only time observed in
+        # this step, never a new vehicle's entire historical waiting timer.
+        increment = waiting - previous if waiting >= previous else waiting
+        increment = max(0.0, min(seconds, increment))
+        stopped = speed <= 0.1
+        detector = self.lane_to_detector.get(lane)
+        if detector is not None:
+            self.unique_vehicles[detector].add(vehicle)
+            self.total_delay[detector] += increment
+            if stopped and self.was_stopped.get(vehicle) is False:
+                self.stop_count[detector] += 1
+        self.previous_wait[vehicle] = waiting
+        self.was_stopped[vehicle] = stopped
+
+    def record_queue(self, detector, halted, seconds):
+        self.queue_sum[detector] += halted * seconds
+        self.queue_seconds[detector] += seconds
+        self.queue_max[detector] = max(self.queue_max[detector], halted)
+
+    def averages(self, detector):
+        vehicles = len(self.unique_vehicles[detector])
+        observed_seconds = self.queue_seconds[detector]
+        return {
+            'delay_seconds_per_vehicle': self.total_delay[detector] / vehicles if vehicles else 0.0,
+            'stops_per_vehicle': self.stop_count[detector] / vehicles if vehicles else 0.0,
+            'mean_queue_vehicles': self.queue_sum[detector] / observed_seconds if observed_seconds else 0.0,
+        }
 
 
 def get_detector_ids():
@@ -75,6 +128,18 @@ def collect_statistics(net_path, output_prefix, label="Сеть"):
         print(" Нет детекторов для сбора данных")
         return False
 
+    step_length = 1.0
+    if CONFIG_FILE.exists():
+        try:
+            setting = ET.parse(CONFIG_FILE).getroot().find('time/step-length')
+            if setting is not None:
+                step_length = float(setting.get('value'))
+            if not math.isfinite(step_length) or step_length <= 0:
+                raise ValueError('Некорректный step-length')
+        except (ET.ParseError, ValueError, TypeError, OSError) as exc:
+            print(f" Не удалось прочитать шаг симуляции: {exc}")
+            return False
+
     temp_net = Path(tempfile.mktemp(suffix=".net.xml"))
     shutil.copy(net_path, temp_net)
 
@@ -88,7 +153,8 @@ def collect_statistics(net_path, output_prefix, label="Сеть"):
     </input>
     <time>
         <begin value="0"/>
-        <end value="360"/>
+        <end value="{SIMULATION_DURATION:g}"/>
+        <step-length value="{step_length:g}"/>
     </time>
     <processing>
         <time-to-teleport value="-1"/>
@@ -97,17 +163,13 @@ def collect_statistics(net_path, output_prefix, label="Сеть"):
     with open(temp_cfg, "w", encoding="utf-8") as f:
         f.write(cfg_content)
 
-    total_delay = {det_id: 0.0 for det_id in DETECTOR_IDS}
-    count_delay = {det_id: 0 for det_id in DETECTOR_IDS}
-    queue_sum = {det_id: 0.0 for det_id in DETECTOR_IDS}
-    queue_count = {det_id: 0 for det_id in DETECTOR_IDS}
-    queue_max = {det_id: 0 for det_id in DETECTOR_IDS}
-    unique_vehicles = {det_id: set() for det_id in DETECTOR_IDS}
-
+    statistics = LaneStatistics(DETECTOR_IDS, LANE_TO_DETECTOR)
+    total_delay = statistics.total_delay
+    stop_count = statistics.stop_count
+    queue_max = statistics.queue_max
+    unique_vehicles = statistics.unique_vehicles
     all_vehicles = set()
-
-    prev_wait = {}
-    veh_lane = {}
+    arrived_vehicles = 0
 
     detector_passed = {det_id: 0 for det_id in DETECTOR_IDS}
     detector_speed_sum = {det_id: 0.0 for det_id in DETECTOR_IDS}
@@ -121,12 +183,17 @@ def collect_statistics(net_path, output_prefix, label="Сеть"):
     try:
         traci.start(sumo_cmd)
         step = 0
-        last_snapshot = 0
-
-        while step < 360:
+        previous_time = traci.simulation.getTime()
+        while previous_time < SIMULATION_DURATION - 1e-9:
             traci.simulationStep()
             step += 1
             current_time = traci.simulation.getTime()
+            elapsed = current_time - previous_time
+            if not math.isfinite(elapsed) or elapsed <= 0:
+                raise ValueError('Время SUMO не продвигается')
+            seconds = min(current_time, SIMULATION_DURATION) - previous_time
+            previous_time = current_time
+            arrived_vehicles += traci.simulation.getArrivedNumber()
 
             active_vehicles = traci.vehicle.getIDList()
             if active_vehicles:
@@ -135,68 +202,41 @@ def collect_statistics(net_path, output_prefix, label="Сеть"):
             for veh_id in active_vehicles:
                 all_vehicles.add(veh_id)
 
-            if not active_vehicles and current_time > 30 and current_time - last_active_time > 30:
-                print(f"   Машины закончились на {last_active_time:.0f} сек")
-                break
-
             for veh_id in active_vehicles:
                 current_wait = traci.vehicle.getWaitingTime(veh_id)
                 try:
                     lane_id = traci.vehicle.getLaneID(veh_id)
                 except:
                     lane_id = None
+                statistics.record_vehicle(veh_id, lane_id, current_wait,
+                                          traci.vehicle.getSpeed(veh_id), seconds)
 
-                if veh_id not in prev_wait:
-                    prev_wait[veh_id] = current_wait
-                    if lane_id is not None:
-                        veh_lane[veh_id] = lane_id
-                    continue
+            # Weight the queue by elapsed seconds, not by sample count.
+            for det_id in DETECTOR_IDS:
+                lane = get_lane_from_detector(det_id)
+                try:
+                    halted = traci.lane.getLastStepHaltingNumber(lane)
+                    statistics.record_queue(det_id, halted, seconds)
+                except:
+                    pass
 
-                delta = current_wait - prev_wait[veh_id]
-                if delta > 0:
-                    lane = veh_lane.get(veh_id)
-                    if lane is not None and lane in LANE_TO_DETECTOR:
-                        det_id = LANE_TO_DETECTOR[lane]
-                        total_delay[det_id] += delta
-                        count_delay[det_id] += 1
-
-                prev_wait[veh_id] = current_wait
-                if lane_id is not None:
-                    veh_lane[veh_id] = lane_id
-
-            if current_time - last_snapshot >= STATS_INTERVAL:
-                last_snapshot = current_time
-
-                for det_id in DETECTOR_IDS:
-                    lane = get_lane_from_detector(det_id)
-                    try:
-                        vehicles = traci.lane.getLastStepVehicleIDs(lane)
-                        for veh in vehicles:
-                            unique_vehicles[det_id].add(veh)
-
-                        halted = traci.lane.getLastStepHaltingNumber(lane)
-                        queue_sum[det_id] += halted
-                        queue_count[det_id] += 1
-                        if halted > queue_max[det_id]:
-                            queue_max[det_id] = halted
-                    except:
-                        pass
-
-                for det_id in DETECTOR_IDS:
-                    try:
-                        n_vehicles = traci.inductionloop.getLastStepVehicleNumber(det_id)
-                        if n_vehicles > 0:
-                            detector_passed[det_id] += n_vehicles
-                            speed = traci.inductionloop.getLastStepMeanSpeed(det_id)
-                            if speed >= 0:
-                                detector_speed_sum[det_id] += speed
-                                detector_speed_count[det_id] += 1
-                            occupancy = traci.inductionloop.getLastStepOccupancy(det_id)
-                            if occupancy >= 0:
-                                detector_occupancy_sum[det_id] += occupancy
-                                detector_occupancy_count[det_id] += 1
-                    except:
-                        pass
+            for det_id in DETECTOR_IDS:
+                try:
+                    n_vehicles = traci.inductionloop.getLastStepVehicleNumber(det_id)
+                    if n_vehicles > 0:
+                        detector_passed[det_id] += n_vehicles
+                        speed = traci.inductionloop.getLastStepMeanSpeed(det_id)
+                        if speed >= 0:
+                            detector_speed_sum[det_id] += speed
+                            detector_speed_count[det_id] += 1
+                        occupancy = traci.inductionloop.getLastStepOccupancy(det_id)
+                        if occupancy >= 0:
+                            detector_occupancy_sum[det_id] += occupancy
+                            detector_occupancy_count[det_id] += 1
+                except:
+                    pass
+            if traci.simulation.getMinExpectedNumber() == 0:
+                break
 
         print(f" Симуляция завершена. Собрано {step} шагов.")
 
@@ -228,31 +268,32 @@ def collect_statistics(net_path, output_prefix, label="Сеть"):
     with open(delays_file, "w", encoding='utf-8') as f:
         f.write(f"ОТЧЁТ О ЗАДЕРЖКАХ И ОЧЕРЕДЯХ (ЧЕРЕЗ TraCI)\n")
         f.write(f"Сеть: {net_path.name}\n")
-        f.write(f"Время сбора данных: до {last_active_time:.0f} сек\n")
+        f.write(f"Время сбора данных: до {previous_time:g} сек; шаг модели {step_length:g} с\n")
+        f.write("Средние задержки и остановки рассчитаны по всем наблюдавшимся на полосе машинам, включая незавершившие поездку.\n")
+        f.write("Остановка — наблюдавшийся переход скорости > 0.1 м/с к <= 0.1 м/с; начальная неподвижность не считается переходом.\n")
         f.write("=" * 80 + "\n\n")
 
         total_wait_all = 0.0
+        total_stops_all = 0
         total_vehicles_all = 0
 
         for det_id in DETECTOR_IDS:
             lane = get_lane_from_detector(det_id)
             delay_sum = total_delay[det_id]
-            count_delay_det = count_delay[det_id]
-            # БАГ: count_delay - это число СЕКУНД, а не машин, поэтому
-            # "средняя задержка на машину" всегда равна 1.00.
-            avg_delay = delay_sum / count_delay_det if count_delay_det > 0 else 0.0
-            avg_queue = queue_sum[det_id] / queue_count[det_id] if queue_count[det_id] > 0 else 0.0
+            averages = statistics.averages(det_id)
+            avg_delay = averages['delay_seconds_per_vehicle']
+            avg_queue = averages['mean_queue_vehicles']
             max_queue = queue_max[det_id]
             unique_cnt = len(unique_vehicles[det_id])
-            # А вот ЭТО на самом деле средняя задержка на машину (сек) - названия перепутаны.
-            stops_per_vehicle = count_delay_det / unique_cnt if unique_cnt > 0 else 0.0
+            stops_per_vehicle = averages['stops_per_vehicle']
 
             total_wait_all += delay_sum
+            total_stops_all += stop_count[det_id]
             total_vehicles_all += unique_cnt
 
             f.write(f"Полоса '{lane}':\n")
             f.write(f"  - Суммарное время задержек: {delay_sum:.2f} сек\n")
-            f.write(f"  - Количество зарегистрированных задержек (прирост): {count_delay_det}\n")
+            f.write(f"  - Количество наблюдавшихся остановок: {stop_count[det_id]}\n")
             f.write(f"  - СРЕДНЯЯ ЗАДЕРЖКА НА МАШИНУ: {avg_delay:.2f} сек\n")
             f.write(f"  - Количество уникальных машин: {unique_cnt}\n")
             f.write(f"  - Среднее количество остановок на машину: {stops_per_vehicle:.2f}\n")
@@ -268,6 +309,11 @@ def collect_statistics(net_path, output_prefix, label="Сеть"):
             f.write(f"  - Всего уникальных машин (сумма по полосам): {total_vehicles_all}\n")
             f.write(f"  - Всего уникальных машин (по всем детекторам): {total_detected_vehicles}\n")
             f.write(f"  - Всего машин, появившихся в симуляции: {total_vehicles_seen}\n")
+            f.write(f"  - Прибывших автомобилей: {arrived_vehicles}\n")
+            average_observed_delay = total_wait_all / total_detected_vehicles if total_detected_vehicles else 0.0
+            average_observed_stops = total_stops_all / total_detected_vehicles if total_detected_vehicles else 0.0
+            f.write(f"  - Средняя задержка на наблюдавшуюся машину: {average_observed_delay:.2f} сек\n")
+            f.write(f"  - Среднее число остановок на наблюдавшуюся машину: {average_observed_stops:.2f}\n")
 
     print(f" Отчёт о задержках: {delays_file}")
 
@@ -275,7 +321,7 @@ def collect_statistics(net_path, output_prefix, label="Сеть"):
     with open(detectors_file, "w", encoding='utf-8') as f:
         f.write(f"ОТЧЁТ С ИНДУКЦИОННЫХ ПЕТЕЛЬ\n")
         f.write(f"Сеть: {net_path.name}\n")
-        f.write(f"Время сбора данных: до {last_active_time:.0f} сек\n")
+        f.write(f"Время сбора данных: до {previous_time:g} сек; шаг модели {step_length:g} с\n")
         f.write("=" * 80 + "\n\n")
 
         for det_id in DETECTOR_IDS:

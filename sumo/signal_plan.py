@@ -233,6 +233,10 @@ def _problem(net, limits, cycle, step=1.):
             raise ValueError(f'Направление {link} никогда не получает зелёный в исходном плане')
         if all(s[link] in 'Gg' for s in states) or not any(s[link] in 'rR' for s in states):
             raise ValueError(f'Направление {link} не имеет красного интервала: этот план не поддерживает заданные ограничения цветов')
+        if limits['yellow'][0] > 0 and not any(s[link] in 'yY' for s in states):
+            raise ValueError(f'У направления {link} в исходной программе нет жёлтого интервала, '
+                             'но задан положительный минимум жёлтого. Выберите программу с жёлтым переходом: '
+                             'оптимизатор не добавляет фазы и не меняет их порядок.')
         for color in ['green', 'yellow', 'red']:
             for run in circular_runs(states, link, color):
                 row = [float(i in run) for i in range(len(states))]
@@ -243,7 +247,12 @@ def _problem(net, limits, cycle, step=1.):
                 right.extend([upper, -lower])
                 runs.append({'link': link, 'color': color, 'indices': run, 'min': lower, 'max': upper})
     all_red_states=['r' if all(s in 'rR' for s in state) else 'G' for state in states]
-    for run in circular_runs(all_red_states,0,'red'):
+    all_red_runs = circular_runs(all_red_states,0,'red')
+    if limits['all_red'][0] > 0 and not all_red_runs:
+        raise ValueError('В исходной программе нет фазы «всем красный», но задан положительный минимум. '
+                         'Укажите минимум «всем красный» 0 с либо выберите программу с такой фазой. '
+                         'Оптимизатор не добавляет фазы и не меняет их порядок.')
+    for run in all_red_runs:
         row=[float(i in run) for i in range(len(states))]
         lower=max(limits['all_red'][0],sum(baseline[i] for i in run))
         upper=limits['all_red'][1]
